@@ -566,11 +566,11 @@ function App() {
 
       {/* Activity indicator */}
       {userSessions.length > 1 && (
-        <div className="activity-panel">
+        <div style={{ position: 'fixed', top: '16px', right: '16px', background: 'white', border: '0.5px solid #d5d5d0', borderRadius: '8px', padding: '12px', fontSize: '11px', maxWidth: '200px', boxShadow: '0 2px 8px rgba(0, 0, 0, 0.08)', zIndex: 100 }}>
           <div style={{ fontSize: '11px', fontWeight: 500, marginBottom: '6px', color: '#666' }}>Online Users</div>
           {userSessions.slice(0, 5).map(u => (
-            <div key={u.id} style={{ fontSize: '10px', display: 'flex', alignItems: 'center', gap: '6px', padding: '4px 0' }}>
-              <div className="online-dot"></div>
+            <div key={u.id} style={{ fontSize: '10px', display: 'flex', alignItems: 'center', gap: '6px', padding: '4px 0', borderBottom: u.id !== userSessions[Math.min(4, userSessions.length-1)].id ? '0.5px solid #f0f0f0' : 'none' }}>
+              <div style={{ display: 'inline-block', width: '6px', height: '6px', borderRadius: '50%', background: '#22c55e', animation: 'pulse 2s ease infinite' }}></div>
               <span>{u.username}</span>
             </div>
           ))}
