@@ -51,7 +51,7 @@ $packageJson = @"
 }
 "@
 
-$packageJson | Out-File "$rootDir\package.json" -Encoding UTF8
+$packageJson | Out-File "$rootDir\package.json" -Encoding UTF8NoBOM
 Write-Host "Created: package.json" -ForegroundColor Green
 
 # Create vite.config.js
@@ -67,7 +67,7 @@ export default defineConfig({
 });
 "@
 
-$viteConfig | Out-File "$rootDir\vite.config.js" -Encoding UTF8
+$viteConfig | Out-File "$rootDir\vite.config.js" -Encoding UTF8NoBOM
 Write-Host "Created: vite.config.js" -ForegroundColor Green
 
 # Create netlify.toml
@@ -83,7 +83,7 @@ $netlifyToml = @"
   status = 200
 "@
 
-$netlifyToml | Out-File "$rootDir\netlify.toml" -Encoding UTF8
+$netlifyToml | Out-File "$rootDir\netlify.toml" -Encoding UTF8NoBOM
 Write-Host "Created: netlify.toml" -ForegroundColor Green
 
 # Create public/index.html
@@ -102,7 +102,7 @@ $indexHtml = @"
 </html>
 "@
 
-$indexHtml | Out-File "$rootDir\public\index.html" -Encoding UTF8
+$indexHtml | Out-File "$rootDir\public\index.html" -Encoding UTF8NoBOM
 Write-Host "Created: public/index.html" -ForegroundColor Green
 
 # Create src/main.jsx
@@ -119,7 +119,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 )
 "@
 
-$mainJsx | Out-File "$rootDir\src\main.jsx" -Encoding UTF8
+$mainJsx | Out-File "$rootDir\src\main.jsx" -Encoding UTF8NoBOM
 Write-Host "Created: src/main.jsx" -ForegroundColor Green
 
 # Create src/index.css
@@ -305,7 +305,7 @@ input:focus, select:focus, textarea:focus {
 }
 "@
 
-$indexCss | Out-File "$rootDir\src\index.css" -Encoding UTF8
+$indexCss | Out-File "$rootDir\src\index.css" -Encoding UTF8NoBOM
 Write-Host "Created: src/index.css" -ForegroundColor Green
 
 # Create src/App.jsx (placeholder)
@@ -323,7 +323,7 @@ export default function App() {
 }
 "@
 
-$appJsxPlaceholder | Out-File "$rootDir\src\App.jsx" -Encoding UTF8
+$appJsxPlaceholder | Out-File "$rootDir\src\App.jsx" -Encoding UTF8NoBOM
 Write-Host "Created: src/App.jsx (placeholder)" -ForegroundColor Yellow
 
 # Create netlify/functions/generate-schema.js (placeholder)
@@ -338,7 +338,7 @@ exports.handler = async (event, context) => {
 };
 "@
 
-$generateSchemaPlaceholder | Out-File "$rootDir\netlify\functions\generate-schema.js" -Encoding UTF8
+$generateSchemaPlaceholder | Out-File "$rootDir\netlify\functions\generate-schema.js" -Encoding UTF8NoBOM
 Write-Host "Created: netlify/functions/generate-schema.js (placeholder)" -ForegroundColor Yellow
 
 # Create .gitignore
@@ -352,7 +352,7 @@ dist/
 .netlify
 "@
 
-$gitignore | Out-File "$rootDir\.gitignore" -Encoding UTF8
+$gitignore | Out-File "$rootDir\.gitignore" -Encoding UTF8NoBOM
 Write-Host "Created: .gitignore" -ForegroundColor Green
 
 # Create .env.example
@@ -365,7 +365,7 @@ VITE_SUPABASE_ANON_KEY=your-anon-key-here
 ANTHROPIC_API_KEY=sk-ant-your-key-here
 "@
 
-$envExample | Out-File "$rootDir\.env.example" -Encoding UTF8
+$envExample | Out-File "$rootDir\.env.example" -Encoding UTF8NoBOM
 Write-Host "Created: .env.example" -ForegroundColor Green
 
 # Create README.md
@@ -388,7 +388,7 @@ Collaborative annotation tool for building context rules from the Kappa Psi Cons
 See DEPLOYMENT_GUIDE.md for complete setup instructions.
 "@
 
-$readme | Out-File "$rootDir\README.md" -Encoding UTF8
+$readme | Out-File "$rootDir\README.md" -Encoding UTF8NoBOM
 Write-Host "Created: README.md" -ForegroundColor Green
 
 Write-Host "`n✅ Project structure created successfully!`n" -ForegroundColor Green
