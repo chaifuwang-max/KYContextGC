@@ -28,7 +28,7 @@ const supabase = createClient(supabaseUrl, supabaseAnonKey);
 // ✓ All 76 sections extracted and verified - ZERO ERRORS
 // ============================================================================
 
-import ALL_SECTIONS from './CONSTITUTION.js';
+import { ALL_SECTIONS } from './CONSTITUTION.js';
 
 // Categories for annotation
 const CATEGORIES = ["membership","dues","discipline","elections","quorum","amendments","scope","procedure","insignia","officers","committees","province","ritual","hazing","finance"];
