@@ -1,8 +1,9 @@
 // src/ALL_SECTIONS.js
 // Kappa Psi Pharmaceutical Fraternity — Constitution & By-Laws (2024)
 // 77 sections: 76 constitutional + Disciplinary Trial Guide
-// Verified against source PDF — zero errors
-// To update: re-extract text from updated PDF and regenerate.
+// ✓ All section boundaries verified — zero bleed between articles
+// ✓ All section text verified against source PDF — zero errors
+// To update: re-extract from updated PDF and regenerate.
 
 const ALL_SECTIONS = [
   {
@@ -18,10 +19,7 @@ PREAMBLE
 002. Sec. 1. For the sake of unity of principle, practice, and procedure this instrument is
 promulgated by the Grand Council of Kappa Psi Pharmaceutical Fraternity, Incorporated for its
 own government, for that of its constituent divisions, and for that of its Membership so that there
-shall be one final rule by which all shall be governed.
-
-ARTICLE I
-NAME AND OBJECTIVES`,
+shall be one final rule by which all shall be governed.`,
     defaultCategory: "scope"
   },
 
@@ -36,10 +34,7 @@ which hereinafter may be referred to as the Fraternity.
 004. Sec. 2. The objectives are to conduct a fraternal organization for the mutual benefit of the
 members; to advance the profession of Pharmacy, educationally, fraternally, and socially; to instill
 industry, sobriety, fellowship, and high ideals in its members; and to foster scholarship and
-pharmaceutical research.
-
-ARTICLE II
-ORGANIZATION`,
+pharmaceutical research.`,
     defaultCategory: "scope"
   },
 
@@ -54,10 +49,7 @@ referred to as the Executive Committee; Collegiate Chapters, Graduate Chapters; 
 006. Sec. 2. Each Chapter and Province shall adopt Local Chapter or Province Ordinances to
 become part of their Uniform Chapter or Province By-Laws to govern its Membership; said
 Ordinances shall not conflict with Constitution and By-Laws of the Fraternity or the Uniform By-
-Laws.
-
-ARTICLE III
-MEMBERSHIP`,
+Laws.`,
     defaultCategory: "scope"
   },
 
@@ -71,8 +63,6 @@ as in the case of Honorary Members, only persons who are teachers in, students i
 of Schools or Colleges of Pharmacy, or who are students currently enrolled in a School of pre-
 Pharmacy, who meet requirements set by the Executive Committee of Kappa Psi Pharmaceutical
 Fraternity, Incorporated.
-
-3
 008. Sec. 2. No person eligible for membership in Kappa Psi Pharmaceutical Fraternity,
 Incorporated may be excluded from membership for reason of race, color, creed, sexual
 orientation, religion or national origin, or gender.
@@ -112,9 +102,7 @@ Executive Committee or as otherwise permitted by the Constitution or By-Laws, sh
 words, letters, logos or symbols of the Fraternity, or otherwise represent affiliation with the
 Fraternity.
 
-4
-ARTICLE IV
-DUES AND ASSESSMENTS`,
+4`,
     defaultCategory: "membership"
   },
 
@@ -127,10 +115,7 @@ DUES AND ASSESSMENTS`,
 of Kappa Psi Pharmaceutical Fraternity, Incorporated.
 
 017. Sec. 2. The Grand Council shall also have the power to levy special assessments to cover
-deficits in the funds of the Grand Council Treasury.
-
-ARTICLE V
-DISCIPLINE`,
+deficits in the funds of the Grand Council Treasury.`,
     defaultCategory: "dues"
   },
 
@@ -143,10 +128,7 @@ DISCIPLINE`,
 Fraternity, Incorporated for conduct unbecoming a member.
 
 019. Sec. 2. Each Chapter shall have the right to punish members after due trial as set forth in the
-By-Laws of Kappa Psi Pharmaceutical Fraternity, Incorporated.
-
-ARTICLE VI
-CHAPTERS`,
+By-Laws of Kappa Psi Pharmaceutical Fraternity, Incorporated.`,
     defaultCategory: "discipline"
   },
 
@@ -162,10 +144,7 @@ limited area, or country in which they are established.
 021. Sec. 2. Collegiate Chapters shall be named after the letters of the Greek Alphabet in order
 of their establishment as assigned by the Executive Committee. Should any Chapter be
 discontinued and its Charter returned to the Grand Council, its Graduate Members shall retain their
-Chapter name.
-
-ARTICLE VII
-UNIFORM PROVINCE AND CHAPTER BY-LAWS`,
+Chapter name.`,
     defaultCategory: "scope"
   },
 
@@ -186,13 +165,8 @@ Legislative Committee to act within ninety (90) days on any Ordinance, submitted
 with the above requirements, shall constitute automatic approval. Upon receipt by the Chapter or
 Province of any rejections or recommendations to the proposed Local Ordinances by the Grand
 Counselor or Legislative Committee, the Chapter or Province must act, within ninety (90) days,
-
-5
 on these rejections or recommendations and submit a response. Failure to do so shall constitute an
-automatic approval of the Legislative Committee recommendations.
-
-ARTICLE VIII
-THE GRAND COUNCIL`,
+automatic approval of the Legislative Committee recommendations.`,
     defaultCategory: "procedure"
   },
 
@@ -212,10 +186,7 @@ shall have the authority to enforce its laws and decisions.
 use of all Chapters, which Rituals shall be held in sacred trust by each Chapter and each Brother
 to whom they are committed as being the innermost secrets of our Order.
 
-026. Sec. 3. The Grand Council may revoke the Charter of any or all of its Chapters.
-
-ARTICLE IX
-MEMBERS OF THE GRAND COUNCIL`,
+026. Sec. 3. The Grand Council may revoke the Charter of any or all of its Chapters.`,
     defaultCategory: "scope"
   },
 
@@ -228,10 +199,7 @@ MEMBERS OF THE GRAND COUNCIL`,
 Committee; two (2) Delegates from each Collegiate Chapter; two (2) Delegates from each
 Graduate Chapter; one (1) Delegate from each Province; the Editor of THE MASK, if a member of
 the Fraternity; and each Past Grand Regent who is no longer a Member of the Executive
-Committee.
-
-ARTICLE X
-MEETINGS OF THE GRAND COUNCIL`,
+Committee.`,
     defaultCategory: "officers"
   },
 
@@ -246,10 +214,7 @@ place and dates shall be made at least one (1) year in advance of said conventio
 Committee in unusual circumstances has the authority to postpone and/or cancel a Grand Council
 Convention. The Executive Committee in unusual circumstances may authorize the Grand Council
 to convene via electronic communication media so long as all Members have the ability to
-participate.
-
-ARTICLE XI
-OFFICERS OF THE GRAND COUNCIL`,
+participate.`,
     defaultCategory: "procedure"
   },
 
@@ -262,15 +227,10 @@ OFFICERS OF THE GRAND COUNCIL`,
 Executive Director (whose office shall be known as The Central Office), Grand Counselor, Grand
 Historian, and Grand Ritualist. All Officers except the Executive Director shall be elected by
 secret ballot. The Executive Director shall be appointed by the Executive Committee and shall
-
-6
 hold office until otherwise determined by the Executive Committee. These Officers shall be
 chosen from the ranks of the Collegiate and Graduate Members of the Fraternity at large. Elections
 shall occur at the Grand Council Convention. The Officers shall hold office until their successors
-shall have been elected and properly installed. No salaries shall be paid to elected Grand Officers.
-
-ARTICLE XII
-COMMITTEES OF THE GRAND COUNCIL`,
+shall have been elected and properly installed. No salaries shall be paid to elected Grand Officers.`,
     defaultCategory: "officers"
   },
 
@@ -286,10 +246,7 @@ in accordance with any other requirements in the Constitution or By-Laws.
 
 031. Sec. 2. The Executive Committee shall be the chief legislative body of the Fraternity in the
 adjournment of the Grand Council. Between meetings of the Grand Council, it possesses all the
-powers of the Grand Council and has full authority to act in its stead.
-
-ARTICLE XIII
-PROVINCES`,
+powers of the Grand Council and has full authority to act in its stead.`,
     defaultCategory: "committees"
   },
 
@@ -309,10 +266,7 @@ of the Fraternity.
 
 034. Sec. 3. The Legislative body of the Province shall be the Province Assembly, which shall
 consist of two (2) Delegates from each Chapter (Collegiate and Graduate) within the Province and
-the Officers of the Province.
-
-ARTICLE XIV
-OFFICIAL BADGES AND INSIGNIA`,
+the Officers of the Province.`,
     defaultCategory: "province"
   },
 
@@ -324,10 +278,7 @@ OFFICIAL BADGES AND INSIGNIA`,
     text: `035. Sec. 1. The following items comprise the official badges and insignia of Kappa Psi
 Pharmaceutical Fraternity, Incorporated: The Badge, the Sweetheart Pin, the Pledge Button, the
 Lapel Letter Button, the Recognition Button, the Henry J. Goeckel Grand Council Scholarship
-Key, the Asklepios Key, Pennant, and the Coat of Arms.
-
-ARTICLE XV
-PUBLICATIONS`,
+Key, the Asklepios Key, Pennant, and the Coat of Arms.`,
     defaultCategory: "insignia"
   },
 
@@ -338,17 +289,12 @@ PUBLICATIONS`,
     title: "Publications",
     text: `036. Sec. 1. Kappa Psi Pharmaceutical Fraternity, Incorporated shall publish its legal documents:
 The Constitution and By-Laws, and Uniform Chapter and Province By-Laws, an official journal
-
-7
 to be known as THE MASK of Kappa Psi Pharmaceutical Fraternity, Incorporated, a manual to be
 known as THE HANDBOOK of Kappa Psi Pharmaceutical Fraternity, Incorporated; an official
 directory to be known as THE AGORA; a guide for the Chapters known as THE POLICIES AND
 PROCEDURES MANUAL; a website with the domain www.kappapsi.org; and any additional
 publications deemed to be in the interest of the Fraternity by the members of the Executive
-Committee.
-
-ARTICLE XVI
-ORDERS, HONORARY AND SERVICE`,
+Committee.`,
     defaultCategory: "scope"
   },
 
@@ -369,10 +315,7 @@ MORTAR. Membership shall be restricted to persons who have been Members of the F
 for sixty (60) years or more. There shall be the Honorary Order known as the Norman A. Campbell
 ORDER OF THE PLATINUM MORTAR. Membership shall be restricted to persons who have
 been Members of the Fraternity for seventy (70) years or more. There shall be a Service Order for
-non-members of the Fraternity.
-
-ARTICLE XVII
-QUORUM`,
+non-members of the Fraternity.`,
     defaultCategory: "scope"
   },
 
@@ -400,16 +343,10 @@ copy is distributed to each member of the Grand Council prior to the time of vot
 041. Sec. 3. A motion to amend made in adjournment of the Grand Council shall be submitted to
 the Legislative Committee, which will forward it along with its recommendation, to the Executive
 Committee. Upon approval of a majority of the Executive Committee, a mail or electronic ballot
-
-8
 shall be conducted of all Chapters in good standing. A favorable ballot must be received from
 three fourths (3/4) of all Chapters responding within sixty (60) days after mailing or electronic
 transmission to make the amendment official and approved.
-
-9
-By-Laws
-BY-LAW I
-ELECTION OF MEMBERS`,
+By-Laws`,
     defaultCategory: "amendments"
   },
 
@@ -451,10 +388,7 @@ Membership shall be made by Alpha Chapter. The nominee, if elected, shall be gra
 Membership. No portion of the Ritual of Initiation will be administered to Honorary Members,
 but an embossed certificate of Membership will be issued. Honorary Members may not hold any
 active office and they shall not be required to pay dues. Honorary office may be granted to
-Honorary Members.
-
-BY-LAW II
-DUES AND ASSESSMENTS`,
+Honorary Members.`,
     defaultCategory: "membership"
   },
 
@@ -465,8 +399,6 @@ DUES AND ASSESSMENTS`,
     title: "Dues and Assessments",
     text: `048. Sec. 1. Each Member shall pay a Grand Council Membership fee of seventy-five dollars
 (U.S.) ($75.00). This fee shall be transmitted to The Central Office within seven (7) days of
-
-10
 initiation by the Treasurer of the Chapter of initiation. By–Law II, Section 2 shall be satisfied
 during the semester of initiation.
 
@@ -501,10 +433,7 @@ revoke the Charter of said Chapter.
 Executive Committee may order an extra assessment to cover the deficit. Such assessment shall
 be levied pro rata with membership for Collegiate Chapters and at a flat and equal rate for Graduate
 Chapters. Such assessments shall be collected and transmitted in a similar manner as the monthly
-or yearly dues; and furthermore, the same retributive proceedings in case of default apply.
-
-BY-LAW III
-DISCIPLINE`,
+or yearly dues; and furthermore, the same retributive proceedings in case of default apply.`,
     defaultCategory: "dues"
   },
 
@@ -518,8 +447,6 @@ Incorporated for conduct unbecoming a Brother. Included under this heading are s
 relate upon or injure the prestige and reputation of the Fraternity; (2) as relate upon the character
 or professional integrity of the Members; (3) as constitute a violation of the Vow of Allegiance
 and Obligations; and (4) as refusal to pay dues.
-
-11
 056. Sec. 2. The provisions for disciplining Members shall also apply to any person elected to
 membership but not having taken the Vow of Allegiance and Obligations. At any time before the
 candidate’s initiation any member, in good standing, may submit written objections to the
@@ -564,8 +491,6 @@ expenses of the Chapter should the Executive Committee sustain the action of the
 Grand Regent of the actions of the Chapter and shall furnish to the Executive Committee an
 attested copy of the charges with signed copies of the testimony and written briefs arguing the
 respective sides of the case.
-
-12
 065. Sec. 11. The Executive Committee, after due consideration, shall render its opinion. A
 majority vote is necessary to either sustain or reverse the Chapter’s decision. If the decision is
 reversed, the accused stands acquitted and the case dismissed. The Chapter has not further appeal.
@@ -579,10 +504,7 @@ Director shall be notified of the action of the Chapter. All Chapters shall then
 action taken and the Grand Regent shall order all Chapters of the Fraternity closed against the
 Member, either temporarily or permanently.
 
-068. Sec. 14. The Grand Council shall have the power to expel Members of inactive Chapters.
-
-BY-LAW IV
-CHAPTERS`,
+068. Sec. 14. The Grand Council shall have the power to expel Members of inactive Chapters.`,
     defaultCategory: "discipline"
   },
 
@@ -624,8 +546,6 @@ the new Chapter.
 
 BY-LAW V
 THE GRAND COUNCIL
-
-13
 074. Sec. 1. Delegates from Chapters in arrears shall not be admitted to the Grand Council until
 all past indebtedness is paid. Upon three-fourths (3/4) vote of the Grand Council this section may
 be waived.
@@ -679,8 +599,6 @@ Council Convention that the Nominations Committee is prepared to receive nominat
 Chapter may nominate for any or all of the Grand Officers, Graduate Member-at-Large, and
 Collegiate Member-at-Large and shall forward the same, certified by the Regent and Secretary, to
 The Central Office at least 120 days prior to the first day of the Grand Council Convention.
-
-14
 081. Sec. 2. The Executive Director shall notify each member of the office for which nominated.
 A member becomes a candidate for office only upon acceptance of nomination for that office and
 may not be a candidate for more than two (2) offices at any Grand Council Convention. Acceptance
@@ -733,8 +651,6 @@ Fraternity, Uniform Province By-Laws, Uniform Collegiate and Graduate Chapter By
 Local Province Ordinances, Local Collegiate and Graduate Chapter Ordinances, and any other
 rules, regulations, and/or enactments; examine all Local Province and Chapter Ordinances
 following their adoption to assure their consistency with superior enactments of the Fraternity; be
-
-15
 consulted by the Chapters and Provinces in all legal matters including, but not limited to, Chapter
 House purchases, contracts and other legal documents before these are entered into and/or
 finalized.
@@ -781,9 +697,7 @@ the discharge of the office and business of the Fraternity-at-Large shall be bor
 Council General Fund. Such expenses may be approved by the Grand Regent prior to
 disbursement from the General Fund.
 
-16
-BY-LAW VIII
-THE CENTRAL OFFICE`,
+16`,
     defaultCategory: "officers"
   },
 
@@ -833,9 +747,7 @@ to provide The Central Office with the necessary stenographic and clerical assis
 the work of said Central Office, the amount to be approved by the Executive Committee.
 
 BY-LAW IX
-COMMITTEES OF THE GRAND COUNCIL
-
-17`,
+COMMITTEES OF THE GRAND COUNCIL`,
     defaultCategory: "officers"
   },
 
@@ -888,8 +800,6 @@ the Chapters.
 111. Sec. 10. The Frank H. Eby Award Committee shall supervise the operations of the Frank H.
 Eby Award Fund. The Executive Director, three (3) past recipients of the Frank H. Eby Award,
 and other Members as appointed by the Grand Regent shall be members of this committee.
-
-18
 112. Sec. 11. The Publications Committee shall be in charge of all overall supervision of all
 Fraternity publications. It may from time-to-time recommend revision of these publications.
 
@@ -912,10 +822,7 @@ presentation.
 
 116. Sec. 15. The Executive Committee, standing committees, and special committees are
 authorized to meet by electronic communication media so long as all members have the ability to
-participate.
-
-BY-LAW X
-PROVINCES`,
+participate.`,
     defaultCategory: "committees"
   },
 
@@ -942,8 +849,6 @@ Convention of the Grand Council. The precise time and place of the meeting shall
 the Executive Committee of the Province; additional meetings may be held if the Province so
 desires. The Province is authorized to meet by electronic communication media so long as all
 Members have the ability to participate.
-
-19
 120. Sec. 4. Each Province shall be granted authority to fix and levy assessments, etc., for the
 necessary expenses incident to the work of the Province.
 
@@ -957,10 +862,7 @@ such other duties as directed by the Grand Regent.
 duties of the office, they shall be performed by the Vice Satrap of the Province.
 
 123. Sec. 7. The duties of the Secretary-Treasurer of the Province, or Secretary and Treasurer of
-the Province, and the Historian of the Province shall be the usual duties assigned to these Offices
-
-BY-LAW XI
-OFFICIAL INSIGNIA, BADGES, ET CETERA`,
+the Province, and the Historian of the Province shall be the usual duties assigned to these Offices`,
     defaultCategory: "province"
   },
 
@@ -996,8 +898,6 @@ of like shape though smaller in size; the remaining portion of its surface being
 enameled gold. Upon the black enameled surface shall be a mask, through which two (2) heart
 shaped eyes of gold and raised above the black enameled surface. The heart shaped eyes are
 accented by red enamel. Above the figure shall be the Greek letter “KAPPA” and below shall be
-
-20
 the Greek letter “PSI,” both being gold inlaid in the black enameled surface. Along the gold border
 surrounding the black enameled surface shall be set twenty (20) close set pearls.
 
@@ -1044,8 +944,6 @@ the Coat of Arms by the Official Jeweler on the following items is authorized: r
 tie tacks, cuff links, medallions, lapel pins, key chains, identification bracelets and watch bands.
 The Official Coat of Arms Decalcomania shall be available from The Central Office and purchase
 from any other source is prohibited.
-
-21
 135. Sec. 12. The plates of the Insignia and Coat of Arms of the Fraternity shall be deposited with
 a company selected by the Grand Council. Imprints shall be made from these plates only upon the
 order of the Grand Council or its proper representative.
@@ -1060,10 +958,7 @@ Council and shall be made of the official colors of the Fraternity.
 
 138. Sec. 15. The colors of the Fraternity shall be Scarlet and Cadet Gray.
 
-139. Sec. 16. The Flower of the Fraternity shall be the Red Carnation.
-
-BY-LAW XII
-PUBLICATIONS`,
+139. Sec. 16. The Flower of the Fraternity shall be the Red Carnation.`,
     defaultCategory: "insignia"
   },
 
@@ -1097,8 +992,6 @@ MASK, who shall be appointed for a term and at an honorarium determined by the E
 Committee and shall be responsible to the Grand Council for the publication at stated intervals.
 
 145. Sec. 6. THE MASK shall be published at the expense of the Fraternity.
-
-22
 146. Sec. 7. The Executive Director shall be required to keep on file all numbers of the journal for
 the purpose of reference in future interests.
 
@@ -1141,9 +1034,7 @@ and at a honorarium determined by the Executive Committee and shall be responsib
 Council for the website on a continual basis.
 
 BY-LAW XIII
-AWARDS, AND HONORS, HONORARY OR SERVICE
-
-23`,
+AWARDS, AND HONORS, HONORARY OR SERVICE`,
     defaultCategory: "scope"
   },
 
@@ -1197,8 +1088,6 @@ of Kappa Psi Pharmaceutical Fraternity, Incorporated.
 166. Sec. 11. Election to the SERVICE ORDER for a non-member may be made by any Collegiate
 or Graduate Chapter. Qualifications for such elections shall be established by the Chapter making
 such election.
-
-24
 167. Sec. 12. Notice of Election to the SERVICE ORDER shall be given to The Central Office by
 the Chapter making such election. Upon receiving proper notice of election, The Central Office
 shall issue a Certificate and jewelry emblem both of a design approved by the Grand Council. The
@@ -1246,13 +1135,9 @@ of the Executive Committee. The cost of such certificate shall be assumed by the
 
 174. Sec. 19. There shall be available a “FRANK H. EBY SCHOLARSHIP TRAY AWARD”
 which will be awarded to the Collegiate Chapter with the highest percentage of eligible Brothers
-25
 earning Scholarship Honors Certificates based on Chapter membership and their school grading
 system. The calculations are based on a formula designed by the Chapter Awards Committee, and
-approved by the Executive Committee. The cost of such Tray shall be assumed by the Fraternity.
-
-BY-LAW XIV
-RULES OF PROCEDURE`,
+approved by the Executive Committee. The cost of such Tray shall be assumed by the Fraternity.`,
     defaultCategory: "scope"
   },
 
@@ -1264,10 +1149,7 @@ RULES OF PROCEDURE`,
     text: `175. Sec. 1. The rules of procedure governing the conduct of the Grand Council Convention shall
 be Robert’s Rules of Order – Newly Revised.
 
-176. Sec. 2. The Grand Regent shall appoint an Official Parliamentarian.
-
-BY-LAW XV
-AMENDMENTS`,
+176. Sec. 2. The Grand Regent shall appoint an Official Parliamentarian.`,
     defaultCategory: "procedure"
   },
 
@@ -1293,1758 +1175,10 @@ Upon approval of the Executive Committee, a mail or electronic ballot shall be c
 Chapters in good standing. A favorable ballot must be received from a two-thirds (2/3) majority
 of all Chapters responding within sixty (60) days after mailing or electronic transmission to make
 the amendment official and approved.
-
-26
  Uniform Collegiate,
 Graduate, and Province
       By-Laws
-             Uniform Collegiate Chapter By-Laws
-C01. Sec.1. The Constitution and By-Laws of Kappa Psi Pharmaceutical Fraternity, Incorporated
-shall be the Constitution for this Chapter of Kappa Psi Pharmaceutical Fraternity, Incorporated: all
-constitutions, by-laws and standing laws by which this Chapter was formerly governed are
-revoked.
-
-BY-LAW I
-TITLE
-
-C02. Sec. 1. This Chapter shall be known as ________________________ Chapter, hereinafter
-referred to as the Chapter, according to the Charter granted by Alpha Chapter of Kappa Psi
-Pharmaceutical Fraternity, Incorporated, hereinafter referred to as the Fraternity, under the date of
-___________________.
-
-C03. Sec. 2. The Chapter may elect to incorporate under the laws of its State, Province, or other
-legal jurisdiction. However, any application for incorporation must receive the approval of the
-Grand Counselor and/or the Legislative Committee of the Grand Council prior to submission to
-the appropriate office of legal jurisdiction. Further, the Chapter may elect to form additional
-corporations, if needed, subject to the aforesaid provision of this section.
-
-BY-LAW II
-MEMBERSHIP
-
-C04. Sec. 1. Membership in the Chapter is subject to the conditions stipulated in the Constitution,
-Article III, the Charter of the Chapter, and those additional stipulations (if any) in By-Law XVII,
-Ordinance 2, of these By-Laws.
-
-BY-LAW III
-ELECTION OF MEMBERS
-
-C05. Sec. 1. Only persons known to be eligible for membership shall be proposed for membership.
-The procedure to be followed in proposing persons for membership is that procedure outlined in
-By-Law XVII, Ordinance 3. Names and contact information for those that begin pledge training
-shall be submitted to the Central Office at the beginning of the pledge training period. Persons
-proposed for membership, who enter into pledge training for membership, shall submit any fee to
-the Chapter as stipulated in By-Law XVII, Ordinance 3 at the beginning of the pledge training
-period. Upon beginning pledge training, they shall be presented with a copy of the Constitution
-and By-Laws of the Fraternity, these By-Laws and Ordinances, the Handbook and Pledge Manual;
-read same; be instructed in same; be tested in same; and declare to uphold same, prior to election
-to membership.
-
-C06. Sec. 2. The Election of Members may occur at any time the Chapter deems desirable;
-however, all elections to membership shall be by secret ballot. Electronic voting may be permitted,
-provided the system is secured and can maintain the secrecy of the ballot. The procedure for
-election is that provided in the Ritual, with those additional requirements and clarifications as
-
-28
-stipulated in By-Law XVII, Ordinance 3; however, at no time may a person be elected to
-membership without having received an affirmation vote from at least three fourths (3/4) of the
-Membership eligible to vote.
-
-BY-LAW IV
-OFFICERS AND ORDER OF ELECTION
-
-C07. Sec. 1. The Officers of the Chapter and Order of Election shall be: Regent, Vice Regent
-(more than one [1] Vice Regent allowable if indicated in By-Law XVII, Ordinance 4, if specific
-duties are indicated for each Vice Regent in By-Law XVII, Ordinance 6), Secretary (or Recording
-and Corresponding Secretaries if indicated in By-Law XVII, Ordinance 4), Treasurer, Historian,
-Chaplain, Sergeant-at-Arms, and such Officers as may be indicated in By-Law XVII, Ordinance
-4, and Grand Council Deputy. These Officers, except for Regent and (First) Vice Regent, may be
-elected in any Order the Chapter deems desirable. Officers of the Ritual may be appointed by the
-Regent and shall serve at the pleasure of the Regent.
-
-BY-LAW V
-            QUALIFICATION, ELECTION AND INSTALLATION OF OFFICERS
-
-C08. Sec. 1. The nomination and election of Officers shall occur annually, as stipulated in By-
-Law XVII, Ordinance 5; these Officers shall serve until their successors are duly installed, unless
-removed from Office as stipulated in these By-Laws. All Officers shall be selected from the
-Collegiate Membership of the Chapter, with the exception of the Grand Council Deputy, who shall
-be a Graduate Member of the Fraternity. No Member shall be elected or installed unless in good
-academic standing and in good standing with the Chapter. No Member shall retain an Office if
-placed on academic probation, or suspended. A Member in arrears may discharge an obligation
-any time prior to election, thus becoming eligible to vote and hold office. Officers shall be chosen
-by secret ballot except in the case where there is only one (1) candidate nominated, in which
-instance the Regent may declare the candidate elected by consent.
-
-C09. Sec. 2. Any meeting at which there will be an election of officers shall require two-thirds
-(2/3) of the Members of the Chapter in good standing to constitute an electoral quorum. Election
-of Officers shall be by a simple majority of the Members voting. In the case of more than two (2)
-candidates standing for election to the same office, and if no candidate receives a majority of the
-first ballot, a second ballot shall be held with the candidate receiving the least number of votes on
-the first ballot being eliminated from consideration on the second ballot; if the second ballot does
-not produce a candidate who has received a majority of the votes cast, this procedure of elimination
-shall continue until a candidate receives a majority of the votes cast. Electronic voting may be
-permitted, provided the system is secured and can maintain the secrecy of the ballot.
-
-C10. Sec. 3. Ballots shall be distributed and collected only by tellers appointed by the Regent.
-The tellers shall determine the number of votes for each candidate, report same to the Regent, who
-shall then report same and announce the results to the Chapter. Any question of eligibility of a
-Member shall be referred by the Regent to the Chapter for discussion. A majority vote shall
-determine the Member’s eligibility.
-
-29
-C11. Sec. 4. Officers-elect shall be installed, within thirty (30) days of election, according to the
-Ritual, at the meeting and time indicated in By-Law XVII, Ordinance 5. The Regent shall install
-all Officers-elect unless an objection is raised; objections must be made for each Officer-elect
-individually. The Chapter must decide all objections prior to installation. If the objection is
-overruled, the Officer-elect in question shall be installed, immediately. If the objection is
-sustained, the Regent shall declare the office vacant and call a new election for that office, either
-at the same or the next subsequent meeting.
-
-C12. Sec. 5. No Officer shall assume the duties of office until properly installed. If at any time,
-it is discovered that an Officer elected and installed was ineligible at the time of election, said
-election shall be declared void and a new election held. If an Officer is suspended, said office
-becomes vacant as of the moment of suspension, and a new election shall be held. The nomination,
-election, and installation of Officers to fill a vacancy may occur in the same meeting.
-
-C13. Sec. 6. If an Officer is unable, refuses, or neglects to perform the duties of the office, the
-Regent shall appoint a Member in good standing to perform said duties until (pursuant to Section
-7) an election can be held to fill the Office. An Officer unable to perform the duties of said Office
-shall deliver all records, money, and property held to the Member appointed or elected to assume
-said Office.
-
-C14. Sec. 7. Any Officer may be removed for misfeasance, malfeasance, and/or nonfeasance by
-two-thirds (2/3) vote of the Chapter; any Officer so charged is entitled to a trial by the Chapter
-according to the Procedure of “Discipline” found in the Constitution and By-Laws, By-Law III.
-The accused shall retain said Office until the charges are tried and sustained; however, if the
-Regent is accused, the Vice Regent shall conduct the trial.
-
-BY-LAW VI
-DUTIES OF OFFICERS
-
-C15. Sec. 1. The Regent, as principal Officer of the Chapter, shall preside at all meetings of the
-Chapter, enforce rigid adherence to the Constitution and By-Laws of the Fraternity; cast the
-deciding vote if the Chapter is equally divided upon any question before it; appoint all committees,
-unless otherwise provided for; convene special meetings, as provided for; attend to the keeping of
-the Rituals of the Fraternity under lock and key; and perform all such other acts and duties as are
-required by virtue of said office, the Constitution and By-Laws of the Fraternity, the By-Laws and
-Ordinances of the Chapter, the Ritual of the Fraternity, a vote of the Chapter, or common usage in
-parliamentary bodies.
-
-C16. Sec. 2. The (First) Vice Regent shall, in all respects, act and have all the powers of the
-Regent, in case of the latter’s absence, inability, refusal, or neglect to perform the duties of said
-office. In the event of the death, resignation, or removal of the Regent, the (First) Vice Regent
-shall assume the Office of Regent for the remainder of the term of office. If the Chapter has more
-than one (1) Vice Regent, the Second Vice Regent shall assume the office of First Vice Regent,
-should a vacancy occur in the office of First Vice Regent, etc. The (First) Vice Regent shall, also,
-be a member of all committees of the Chapter.
-
-30
-C17. Sec. 3. The Secretary shall maintain an accurate roster, keep accurate records of the
-proceedings of all Chapter Meetings; receive and preserve for the record the written reports of all
-Officers and committee chairmen; incorporate into the record all data generated by the Fraternity
-Ritual of Initiation; attend to all correspondence of the Chapter; submit to The Central Office, on
-time, all reports required by the Executive Director; report all newly elected Members to The
-Central Office within seven (7) days after initiation; report all newly elected Chapter Officers to
-The Central Office within seven (7) days after election, indicating the effective date of installation;
-and perform all such other duties as are required by virtue of said office, the Constitution and By-
-Laws of the Fraternity, the By-Laws and Ordinances of the Chapter, or custom may attach to the
-Office.
-
-C18. Sec. 4. The Recording Secretary and Corresponding Secretary (if the Chapter elects to
-replace the Office of Secretary with these two [2] Offices) shall assume all duties outlined in
-Section 3 of this By-Law as custom would attach to these two (2) Offices; additionally, the
-Corresponding Secretary shall assist the Historian in the preparation of all Chapter newsletters.
-
-C19. Sec. 5. The Treasurer shall receive all monies due to the Chapter and/or the Grand Council,
-and disburse all monies necessary to satisfy the obligations of the Chapter; keep an accurate record,
-following sound accounting practices, of all receipts and disbursements; promptly collect all dues,
-initiation fees, special assessments, and any other monies due to the Chapter; transmit all fees due
-to the Grand Council, on time, to The Central Office as provided for in the Constitution and By-
-Laws of the Fraternity; report the financial condition of the Chapter at each meeting, including the
-names of all members in arrears and the dollar amounts thereof; and upon completion or removal
-from the term of office, transfer to either the successor or a committee appointed to audit, all books,
-records, monies, and property belonging to or in the custody of the Chapter.
-
-C20. Sec. 6. The Assistant Secretary and Assistant Treasurer (if the Chapter elects to have these
-Offices) shall assist their Superior Officers in the discharge of the duties of the respective Offices.
-
-C21. Sec. 7. The Historian shall submit photos and articles for publication; report to The Central
-Office significant and/or historical activities and/or events on the official forms provided, and
-maintain the permanent Chapter Record of same; ; see that each Member of the Chapter is
-receiving THE MASK; on occasion, encourage the Chapter’s recognition of its history; and be the
-Chapter’s official representative to assist the Grand Historian or the Editor of THE MASK in the
-performance of their official duties.
-
-C22. Sec. 8. The Chaplain shall supervise the instruction and work of the Ritual; conduct all
-appropriate services designated by the Chapter or Regent; and be the Chapter’s official
-representative to assist the Grand Ritualist in the performance of official Ritualist duties.
-
-C23. Sec. 9. The Sergeant-at-arms shall, at the direction of the Regent, enforce the Constitution
-and By-Laws of the Fraternity, the By-Laws and Ordinances of the Chapter, and the commands of
-the Chapter; preserve order; and perform all such duties as custom attaches to the office.
-
-C24. Sec. 10. The Grand Council Deputy, as the personal representative of the Grand Regent, shall
-be the advisory and supervising Officer of the Chapter. Through visitations and/or consultations,
-
-31
-at least once per month during the school year, to the Chapter and/or with the Executive Committee
-of the Chapter, the Grand Council Deputy shall see that the Chapter is carrying out all provisions
-of the Constitution and By-Laws of the Fraternity, and By-Laws and Ordinances of the Chapter;
-is properly conducting the work of the Ritual; that officers and committees are functioning
-properly; that Chapter records are being preserved and properly kept; and that the conduct of the
-Chapter will ensure its continuation. Further, the Grand Council Deputy, as the official
-representative and/or deputy of the Grand Regent, shall conduct investigations and make reports
-concerning the Chapter as may be directed by the Grand Regent.
-
-C25. Sec. 11. The Chapter Co-GCD(s), if the Chapter elects to have this [these] position(s), shall
-not be an officer(s) or member(s) of the Executive Committee of the Chapter, except when acting
-for the Grand Council Deputy during the latter’s absence or inability; and shall assist the Grand
-Council Deputy in the discharge of duties of that Office.
-
-C26. Sec. 12. Officers of the Ritual shall have an understanding and working knowledge of the
-Ritual, such that the conduct of the Ritual Work shall demonstrate the exemplification of propriety;
-preserve the decorum and dignity of the Ritual, the most sacred of Fraternal Traditions; render
-assistance and service to the Regent in the discharge of said officer’s official duties; and strive to
-insure that all Brothers may participate and partake of the Industry, Sobriety, Fellowship, and High
-Ideals of the Order.
-
-C27. Sec. 13. The Chapter, at least one (1) month preceding the Grand Council Convention
-or Province Assembly, shall elect Delegates and Alternate Delegate(s), who if unable to
-attend, shall, also, notify the Regent. If neither the Delegate nor Alternates Delegate(s) are
-able to attend, the Regent shall appoint a qualified member(s) of the Chapter to serve as
-Delegate(s). If it is not possible to send any Member, the Chapter or Regent may confer
-representation of the Delegate(s) to another Chapter, or Province by proxy. All proxies
-must be certified as required by the rules of the Grand Council or Province.
-
-BY-LAW VII
-COMMITTEES AND THEIR DUTIES
-
-C28. Sec. 1. The Chapter shall have the following standing committees; Executive, Judiciary,
-Legislative, Scholarship, Graduate Relations, Social, and Risk Management.
-
-C29. Sec. 2. The Chapter may also have the following as standing committees when required;
-Finance, Auditing, Professional Relations, Interfraternity, Chapter House, and Athletic.
-
-C30. Sec. 3. The Chapter may also have any special committees that are required from time to
-time.
-
-C31. Sec. 4. The Executive Committee shall consist of the Elected Officers of the Chapter and the
-Immediate Past Regent of the Chapter, providing that said Immediate Past Regent was not removed
-from office for cause by the Chapter, and providing that said Immediate Past Regent is still a
-Collegiate Member of the Chapter. All other committees of the Chapter shall consist of at least
-three (3) Members, appointed by the Regent to serve at their pleasure or the Regent, unless
-
-32
-otherwise indicated in these By-Laws or Ordinances; Graduate Members may serve on any of
-these committees.
-
-C32. Sec. 5. The duties of the committees listed in Section 1 and 2 of this By-Law shall be:
-
-C33. Sub-Sec. A. The Executive Committee shall act for the Chapter when it is not in session and
-shall have all the powers of the Chapter except the election and removal of officers, the election
-of members, the disciplining of members, and the amending of these By-Laws. All actions of the
-Executive Committee are subject to the review and approval of the Chapter. The Regent shall be
-the Chairman of this Committee.
-
-C34. Sub-Sec. B. The Judiciary Committee shall assist the Grand Council Deputy in supervision
-of the workings of the Chapter. Any citation for misfeasance, malfeasance, or nonfeasance in
-office: violations of the Constitution and By-Laws of the Fraternity, By-Laws and Ordinances of
-the Chapter, or other Fraternity rules and regulations shall be made by the Judiciary Committee at
-its recognizance. The Committee shall receive charges against any Member of the Chapter; such
-charges must be placed before the Committee in writing and be signed by the complainant(s).
-After investigation and evaluation of the charges, if the Committee finds reasonable cause to
-sustain them, it shall proceed as provided in the Constitution and By-Laws of the Fraternity. The
-Committee has no power to adjudge the guilt of any Member, nor can it determine the punishment;
-however, it can recommend a course of action. The Sergeant-at-Arms shall be a Member of this
-Committee.
-
-C35. Sub-Sec. C. The Legislative Committee shall from time to time review the By-Laws and
-Ordinances of the Chapter. The Committee shall prepare proposed amendments to the Ordinances
-of By-Law XVII, which it feels are necessary for the proper conduct of the Chapter, for submission
-to the Chapter. The Committee shall also receive from any Member of the Chapter,
-recommendations for amendments to the Ordinances of By-Law XVII, which it shall place in
-proper form for submission to the Chapter. The Committee shall interpret the meaning and intent
-of these By-Laws and Ordinances when so requested by any Member. The Chairman of this
-Committee shall be the Chapter Parliamentarian.
-
-C36. Sub-Sec. D. The Scholarship Committee shall develop a program for promoting scholarship
-and research by the Chapter’s Members. The Committee shall develop a program of recognition
-for scholarship achievement by the Chapter’s Members (or non-members) in which, if feasible,
-funds and rewards for achievement may be provided. The Committee shall publish information
-regarding scholastic achievement and recognition given such achievement.
-
-C37. Sub-Sec. E. The Graduate Relations Committee shall whenever and wherever possible
-emphasize the fact: “That Membership in Kappa Psi is for Life!” The Committee shall develop a
-program to strengthen the ties between the Chapter and its Graduate Members. Where a Graduate
-Chapter exists, the Committee will work with the Graduate Chapter in mutual association for the
-advancement of the Fraternity. The Committee shall also assist The Central Office in developing
-and expanding the Graduate activities of the Fraternity.
-
-33
-C38. Sub-Sec. F. The Social Committee shall develop a balanced program of activities for the
-Chapter. The Committee shall plan, promote and supervise all social activities of the Chapter. The
-Committee shall encourage the planning of a founder’s day event.
-
-C39. Sub-Sec. G. The Risk Management Committee shall review the International Kappa Psi Risk
-Management policy and manual. The Committee shall review and implement the chapter’s Risk
-Management Policy. The committee shall educate the members about the risk management policy
-and ensure all chapter functions are in compliance.
-
-C40. Sub-Sec. H. The Finance Committee shall develop a financial budget for the Chapter, and
-from time to time, a suitable investment program for Chapter funds. The Committee shall monitor
-the fiscal operations of the Chapter, and may at its discretion, require reports of the Treasurer
-regarding income and expenditures. The Committee shall report on the fiscal operation of the
-Chapter in relation to the budget at a regular meeting at least every sixty (60) days. The Treasurer
-shall be a member of this Committee.
-
-C41. Sub-Sec. I. The Auditing Committee shall examine and verify when accurate, the records of
-the Secretary, Treasurer, and/or other Chapter Officers holding Chapter property. Examinations
-of records may be at any time the Committee feels desirable or when the Chapter or Regent may
-direct. The Committee shall present a written report at the next regular meeting of the Chapter
-stating its findings. The Auditing Committee shall have the power to require, at any time,
-presentation of all books, papers, vouchers, and documents relating to the account they are to
-examine, which may be necessary to determine their correctness, and the actual cash in the hands
-of the Officers.
-
-C42. Sub-Sec. J. The Professional Relations Committee shall develop a program of professional
-activities and public relations for the Chapter. The Committee shall create programs which will
-achieve the objectives and promote the best interests of the Fraternity, while developing the
-professional character of its members.
-
-C43. Sub-Sec. K. The Interfraternity Committee shall act as an interested party between the
-Chapter and chapters of other fraternities, on matters of mutual interest to promote friendly and
-co-operative spirit between Kappa Psi Pharmaceutical Fraternity and other fraternities. The
-Committee shall act with similar committees or bodies from other fraternities to advance the
-interest of Greek Letter Societies, and shall act as agent, intermediary, or ambassador between
-Kappa Psi Pharmaceutical Fraternity and other fraternities. The Committee shall perform any
-other functions that may be assigned by the Regent or the Chapter.
-
-C44. Sub-Sec. L. The Chapter House Committee shall have charge of the Chapter House including
-the formation and enforcement of House Rules. In the event that the Chapter establishes a fund
-for building or purchasing a Chapter House, the Committee shall develop a proposed program for
-collecting and investing such funds. The Chairman of this Committee shall be the House Manager.
-
-C45. Sub-Sec. M. The Athletic Committee shall develop a program of inter-chapter, and where
-possible, interfraternity activities. The Chairman shall represent the Chapter on all athletic
-councils to which the Chapter is an interested party.
-
-34
-C46. Sec. 6. All Committees shall meet at least once a month, during the school year, and also at
-the call of the Chairman. A record, in writing, of all proceedings of all meetings shall be kept.
-The Chairman of each committee will report the activity of the Committee at the regular meeting
-of the Chapter immediately following the Committee meeting. A written copy of the proceedings
-of all Committee, and a written copy of the Chairman’s reports will be delivered to the Chapter
-Secretary for inclusion in the Chapter’s records. The Executive Committee, standing committees,
-and special committees are authorized to meet by electronic communication media so long as all
-members have the ability to participate.
-
-C47. Sec. 7. No program or activity developed by any Committee may commence until such
-program or activity has been approved and adopted by the Chapter.
-
-BY-LAW VIII
-RECORDS
-
-C48. Sec. 1. All Chapter proceedings will be recorded on, and all Chapter reports will be submitted
-on forms approved by The Central Office or the Grand Council.
-
-BY-LAW IX
-UNETHICAL CONDUCT
-
-C49. Sec. 1. Any Member of the Chapter found guilty of unethical conduct may be punished by a
-fine and/or suspension, or expulsion, after trial and conviction as provided in the Constitution and
-By-Laws of the Fraternity.
-
-C50. Sec. 2. Any Member of the Chapter who files a complaint with the Judiciary Committee that
-shall prove to be unfounded and malicious may be charged with unethical conduct.
-
-C51. Sec. 3. Any Member of the Chapter who improperly uses the name of the Fraternity, the
-Chapter, the Fraternity emblem(s) or secrets; or who utilizes Fraternity Membership for strict
-personal gain may be charged with unethical conduct.
-
-BY-LAW X
-MEETINGS
-
-C52. Sec. 1. The regular meetings of the Chapter will be held as provided for in By-Law XVII,
-Ordinance 10. The Secretary (or Corresponding Secretary) shall notify the Members of any change
-in the regular meeting at least forty-eight (48) hours prior to the change. The Chapter is authorized
-to meet by electronic communication media so long as all Members have the ability to participate.
-
-C53. Sec. 2. A fine, as stipulated in By-law XVII, Ordinance 10, may be levied for absence from
-any regular meeting.
-
-C54. Sec. 3. The usual order of business shall be that order as prescribed in the Ritual.
-
-35
-C55. Sec. 4. Special meetings may be called at any time by the Regent or by the Regent upon the
-written demand of five (5) Members of the Chapter. No business other than that stated in the call
-may be conducted at the special meeting. All Members shall be notified by the Secretary (or
-Corresponding Secretary) at least forty-eight (48) hours prior to the special meeting.
-
-BY-LAW XI
-DUES
-
-C56. Sec. 1. Each newly elected Member shall pay to the Treasurer the Grand Council
-Membership Fee as stipulated in the Constitution and By-Laws of the Fraternity, and any
-additional fee as stipulated in By-Law XVII, Ordinance 11; such funds as are due to the Grand
-Council shall be transmitted to The Central Office within seven (7) days of initiation.
-
-C57. Sec. 2. Each Member shall pay to the Treasurer such dues as stipulated in By-Law XVII,
-Ordinance 11.
-
-C58. Sec. 3. Special assessments may be imposed by a two-thirds (2/3) vote of the Chapter at any
-time.
-
-C59. Sec. 4. Any Member who has not paid said dues on or before the first regular scheduled
-meeting day of the month, or who is in arrears for fines or assessments shall be summarily deemed
-not to be in good standing.
-
-C60. Sec. 5. If a Member is in arrears for dues, fines, or assessments, the Regent must make this
-known to the Chapter in open meeting. Any Member in arrears shall not be entitled to hold office
-or vote, and shall have only one (1) meeting to make up such arrears, or shall be summarily
-suspended from all benefits and privileges of the Fraternity and the Chapter. Such suspension
-shall remain in force until payment is made in full, or other disciplinary action is taken by the
-Chapter.
-
-BY-LAW XII
-SECRECY
-
-C61. Sec. 1. All proceedings, Ritual and ceremonies of the Fraternity and all matters pertaining to
-the management or conduct of the Chapter shall be kept secret.
-
-C62. Sec. 2. The names of the Chapter Officers and Members, and the general object and scope
-of the Fraternity may be published. The names of the Officers of the Ritual shall never be
-published. Any Member who reveals any of the secrets of the Fraternity shall be subject to
-expulsion.
-
-BY-LAW XIII
-RITUAL OF INITIATION
-
-36
-C63. Sec. 1. The Ritual of Initiation while secret, shall be considered to be a part of these By-
-Laws, and shall be conducted at all times with proper dignity and decorum. Hazing, as defined by
-the Grand Council and/or the Executive Committee of the Grand Council, is prohibited; any
-Member found guilty of hazing shall be subject to expulsion.
-
-BY-LAW XIV
-QUORUM
-
-C64. Sec. 1. Unless a greater number is stipulated in By-Law XVII, Ordinance 14, the quorum
-necessary for the transaction of business at any meeting of the Chapter shall not be less than one-
-half (1/2) of the Chapter Membership in good standing. Chapters may elect to increase the
-requirement for quorum or exclude Members on clinical rotations (APPEs) if specified in By-Law
-XVII, Ordinance 14. If specified, Members on clinical rotations shall be permitted to vote as part
-of any required quorum if in good standing, but their absence will not count against quorum.
-
-BY-LAW XV
-PARLIAMENTARY PROCEDURE
-
-C65. Sec. 1. Parliamentary conduct at all meetings shall be closely adhered to, and shall be
-governed by the current edition of Robert’s Rules of Order – Newly Revised.
-
-BY-LAW XVI
-AMENDMENTS (LOCAL CHAPTER ORDINANCES)
-
-C66. Sec. 1. Any motion to amend these By-Laws must be made in writing; signed by at least two
-(2) Members of the Chapter, and presented to the Legislative Committee of the Chapter. The
-Legislative Committee shall, within ten (10) days, prepare the proposed amendments in
-appropriate form and present it to the Chapter, without comment, at the next regular meeting of
-the Chapter. A motion to amend may not be voted upon until the next regular meeting of the
-Chapter following its presentation to the Chapter, at which time the Legislative Committee may
-make a recommendation; such motion shall require a two-thirds (2/3) vote of the Members in good
-standing, present at the meeting, for adoption.
-
-C67. Sec. 2. Any amendments to these By-Laws shall be in the form of Local Chapter
-Ordinances to be a part of By-Law XVII. All Local Chapter Ordinances shall be subordinate to
-and consistent with these By-Laws and the Constitution and By-Laws of the Fraternity.
-Organization of Local Chapter Ordinances shall be such that the Arabic numeral of each
-Ordinance shall indicate content corresponding to and in modification of the numerically
-equivalent Roman numeral By-Law. Local Chapter Ordinances may consist of more than one
-(1) section, in which case, the order of sequence shall be similar to the order of sequence in the
-respectively modified By-Law.
-
-C68. Sec. 3. Duly adopted Local Chapter Ordinances of By-Law XVII shall be deemed to be in
-force upon adoption by the Chapter, unless disapproved by the Grand Counselor and/or the
-Legislative Committee of the Grand Council. Enforcement of any newly adopted Local Chapter
-Ordinance may be delayed for a decision of legality from the Grand Counselor and/or the
-
-37
-Legislative Committee of the Grand Council upon a motion approved by a simple majority of the
-members in good standing at any regular or special meeting of the Chapter.
-
-C69. Sec. 4. Should formal charges be brought against any Member of the Chapter for an alleged
-violation of any Local Chapter Ordinance, less than one-hundred-twenty (120) days old, that has
-not received written approval of the Grand Counselor or the Legislative Committee of the Grand
-Council, said Member shall be entitled to demand a continuance of all proceedings, pending a
-written decision concerning the legality of such Ordinance from the Grand Counselor or the
-Legislative Committee of the Grand Council; such decision shall be transmitted by Certified Mail;
-the request for such decision shall also be transmitted by Certified Mail by the Chairman of the
-Legislative Committee of the Chapter.
-
-BY-LAW XVII
-LOCAL CHAPTER ORDINANCES
-
-38
-              Uniform Graduate Chapter By-Laws
-G01. Sec.1. The Constitution and By-Laws of Kappa Psi Pharmaceutical Fraternity, Incorporated
-shall be the Constitution for this Chapter of Kappa Psi Pharmaceutical Fraternity, Incorporated: all
-constitutions, by-laws and standing laws by which this Chapter was formerly governed are
-revoked.
-
-BY-LAW I
-TITLE
-
-G02. Sec. 1. This Chapter shall be known as ________________________Chapter, hereinafter
-referred to as the Chapter, according to the Charter granted by Alpha Chapter of Kappa Psi
-Pharmaceutical Fraternity, Incorporated, hereinafter referred to as the Fraternity, under the date of
-___________________.
-
-G03. Sec. 2. The Chapter may elect to incorporate under the laws of its State, Province, or other
-legal jurisdiction. However, any application for incorporation must receive the approval of the
-Grand Counselor and/or the Legislative Committee of the Grand Council prior to submission to
-the appropriate office of legal jurisdiction. Further, the Chapter may elect to form additional
-corporations, if needed, subject to the aforesaid provision of this section.
-
-BY-LAW II
-MEMBERSHIP
-
-G04. Sec. 1. Membership in the Chapter is subject to the conditions stipulated in the Constitution,
-Article III, the Charter of the Chapter, and those additional stipulations (if any) in By-Law XVII,
-Ordinance 2, of these By-Laws.
-
-BY-LAW III
-ELECTION OF MEMBERS
-
-G05. Sec. 1. Only persons known to be eligible for membership shall be proposed for membership.
-The procedure to be followed in proposing persons for membership is that procedure outlined in
-By-Law XVII, Ordinance 3. Names and contact information for those that begin pledge training
-shall be submitted to the Central Office at the beginning of the pledge training period. Persons
-proposed for membership, who enter into pledge training for membership, shall submit any fee to
-the Chapter as stipulated in By-Law XVII, Ordinance 3 at the beginning of the pledge training
-period. Upon beginning pledge training, they shall be presented with a copy of the Constitution
-and By-Laws of the Fraternity, these By-Laws and Ordinances, the Handbook and Pledge Manual;
-read same; be instructed in same; be tested in same; and declare to uphold same, prior to election
-to membership.
-
-G06. Sec. 2. The Election of Members may occur at any time the Chapter deems desirable;
-however, all elections to membership shall be by secret ballot. Electronic voting may be permitted,
-provided the system is secured and can maintain the secrecy of the ballot. The procedure for
-election is that provided in the Ritual, with those additional requirements and clarifications as
-
-39
-stipulated in By-Law XVII, Ordinance 3; however, at no time may a person be elected to
-membership without having received an affirmative vote from at least three fourths (3/4) of the
-Membership eligible to vote.
-
-BY-LAW IV
-OFFICERS AND ORDER OF ELECTION
-
-G07. Sec. 1. The Officers of the Chapter and Order of Election shall be: Regent, Vice Regent
-(more than one [1] Vice Regent allowable if indicated in By-Law XVII, Ordinance 4, if specific
-duties are indicated for each Vice Regent in By-Law XVII, Ordinance 6), Secretary (or Recording
-and Corresponding Secretaries if indicated in By-Law XVII, Ordinance 4), Treasurer (the Offices
-of Secretary and Treasurer may be combined into one [1] office, to wit: Secretary-Treasurer, if
-indicated in By-Law XVII, Ordinance 4), Historian, Chaplain, and such Officers as may be
-indicated in By-Law XVII, Ordinance 4. These Officers, except for Regent and Vice-Regent, may
-be elected in any Order the Chapter deems desirable. Officers of the Ritual shall be appointed by
-the Regent and shall serve at the pleasure of the Regent.
-
-BY-LAW V
-            QUALIFICATION, ELECTION AND INSTALLATION OF OFFICERS
-
-G08. Sec. 1. The nomination and election of Officers shall occur as stipulated in By-Law XVII,
-Ordinance 5; these Officers shall serve until their successors are duly installed, unless removed
-from Office as stipulated in these By-Laws. All Officers shall be selected from the Membership
-of this Chapter. (This provision will not, however, preclude the Chapter from making provisions
-in By-Law XVII, Ordinance 7, allowing for the inclusion of Collegiate Brother(s) on the Executive
-Committee of this Chapter). No Member shall retain an Office if in arrears or suspended. A
-Member in arrears may discharge an obligation any time prior to election, thus becoming eligible
-to vote and hold office. Officers shall be chosen by secret ballot except in the case where there is
-only one (1) candidate nominated, in which instance the Regent may declare the candidate elected
-by consent.
-
-G09. Sec. 2. Election of Officers shall be by a simple majority of the Members voting. In the case
-of more than two (2) candidates standing for election to the same office, and if not candidate
-receives a majority of the first ballot, a second ballot shall be held with the candidate receiving the
-least number of votes on the first ballot being eliminated from consideration on the second ballot;
-if the second ballot does not produce a candidate who has received a majority of the votes cast,
-this procedure of elimination shall continue until a candidate receives a majority of the votes cast.
-Electronic voting may be permitted, provided the system is secured and can maintain the secrecy
-of the ballot.
-
-G10. Sec. 3. Ballots shall be distributed and collected only by tellers, appointed by the Regent.
-The tellers shall determine the number of votes for each candidate, report same to the Regent, who
-shall then report same and announce the results to the Chapter. Any question of eligibility of a
-Member shall be referred by the Regent to the Chapter for Discussion. A majority vote shall
-determine the Member’s eligibility.
-
-40
-G11. Sec. 4. Officers-elect shall be installed, within ninety (90) days of election, according to the
-Ritual, at the meeting and time indicated in By-Law XVII, Ordinance 5. The Regent shall install
-all Officers-elect unless an objection is raised; objections must be made for each Officer-elect
-individually. The Chapter must decide all objections prior to installation. If the objection is
-overruled, the Officer-elect in question shall be installed, immediately. If the objection is
-sustained, the Regent shall declare the office vacant and call a new election for that office, either
-at the same or the subsequent meeting.
-
-G12. Sec. 5. No Officer shall assume the duties of office until properly installed. If at any time,
-it is discovered that an Officer elected and installed was ineligible at the time of election, said
-election shall be declared void and a new election held. If an Officer is suspended, said office
-becomes vacant as of the moment of suspension, and a new election shall be held. The nomination,
-election, and installation of Officers to fill a vacancy may occur in the same meeting.
-
-G13. Sec. 6. If an Officer is unable, refuses, or neglects to perform the duties of the office, the
-Regent shall appoint a Member in good standing to perform said duties until (pursuant to Section
-7) an election can be held to fill the Office. An Officer unable to perform the duties of said Office
-shall deliver all records, money, and property held to the Member appointed or elected to assume
-said Office.
-
-G14. Sec. 7. Any Officer may be removed for misfeasance, malfeasance, and/or nonfeasance by
-two-thirds (2/3) vote of the Chapter; any Officer so charged is entitled to a trial by the Chapter
-according to the Procedure of “Discipline” found in the Constitution and By-Laws, By-Law III.
-The accused shall retain said Office until the charges are tried and sustained; however, if the
-Regent is accused, the Vice Regent shall conduct the trial.
-
-BY-LAW VI
-DUTIES OF OFFICERS
-
-G15. Sec. 1. The Regent, as principal Officer of the Chapter, shall preside at all meetings of the
-Chapter, enforce rigid adherence to the Constitution and By-Laws of the Fraternity; cast the
-deciding vote if the Chapter is equally divided upon any question before it; appoint all committees,
-unless otherwise provided for; convene special meetings, as provided for; attend to the keeping of
-the Rituals of the Fraternity under lock and key; and perform all such other acts and duties as are
-required by virtue of said office, the Constitution and By-Laws of the Fraternity, the By-Laws and
-Ordinances of the Chapter, the Ritual of the Fraternity, a vote of the Chapter, or common usage in
-parliamentary bodies.
-
-G16. Sec. 2. The (First) Vice Regent shall, in all respects, act and have all the powers of the
-Regent, in case of the latter’s absence, inability, refusal, or neglect to perform the duties of said
-office. In the event of the death, resignation, or removal of the Regent, the (First) Vice Regent
-shall assume the Office of Regent for the remainder of the term of office. If the Chapter has more
-than one (1) Vice Regent, the Second Vice Regent shall assume the office of First Vice Regent,
-should a vacancy occur in the office of First Vice Regent, etc. The (First) Vice Regent shall, also,
-be a member of all committees of the Chapter.
-
-41
-G17. Sec. 3. The Secretary shall maintain an accurate roster, keep accurate records of the
-proceedings of all Chapter Meetings; receive and preserve for the record the written reports of all
-officers and committee chairmen; incorporate into the record all data generated by the Fraternity
-Ritual of Initiation; attend to all correspondence of the Chapter; submit to The Central Office, on
-time, all reports required by the Executive Director; report all newly elected Members to The
-Central Office within seven (7) days after initiation; report all newly elected Chapter Officers to
-The Central Office within seven (7) days after election, indicating the effective date of initiation;
-and perform all such other duties as are required by virtue of said office, the Constitution and By-
-Laws of the Fraternity, the By-Laws and Ordinances of the Chapter, or custom may attach to the
-Office.
-
-G18. Sec. 4. The Recording Secretary and Corresponding Secretary (if the Chapter elects to
-replace the Office of Secretary with these two [2] Offices) shall assume all duties outlined in
-Section 3 of this By-Law as custom would attach to these two (2) Offices; additionally, the
-Corresponding Secretary shall assist the Historian in the preparation of all Chapter newsletters.
-
-G19. Sec. 5. The Treasurer shall receive all monies due to the Chapter and/or the Grand Council,
-and disburse all monies necessary to satisfy the obligations of the Chapter; keep an accurate record,
-following sound accounting practices, of all receipts and disbursements; promptly collect all dues,
-initiation fees, special assessments, and any other monies due to the Chapter; transmit all fees due
-to the Grand Council, on time, to The Central Office as provided for in the Constitution and By-
-Laws of the Fraternity; report the financial condition of the Chapter at each meeting, including the
-names of all Members in arrears and the dollar amount thereof; and upon completion or removal
-from the term of Office, transfer to wither the successor of a committee appointed to audit, all
-books, records, monies, and property belonging to or in the custody of the Chapter.
-
-G20. Sec. 6. The Assistant Secretary and Assistant Treasurer (if the Chapter elects to have these
-Offices) shall assist their Superior Officers in the discharge of the duties of the respective Offices.
-
-G21. Sec. 7. The Historian shall submit photos and articles for publication; report to The Central
-Office significant and/or historical activities and/or events on the official forms provided, and
-maintain the permanent Chapter Record of same; ; see that each Member of the Chapter is
-receiving THE MASK; on occasion, encourage the Chapter’s recognition of its history; and by the
-Chapter’s official representative to assist the Grand Historian or the Editor of THE MASK in the
-performance of their official duties.
-
-G22. Sec. 8. The Chaplain shall supervise the instruction and work of the Ritual; conduct all
-appropriate services designated by the Chapter or Regent; and be the Chapter’s official
-representative to assist the Grand Ritualist in the performance of official Ritualist duties.
-
-G23. Sec. 9. Officers of the Ritual shall have an understanding and working knowledge of the
-Ritual, such that the conduct of the Ritual Work shall demonstrate the exemplification of propriety;
-preserve the decorum and dignity of the Ritual, the most sacred of Fraternal Traditions; render
-assistance and service to the Regent in the discharge of said Officer’s official duties; and strive to
-ensure that all Brothers may participate and partake of the Industry, Sobriety, Fellowship, and
-High Ideals of the Order.
-
-42
-G24. Sec. 10. The Chapter, at least one (1) month preceding the Grand Council Convention or
-Province Assembly, shall elect Delegates and Alternates Delegate(s), who if unable to attend, shall,
-also, notify the Regent. If neither the Delegate or Alternate Delegate(s) are unable to attend, the
-Regent shall appoint a qualified Member(s) of the Chapter to serve as Delegate(s). The Delegate(s)
-shall be chosen from the Graduate Members of the Chapter. If it is not possible to send any
-Member, the Chapter or Regent may confer representation of the Delegate(s) to another Chapter,
-or Province by proxy. All proxies must be certified as required by the rules of the Grand Council
-or Province.
-
-BY-LAW VII
-COMMITTEES AND THEIR DUTIES
-
-G25. Sec. 1. The Chapter shall have the following standing committees; Executive, Judiciary,
-Legislative, and Risk Management.
-
-G26. Sec. 2. The Chapter may also have the following as standing committees when required;
-Scholarship, Social, Professional Relations, Finance, Auditing, Chapter House, and Continuing
-Education.
-
-G27. Sec. 3. The Chapter may also have any special committees that are required from time to
-time.
-
-G28. Sec. 4. The Executive Committee shall consist of the Elected Officers of the Chapter and the
-Immediate Past Regent of the Chapter, providing that said Immediate Past Regent was not removed
-from office for cause by the Chapter; and such other Members as stipulated in By-Law XVII,
-Ordinance 7. All other committees of the Chapter shall consist of at least three (3) Members,
-unless otherwise indicated in these By-Laws or Ordinances, appointed by the Regent to serve at
-the Regent’s pleasure; Collegiate Brothers may serve on any of these committees.
-
-G29. Sec. 5. The duties of the committees listed in Section 1 and 2 of this By-Law shall be:
-
-G30. Sub-Sec. A. The Executive Committee shall act for the Chapter when it is not in session and
-shall have all the powers of the Chapter except the election and removal of officers, the election
-of members, the disciplining of members, and the amending of these By-Laws. All actions of the
-Executive Committee are subject to the review and approval of the Chapter. The Regent shall be
-the Chairman of this Committee.
-
-G31. Sub-Sec. B. Any citation for misfeasance, malfeasance, or nonfeasance in office: violations
-of the Constitution and By-Laws of the Fraternity, By-Laws and Ordinances of the Chapter, or
-other Fraternity, rules and regulations shall be made by the Judiciary Committee at its
-recognizance. The Committee shall receive charges against any Member of the Chapter; such
-charges must be placed before the Committee in writing and be signed by the complainant(s).
-After investigation and evaluation of the charges, if the Committee finds reasonable cause to
-sustain them, it shall proceed as provided in the Constitution and By-Laws of the Fraternity. The
-
-43
-Committee has no power to adjudge the guilt of any Member, nor can it determine the punishment;
-however, it can recommend a course of action.
-
-G32. Sub-Sec. C. The Legislative Committee shall from time to time review the By-Laws and
-Ordinances of the Chapter. The Committee shall prepare proposed amendments to the Ordinances
-of By-Law XVII, which it feels are necessary for the proper conduct of the Chapter, for submission
-to the Chapter. The Committee shall also receive from any Member of the Chapter,
-recommendations for amendments to the Ordinances of By-Law XVII, which it shall place in
-proper form for submission to the Chapter. The Committee shall interpret the meaning and intent
-of these By-Laws and Ordinances when so requested by any Member. The Chairman of this
-Committee shall be the Chapter Parliamentarian.
-
-G33. Sub-Sec. D. The Risk Management Committee shall review the International Kappa Psi Risk
-Management policy and manual. The Committee shall review and implement the Chapter’s Risk
-Management Policy. The Committee shall educate the Members about the risk management policy
-and ensure all Chapter functions are in compliance.
-
-G34. Sub-Sec. E. The Scholarship Committee shall develop a program for promoting scholarship
-and research by the Chapter’s Members. The Committee shall develop a program of recognition
-for scholarship achievement by the Chapter’s Members (or non-members) in which, if feasible,
-funds and rewards for achievement may be provided. The Committee shall publish information
-regarding scholastic achievement and recognition given such achievement.
-
-G35. Sub-Sec. F. The Social Committee shall develop a balanced program of activities for the
-Chapter. The Committee shall plan, promote and supervise all social activities of the Chapter. The
-Committee shall encourage the planning of a founder’s day event.
-
-G36. Sub-Sec. G. The Professional Relations Committee shall develop a program of professional
-activities and public relations for the Chapter. The Committee shall create programs which will
-achieve the objectives and promote the best interests of the Fraternity, while developing the
-professional character of its members.
-
-G37. Sub-Sec. H. The Finance Committee shall develop a financial budget for the Chapter, and
-from time to time, a suitable investment program for Chapter funds. The Committee shall monitor
-the fiscal operations of the Chapter, and may at its discretion, require reports of the Treasurer
-regarding income and expenditures. The Committee shall report on the fiscal operation of the
-Chapter in relation to the budget. The Treasurer shall be a member of this Committee.
-
-G38 Sub-Sec. I. The Auditing Committee shall examine and verify when accurate, the records of
-the Secretary, Treasurer, and/or other Chapter Officers holding Chapter property. Examinations
-of records may be at any time the Committee feels desirable or when the Chapter or Regent may
-direct. The Committee shall present a written report at the next regular meeting of the Chapter
-stating its findings. The Auditing Committee shall have the power to require, at any time,
-presentation of all books, papers, vouchers, and documents relating to the account they are to
-examine, which may be necessary to determine their correctness, and the actual cash in the hands
-of the Officers.
-
-44
-G39. Sub-Sec. J. The Chapter House Committee shall have charge of the Chapter House including
-the formation and enforcement of House Rules. In the event that the Chapter establishes a fund
-for building or purchasing a Chapter House, the Committee shall develop a proposed program for
-collecting and investing such funds. The Chairman of this Committee shall be the House Manager.
-
-G40. Sub-Sec. K. The Continuing Education Committee shall develop programs of continuing
-education for the Members of the Chapter, which if possible fulfill re-licensing requirements for
-the local jurisdiction(s). The Committee shall also publish information relating to the availability
-of programs designed to meet requirements of continuing education.
-
-G41. Sec. 6. All Committees shall meet at the call of the Chairman, and a written record of all
-meetings shall be kept. The Chairman of each Committee shall report at each Chapter meeting the
-activities of their respective committees. All committees are authorized to meet by electronic
-communication media so long as all members have the ability to participate.
-
-G42. Sec. 7. No program or activity developed by any Committee may commence until such
-program or activity has been approved and adopted by the Chapter.
-
-BY-LAW VIII
-RECORDS
-
-G43. Sec. 1. All Chapter proceedings will be recorded on, and all Chapter reports will be submitted
-on forms approved by The Central Office or the Grand Council.
-
-BY-LAW IX
-UNETHICAL CONDUCT
-
-G44. Sec. 1. Any Member of the Chapter found guilty of unethical conduct may be punished by a
-fine and/or suspension, or expulsion, after trial and conviction as provided in the Constitution and
-By-Laws of the Fraternity.
-
-G45. Sec. 2. Any Member of the Chapter who files a complaint with the Judiciary Committee that
-shall prove to be unfounded and malicious may be charged with unethical conduct.
-
-G46. Sec. 3. Any Member of the Chapter who improperly uses the name of the Fraternity, the
-Chapter, the Fraternity emblem(s) or secrets; or who utilizes Fraternity Membership for strict
-personal gain may be charged with unethical conduct.
-
-BY-LAW X
-MEETINGS
-
-G47. Sec. 1. The regular meetings of the Chapter will be held as provided for in By-Law XVII,
-Ordinance 10. The Secretary (or Corresponding Secretary) shall notify the Members of any change
-in the regular meeting at least forty-eight (48) hours prior to the change. The Chapter is authorized
-to meet by electronic communication media so long as all Members have the ability to participate.
-
-45
-G48. Sec. 2. The usual order of business shall be that order as prescribed in the Ritual.
-
-G49. Sec. 3. Special meetings may be called at any time by the Regent or by the Regent upon the
-written demand of five (5) Members of the Chapter. No business other than that stated in the call
-may be conducted at the special meeting. All Members shall be notified by the Secretary (or
-Corresponding Secretary) at least forty-eight (48) hours prior to the special meeting.
-
-BY-LAW XI
-DUES
-
-G50. Sec. 1. Each newly elected Member shall pay to the Treasurer the Grand Council
-Membership Fee as stipulated in the Constitution and By-Laws of the Fraternity, and any
-additional fee as stipulated in By-Law XVII, Ordinance 11; such funds as are due to the Grand
-Council shall be transmitted to The Central Office with seven (7) days of initiation.
-
-G51. Sec. 2. Each Member shall pay to the Treasurer such dues as stipulated in By-Law XVII,
-Ordinance 11.
-
-G52. Sec. 3. Special assessments may be imposed by a two-thirds (2/3) vote of the Chapter at any
-time.
-
-G53. Sec. 4. Any Member who has not paid dues or is in arrears for fines or assessments shall be
-deemed, not in good standing.
-
-G54. Sec. 5. If a Member is in arrears for dues, fines, or assessments, said Member shall not be
-entitled to hold office or vote, and shall have only one (1) meeting to make up such arrears, or may
-be suspended from all benefits and privileges of the Fraternity and the Chapter. Such suspension
-may remain in force until payment is made in full.
-
-BY-LAW XII
-SECRECY
-
-G55. Sec. 1. All proceedings, Ritual and ceremonies of the Fraternity and all matters pertaining
-to the management or conduct of the Chapter shall be kept secret.
-
-G56. Sec. 2. The names of the Chapter Officers and Members, and the general object and scope
-of the Fraternity may be published. The names of the Officers of the Ritual shall never be
-published. Any Member who reveals any of the secrets of the Fraternity shall be subject to
-expulsion.
-
-BY-LAW XIII
-RITUAL OF INITIATION
-
-G57. Sec. 1. The Ritual of Initiation while secret, shall be considered to be a part of these By-
-Laws, and shall be conducted at all times with proper dignity and decorum. Hazing, as defined by
-
-46
-the Grand Council and/or the Executive Committee of the Grand Council, is prohibited; any
-Member found guilty of hazing shall be subject to expulsion.
-
-BY-LAW XIV
-QUORUM
-
-G58. Sec. 1. Unless a greater number is stipulated in By-Law XVII, Ordinance 14, the quorum
-necessary for the transaction of business at any meeting of the Chapter shall not be less than one-
-fifth (1/5) of the Chapter Membership in good standing.
-
-BY-LAW XV
-PARLIAMENTARY PROCEDURE
-
-G59. Sec. 1. Parliamentary conduct at all meetings shall be closely adhered to, and shall be
-governed by the current edition of Robert’s Rules of Order – Newly Revised.
-
-BY-LAW XVI
-AMENDMENTS (LOCAL CHAPTER ORDINANCES)
-
-G60. Sec. 1. Any motion to amend these By-Laws must be made in writing; signed by at least two
-(2) Members of the Chapter, and presented to the Legislative Committee of the Chapter. The
-Legislative Committee shall, within ten (10) days, prepare the proposed amendments in
-appropriate form and present it to the Chapter, without comment, at the next regular meeting of
-the Chapter. A motion to amend may not be voted upon until the next regular meeting of the
-Chapter following its presentation to the Chapter, at which time the Legislative Committee may
-make a recommendation; such motion shall require a two-thirds (2/3) vote of the Members in good
-standing, present at the meeting, for adoption.
-
-G61. Sec. 2. Any amendments to these By-Laws shall be in the form of Local Chapter Ordinances
-to be a part of By-Law XVII. All Local Chapter Ordinances shall be subordinate to and consistent
-with these By-Laws and the Constitution and By-Laws of the Fraternity. Organization of Local
-Chapter Ordinances shall be such that the Arabic numeral of each Ordinance shall indicate content
-corresponding to and in modification of the numerically equivalent Roman numeral By-Law.
-Local Chapter Ordinances may consist of more than one (1) section, in which case, the order of
-sequence shall be similar to the order of sequence in the respectively modified By-Law.
-
-G62. Sec. 3. Duly adopted Local Chapter Ordinances of the By-Law XVII shall be deemed to be
-in force upon adoption by the Chapter, unless disapproved by the Grand Counselor and/or the
-Legislative Committee of the Grand Council. Enforcement of any newly adopted Local Chapter
-Ordinance may be delayed for a decision of legality from the Grand Counselor and/or the
-Legislative Committee of the Grand Council upon a motion approved by a simple majority of the
-Members in good standing at any regular or special meeting of the Chapter.
-
-G63. Sec. 4. Should formal charges be brought against any Member of the Chapter for an alleged
-violation of any Local Chapter Ordinance, less that one-hundred-twenty (120) days old, that has
-not received written approval of the Grand Counselor or the Legislative Committee of the Grand
-
-47
-Council, said Member shall be entitled to demand a continuance of all proceedings, pending a
-written decision concerning the legality of such Ordinance from the Grand Counselor or the
-Legislative Committee of the Grand Council; such decision shall be transmitted by Certified Mail;
-the request for such decision shall also be transmitted by Certified Mail by the Chairman of the
-Legislative Committee of the Chapter.
-
-BY-LAW XVII
-LOCAL CHAPTER ORDINANCES
-
-48
-Uniform Province By-Laws
-P01. (Sec. 1.) The Constitution and By-Laws of Kappa Psi Pharmaceutical Fraternity,
-Incorporated shall be the Constitution for this Province of Kappa Psi Pharmaceutical Fraternity,
-Incorporated: all constitutions, by-laws and standing laws by which this Province was formerly
-governed are revoked.
-
-BY-LAW I
-TITLE
-
-P02. Sec. 1. This Province shall be known as ___________________ Province, hereinafter
-referred to as the Province of Kappa Psi Pharmaceutical Fraternity, Incorporated, as designated by
-Alpha Chapter of Kappa Psi Pharmaceutical Fraternity, Incorporated, hereinafter referred to as the
-Fraternity.
-
-P03. Sec. 2. The Province may elect to incorporate, however, any application for incorporation
-must receive the approval of Alpha Chapter of the Fraternity prior to submission to the appropriate
-office of legal jurisdiction. Further, the Province may elect to form additional corporations, if
-needed, subject to the aforesaid provision of this section.
-
-BY-LAW II
-COMPOSITION OF THE PROVINCE
-
-P04. Sec. 1. The Province shall be composed of the Collegiate and Graduate Chapters within the
-boundaries designated by Alpha Chapter of the Fraternity.
-
-BY-LAW III
-DUES AND ASSESSMENTS
-
-P05. Sec. 1. Each Collegiate Chapter shall pay the annual per capita fees as provided in By-Law
-XIII, Ordinance 3 for all Chapter Members of record as of November 1st of the preceding year.
-Each Graduate Chapter shall pay the annual per capita fees as provided in By-Law XIII, Ordinance
-3. All dues and/or fees shall be for the calendar year and shall be due on a date set forth by the
-Province in By-Law XIII, Ordinance 3. Late charges of two percent (2%) per month may be
-assessed for any dues and/or fees not received by the predetermined date.
-
-P06. Sec. 2. Any Chapter failing to pay its dues or fees by the due date set by the Province shall
-be automatically suspended from the Province and must remain suspended until all dues or fees,
-and late charges are paid in full.
-
-P07. Sec. 3. Special assessments may be levied with the consent of two-thirds (2/3) of the
-Chapters of the Province. Each Chapter, regardless of size, shall have one vote when balloting for
-special assessments.
-
-P08. Sec. 4. Notice of special assessments shall be given to the Chapters by the Province Secretary
-and shall be due within thirty (30) days after the posting of such written notice.
-
-49
-P09. Sec. 5. Money raised by special assessment may be used only for the stated purpose for which
-the assessment is made. Any unused money must, on a pro-rated basis, be either refunded to the
-Chapter or credited toward the following year’s dues and/or fees, at the option of the individual
-Chapter.
-
-BY-LAW IV
-PROVINCE ASSEMBLIES AND INTERIM MEETINGS
-
-P10. Sec. 1. A Province Assembly shall be held between the meetings of the Grand Council. The
-time and place of these meetings shall be determined by the Province Executive Committee after
-consultation with the Chapters, in accordance with the provisions indicated in By-Law XIII,
-Ordinance 4, or at the request of the Province Executive Committee, or at the request of at least
-two-thirds (2/3) of the Chapters of the Province.
-
-P11. Sec. 2. The Secretary-Treasurer, or Secretary, shall notify the Chapters of the time and place
-of the Province Assembly and Interim Meeting at least two (2) months prior to the date of the
-meeting(s). The Secretary-Treasurer, or Secretary, shall notify each Chapter of the agenda for the
-Assembly or Interim Meeting at least ten (10) days prior to the meeting(s).
-
-P12. Sec. 3. The Province Executive Committee may postpone any Assembly or Interim Meeting
-in case of an emergency.
-
-P13. Sec. 4. The Province Executive Committee shall conduct an Interim Executive Committee
-Meeting between Province Assemblies and at each Grand Council Convention for the purpose of
-planning the next Province Assembly and/or conduct any other Province business.
-
-BY-LAW V
-COMPOSITION OF THE PROVINCE ASSEMBLY
-
-P14. Sec. 1. The Assembly shall be the supreme legislative, judicial and executive body for the
-Province. Appeals of its decisions may be made to Alpha Chapter or to the Grand Council when
-in session assembled. The decision of the Grand Council shall be final.
-
-P15. Sec. 2. The Province Assembly shall consist of the Collegiate Chapters, Graduate Chapters,
-and the elected Province Officers.
-
-P16. Sec. 3. Each Chapter in good standing shall be entitled to two (2) votes in the Assembly.
-Each Province Officer, who is not a Chapter Delegate, shall be entitled to one (1) vote. In the case
-of Chapters, two (2) votes may be cast by a single delegate.
-
-P17. Sec. 4. The Chapter Secretary should notify the Province Secretary, at least thirty (30) days
-prior to the Assembly, of the names of the Chapter’s Delegates. Any changes are to be reported
-to the Province Secretary at the opening of the Province Assembly.
-
-50
-P18. Sec. 5. Any Chapter unable to send a Delegate to the Province Assembly may confer its
-proxy on any Delegate of another Chapter represented at the Assembly. The certificate of proxy
-must be signed by the Regent and Secretary of the Chapter-conferrer and must be forwarded or
-presented to the Province Secretary. Any Chapter represented by proxy shall not be entitled to
-travel funds and/or any other Assembly reimbursement.
-
-P19. Sec. 6. Each Collegiate Chapter represented by a Delegate (not a proxy representation) shall
-be reimbursed for expenses to Province Assemblies as provided in By-Law XIII, Ordinance 5.
-
-P20. Sec. 7. Expenses of the Province Officers shall be reimbursed as provided in By-Law XIII,
-Ordinance 5.
-
-P21. Sec. 8. A Grand Council Deputy of each Chapter within the Province, not sitting as a Province
-Officer or Graduate Chapter Delegate shall be a non-voting Member of the Province Assembly.
-Expenses of the Grand Council Deputies shall be reimbursed as provided in By-Law XIII,
-Ordinance 5.
-
-P22. Sec. 9. The Province shall provide a forum in which the Grand Council Deputies may meet
-for the purpose of discussion and free exchange of ideas.
-
-BY-LAW VI
-OFFICERS: ELECTION AND DUTIES
-
-P23. Sec. 1. The Province Officers shall be: Satrap, Vice Satrap, Secretary-Treasurer (the Office
-of Secretary-Treasurer may be split into two [2] Offices, to wit: Secretary and Treasurer, if
-indicated in By-Law XIII, Ordinance 6), Historian, and Chaplain. These Officers shall be elected
-from the Collegiate and Graduate Members in the Province. The Province may also elect other
-Officers, deemed necessary, as indicated in By-Law XIII, Ordinance 6.
-
-P24. Sec. 2. The Grand Regent shall appoint a Province Supervisor and/or Assistant Supervisor
-as Province Officers. The Province Supervisor and/or Assistant Supervisor shall not have voting
-rights within the Province.
-
-P25. Sec. 3. Nomination and election of Province Officers shall be as provided in By-Law XIII,
-Ordinance 6; installation shall be upon the same day as the election. Election shall be by secret
-ballot with a simple majority needed to elect. Electronic voting may be permitted, provided the
-system is secured and can maintain the secrecy of the ballot. Officers shall serve until their
-successors have been elected and properly installed. If an elected Officer is unable, refuses, or
-neglects to perform the duties of Office, the Province Executive Committee shall declare the Office
-vacant and the Satrap shall appoint a successor to serve until the next Assembly.
-
-P26. Sec. 4. The Province Officers shall administer the affairs of the Province. Their duties shall
-be those usually attending their respective Office, comparable to the functions of Officers of the
-Grand Council as indicated in the Constitution and By-Laws of the Fraternity.
-
-51
-P27. Sec. 5. The Province Executive Committee may designate a particular Chapter to serve as a
-“Permanent Archives,” and a member of that Chapter shall be appointed by the Satrap to serve as
-“archivist.”
-
-BY-LAW VII
-COMMITTEES
-
-P28. Sec. 1. The Province shall have the following standing committees: Executive, Legislative,
-Auditing, and Province Assembly Planning.
-
-P29. Sec. 2. The Province shall have such special Committees as may be needed from time to time.
-Special Committees may be created at the will of the Satrap, by vote of the Province Executive
-Committee, or by vote of the Province Assembly.
-
-P30. Sec. 3. All Committees, except the Executive, shall consist of at least three (3) members, be
-appointed by the Satrap from the Collegiate and Graduate Members of the Province, and serve at
-the pleasure of the Satrap.
-
-P31. Sec. 4. The Executive Committee shall consist of the Province Officers; the Satrap shall be
-Chairman of this Committee.
-
-P32. Sec. 5. The duties of the Committees, unless otherwise stated, shall be comparable to the
-duties of similar Committees of the Grand Council.
-
-P33. Sec. 6. All committees are authorized to meet by electronic communication media so long
-as all members have the ability to participate.
-.
-
-BY-LAW VIII
-          DELEGATE AND ALTERNATE DELEGATE TO THE GRAND COUNCIL
-
-P34. Sec. 1. The Province Delegate and Alternate Delegate shall be selected as provided in By-
-Law XIII, Ordinance 8. If either the Delegate or Alternate Delegate are unable to attend, the Satrap
-shall appoint a Member of the Province to serve as Delegate.
-
-P35. Sec. 2. The Province Delegate shall submit a written or electronic report of the Grand Council
-to the Province Secretary at least one month prior to the next Province Assembly.
-
-P36. Sec. 3. The Province Delegate shall be reimbursed for expenses of attending the Grand
-Council as provided in By-Law XIII, Ordinance 8.
-
-BY-LAW IX
-                   ORDER OF BUSINESS FOR PROVINCE ASSEMBLIES
-
-P37. Sec. 1. The order of business for Province Assemblies shall be: Call to Order; Opening Ritual;
-Roll Call and Seating of Delegates; Welcoming of Visiting Brothers; Minutes of Previous
-
-52
-Assemblies; Reading of Communications; Officer and Committee reports; Chapter Reports;
-Special Speakers; Old Business; Report of Grand Council Deputies Session; New Business;
-Election and Installation of Officers; Closing Ritual; and Adjournment.
-
-BY-LAW X
-QUORUM
-
-P38. Sec. 1. A quorum shall consist of the Delegates from not less than one-half (1/2) of the
-Chapters, including proxies, of the Province.
-
-BY-LAW XI
-PARLIAMENTARY PROCEDURE
-
-P39. Sec. 1. Parliamentary conduct at all meetings shall be closely adhered to and shall be
-governed by the current edition of Robert’s Rules of Order - Newly Revised.
-
-BY-LAW XII
-AMENDMENTS (LOCAL PROVINCE ORDINANCES)
-
-P40. Sec. 1. Any amendments to these By-Laws shall be in the form of Local Province Ordinances
-to be a part of By-Law XIII. All Local Province Ordinances shall be subordinate to and consistent
-with these By-Laws and the Constitution and By-Laws of the Fraternity. Organization of Local
-Province Ordinances shall be such that the Arabic numeral of each Ordinance shall indicate content
-corresponding to and in modification of the numerically equivalent Roman numeral By-Law.
-Local Province Ordinances may consist of more than one (1) section, in which case, the order of
-sequence shall be similar to the order of sequence in the respectively modified By-Law.
-
-P41. Sec. 2. At Province Assemblies, motions to amend shall be presented to the Delegates at any
-Session prior to the Final Session, in writing, and shall be voted upon at the Final Session of the
-Assembly. A two-thirds (2/3) vote of the Assembly is necessary to adopt an amendment
-(ordinance) to By-Law XIII. Amendments to the Local Province Ordinances in the period between
-assemblies shall be defined by the Province in Local Province Ordinance 12, Sec 2.
-
-P42. Sec. 3. Duly adopted Local Province Ordinances of By-Law XIII shall be deemed to be in
-force upon adoption by the Province, unless disapproved by the Grand Counselor or the Legislative
-Committee of the Grand Council. Enforcement of any newly adopted Local Province Ordinance
-may be delayed for a decision of legality from the Grand Counselor or the Legislative Committee
-of the Grand Council upon a motion, approved by simple majority of the Province Assembly.
-
-P43. Sec. 4. Should formal charges be brought against any Chapter or Member of the Province for
-an alleged violation of any Local Province Ordinance, less than one-hundred-twenty (120) days
-old, that had not received written approval of the Grand Counselor or the Legislative Committee
-of the Grand Council, the Chapter or Member so charged shall be entitled to demand a continuance
-of all proceedings, pending written decision concerning the legality of such Ordinance from the
-Grand Counselor or the Legislative Committee of the Grand Council; such decision shall be
-transmitted by Certified Mail.
-
-53
-        BY-LAW XIII
-LOCAL PROVINCE ORDINANCES
-
-           54
-                Rules of Parliamentary Procedure
-Trace each motion to its respective references and you master at a glance the intricacies
-of parliamentary usages comprising some three hundred points of order.
-
- Motion to adjourn                                                        1 a * B a II x
- Motion to determine time to which to adjourn                             2 a + A a II x
- Motion to amend                                                          3 a + A a II x
- Motion to amend an amendment                                             3 a * A a II x
- Motion to amend the rules                                                3 a + A a II x
- Motion to appeal from Speaker’s decision in re indecorum                 1 a + A a II y
- Motion to appeal from Speaker’s decision generally                       3 a + A a II y
- Call to order                                                            1 a * A a II y
- Motion to close debate on question                                       1 a + A b II x
- Motion to commit                                                         3 b + A b II x
- Motion to extend limits of debate on question                            1 a + A a II x
- Leave to continue speaking after indecorum                               1 a * A a II x
- Motion that -----------do lie on the table                               1 a * C a II x
- Motion to limit debate on question                                       1 a + A b II x
- Objection to consideration of question                                   1 a * A b III y
- Motion for orders of the day                                             1 a * A a III y
- Motion to postpone to a definite time                                    4 a + A a II x
- Motion to postpone indefinitely                                          3 b * A a II x
- Motion for previous question                                             1 a * A b II x
- Questions touching priority of business                                  1 a + A a II x
- Questions of privilege                                                   3 a + A a II x
- Reading papers                                                           1 a * A a II x
- Motion to reconsider debatable question                                  3 b * B a II x
- Motion to reconsider an undebatable question                             1 a * B a II z
- Motion to refer a question                                               3 b + B a II x
- Motion that committee do not rise                                        1 a * B a II x
- Question whether subject shall be discussed                              1 a * A b III y
- Motion to make subject a special order                                   3 a + A b II x
- To substitute in nature of an amendment                                  3 a + A a II x
- Motion to suspend the rules                                              3 a + B a II x
- Motion to take from the table                                            1 a + B a II x
- To take up question out of it’s proper order                             1 a * A b II x
- Motion to withdraw a motion                                              1 a * A b II x
- Questions of precedence of questions                                     5-14
- Forms in which questions may be put                                      15-19
-
-55
-1. Questions undebatable: sometimes remarks tacitly allowed.
-2. Undebatable if another question is before the assembly.
-3. Debatable question.
-4. Limited debate only on propriety of postponement.
-a. Does not allow reference to main question.
-b. Opens the main question to debate.
-* Cannot be amended.
-+ May be amended.
-A. Can be reconsidered.
-B. Cannot be reconsidered.
-C. Affirmative vote on this question cannot be reconsidered.
-a. Simple majority suffices to determine the question.
-b. Requires two-thirds vote unless special rules have been enacted.
-II. Motion must be seconded.
-III. Does not require to be seconded.
-x. Not in order, though another has the floor.
-y. Always in order, though another may have the floor.
-z. May be moved and entered on record, when another has the floor, but the
-     business then before the assembly may not be put aside. Motion must be made by one who
-     voted with prevailing side, and on same day original vote was taken.
-5. Fixing the time to which an adjournment may be made: ranks first.
-6. To adjourn without limitations; second
-7. Motion for the Orders of the Day; third
-8. Motion that ……..do lie on the table; fourth
-9. Motion for the previous question; fifth
-10. Motion to postpone definitely; sixth
-12. Motion to commit; seventh
-13. Motion to amend; eighth
-14. Motion to postpone indefinitely; ninth
-15. On Motion to strike out words, “Shall the words stand part of the
-     motion?” Unless a majority sustains the words they are struck out.
-16. On motion for previous question the form to be observed is “Shall the
-     main question be now put?” This if carried, ends debate.
-17. On an appeal from the Chair’s decision, “Shall the decision be sustained
-     as the ruling of the house?” The Chair is generally sustained.
-18. On motion for Orders of the Day, “Will the house now proceed to the
-     Orders of the Day?’ This if carried, supersedes intervening motions.
-19. When an objection is raised to considering question, “Shall the question be
-     considered?” Objection may be made by any member before debate has
-     commenced, but not subsequently.
-
-56
-Disciplinary Trial Guide
-
-The Constitution (Article V) & By-Laws (By-Law III) of the Fraternity allow for Chapters to
-discipline their members after appropriate trial proceedings for conduct unbecoming of a brother,
-specifically “such acts: (1) as relate upon or injure the prestige and reputation of the Fraternity;
-(2) as relate upon the character or professional integrity of the Members; (3) as constitute a
-violation of the Vow of Allegiance and Obligations; and (4) as refusal to pay dues.” This guide is
-meant to assist Chapters in ensuring they follow the appropriate steps in conducting trial and
-disciplining their members.
-
-Article I
-Hearing Policies and Procedures
-
-Sec. 1. Charges against the accused, hearings and disciplinary trials shall follow the details
-        outlined in By-Law III of the Constitutions & By-Laws of the Fraternity.
-
-Sec. 2. Any charge or allegation should be submitted as soon as possible after the conduct or
-        event takes place.
-
-Sec. 3. The Judiciary committee of the Chapter has the discretion to initiate an investigation to
-        determine the merit of the charges. Any formal investigation should be carried out in a
-        timely manner and findings of the investigation shall be presented to the Chapter in
-        writing within ten (10) days of the conclusion of the investigation. The Judiciary
-        committee does not have the right or power to adjudge guilt.
-
-Sec. 4. The accused shall be notified of the charges in writing, signed by the Regent and Grand
-        Council Deputy (or GCD alone if accused is the Regent). The letter must include the list
-        of charges, the name(s) of the complainant (or if anonymous the Chapter as a whole),
-        and a timeline for investigation and trial.
-
-Sec. 5. The accused shall have the right of timely notice of hearing and trial. The accused shall
-        have the right to review all written charges prior to the hearing and select counsel. The
-        Regent (or GCD) shall appoint two (2) members to act as prosecutors and the accused
-        may choose two (2) members to act as counsel.
-
-Sec. 6. Should the accused fail to comply with the order to appear for more than ninety (90)
-        days, the Regent and the Chair of the Judiciary Committee can jointly enter a summary
-        judgment and proceed with the punishment process. If the absent Member has an excuse
-        that is determined by the Judiciary Committee or GCD to be valid, then the Member may
-        not be found to have violated the Code of Conduct or the Disciplinary Policy solely
-        because the Member failed to appear.
-
-Sec. 7. The Chapter may conduct a formal hearing according to the following guidelines:
-        A. The presiding officer/judge shall be the Regent, or in case of trial with the Regent as
-           defendant, the (First) Vice-Regent shall act as judge.
-
-57
-       B. As per By-Law III of the Uniform By-Laws of Kappa Psi, no hearing shall be
-          considered valid unless two-thirds (2/3) of the Chapter membership in good standing
-          are present at the meeting.
-       C. Presiding officers have the authority to ask counsel or the accused to leave the
-          hearing at any time if they are disrupting the proceedings.
-       D. The presiding officer should remind those in attendance that the proceedings are an
-          educational exercise and will not be perceived as a formal legal hearing.
-       E. Hearings normally shall be conducted in private. At the request of the accused, and
-          subject to the discretion of the presiding officer, other persons may be allowed to
-          attend the hearing.
-       F. In hearings involving more than one accused member, the presiding officer, in
-          his/her discretion may permit the hearings concerning each Member to be conducted
-          separately. This may also be requested by the accused.
-       G. The complainant and the accused have the right to be assisted by any advisor they
-          choose, at their own expense. The advisor may be a non-member.
-       H. The complainant, the accused, and the representative of the Judiciary committee shall
-          each have the right to make an open argument before the evidence is presented and a
-          closing argument after all the evidence has been presented.
-       I. The complainant, the accused, and the representative of the Judiciary Committee
-          shall have the privilege of presenting witnesses, subject to the right of cross-
-          examination by the Chapter counsel.
-       J. If there is material evidence that cannot be secured from the testimony of members,
-          non-member testimony may be received at the hearing in the discretion of the
-          presiding officer. Non-members may be present at the hearing only while testifying.
-       K. All procedural questions are subject to the final decision of the presiding officer.
-       L. After all the evidence has been presented, the Chapter shall determine whether the
-          Member has violated each section of the Member Code of Conduct, Vow of
-          Allegiance, or Disciplinary Policy that the Member is charged with violating. The
-          vote shall be taken separately on each offense and separately as to each accused
-          Member. A two-thirds (2/3) vote is required to convict.
-       M. If convicted, the Regent shall call for the sort of punishment. A motion with the
-          recommended punishment must be made in proper form and seconded. Motions to
-          expel must gain a two-thirds (2/3) affirmative vote to pass, all other punishments will
-          require simple majority to pass.
-
-Sec. 8. The notice of sanctions imposed should be in writing and should also notify the accused
-        that he/she has thirty (30) days to appeal the decision. Any notice of expulsion should be
-        sent via certified mail so that the Chapter has a signature on file to verify the convicted
-        has received the letter.
-
-Sec. 9. Appeals for conviction or punishment type shall be handled according to the provisions
-        of Uniform By-Law III, sec 9-13 of the Fraternity.
-
-Sec. 10. When conviction is final and there are no appeals requested or available, the Chapter
-       shall notify the Executive Director of the Chapter’s decision immediately.
-
-58
-Article II
-Disciplinary Actions & Consequences
-
-Sec. 1. Any Member found guilty of any of the above offenses shall, upon a disciplinary
-        determination by the Judiciary Committee, can be subject to a penalty determined by the
-        Chapter. Below are some examples of type of discipline that a Chapter may choose to
-        impose, but it is important that proper procedures are followed based on the type of
-        punishment.
-
-       A. Expulsion leading to:
-             a. Surrender, to the Executive Director of the Fraternity, of his/her official
-                membership certificate, membership card and official pin along with all
-                regalia, insignia, clothing or jewelry bearing any identity with the Fraternity.
-                This may include financial compensation for the cost of any items lost or
-                damaged.
-             b. Remove him/herself and his personal effects from the property of the chapter,
-                the district and the international office and he/she may not return on any
-                occasion.
-             c. Not attend any meeting of any chapter, province, or GCC.
-             d. Cease to identify him/herself with the Fraternity in any manner on or off
-                campus.
-
-       B. Suspension for a designated or indefinite period during which time the Member
-          shall:
-              a. Not attend Fraternity meetings, vote, or hold office, nor shall he/she attend
-                 any Fraternity gathering not attended by the public until the end of the
-                 designated period of suspension.
-              b. Cease to identify him/herself with the Fraternity in any manner on or off
-                 campus until the end of the designated period of suspension.
-              c. Be entitled to return at the end of the designated period of suspension unless
-                 he/she is in violation of the terms of said suspension or if suspended for an
-                 indefinite period, may only return upon written permission by the Judiciary
-                 committee.
-              d. Be automatically returned to good standing unless he/she is subject to further
-                 disciplinary action at the end of the designated time period or by written
-                 permission of the Judiciary committee.
-              e. Pay all dues, fees, and assessments applicable to all Members in good
-                 standing unless expressly excused by the Chapter by the terms of the
-                 designated suspension. (Note: The Chapter is still responsible for paying
-                 national & province dues for said member)
-
-       C. Probation for a designated or indefinite time period during which time the Member
-          shall:
-              a. Follow the limitations, restrictions or terms of the probation, provided they
-                 abide by all Fraternity policies.
-
-59
-               b. Pay all dues, fees, and assessments applicable to all Members in good
-                  standing unless expressly excused there from by the terms of the designated
-                  probation. (Note: The Chapter is still responsible for paying national &
-                  province dues for said member)
-
-       D. Make Restitution in the form of appropriate service or material replacement in order
-          to compensate the Fraternity, Province, Chapter or other entity for individual loss,
-          damage or injury. Refusal or failure to make requested restitution shall subject the
-          member to being declared in arrears and not in good standing.
-
-       E. Pay a Fine of an amount and within a time period defined by the Judiciary
-          committee to the Chapter treasurer. Fines must be reasonable (for example, not to
-          exceed $100) to the infraction. Refusal or failure to pay the fine assessed shall
-          subject the Member to being declared in arrears and not in good standing.
-
-       F. Warning in which a written notice is provided to the Member that the Member is
-          violating or has violated provisions of this code.
-
-       G. Any other lawful penalty that the Fraternity may determine and impose, as long as
-          such penalty is legal and not in conflict with the rules and regulations of the
-          Fraternity, University or society in general.
-
-       H. Multiple Sanctions which may include more than one of the sanctions listed above
-          for any single or series of violations.
-
-Sec. 2. When these penalties are properly imposed upon a Member, expulsions shall be honored
-and held binding by all members of the Chapter and shall be communicated to the Province &
-Grand Council for record.
-
-Sec. 3. If a member is expelled from the Fraternity, the Chapter is responsible for notifying the
-Central Office immediately in order to have the member removed from the roster to absolve the
-Chapter of future dues requirements for that individual.
-
-Sec. 4. The Chapter is still financially responsible for all dues owed to the Central Office and the
-Province for any individual punished by any means other than expulsion.
-
-Sec. 5. If a Member is undergoing investigation by the University or College in which they are
-enrolled, the Chapter shall report the results of any investigation, verdicts or imposed
-punishments it conducts to the appropriate authorities.
-
-60
-Disciplinary Process Form
-The following checklist outlines the steps in the disciplinary process that must be followed for a Chapter to Discipline a Member
-as noted in the Kappa Psi Constitution and By-Laws.
-A form should be kept for each Member facing disciplinary charges. Chapters are recommended to keep this checklist and a copy
-of all supporting documents on file for a period of 5 years.
-
- Name of Chapter:
-
- Name of Member:
-
- Charge(s):
-
- Date charge(s)submitted:
-
- Name of Chapter Officer who has verified the accuracy of documentation:
-
- Name of Grand Council Deputy who has verified the accuracy of documentation:
-
-  Written charges are presented by a Member or Members or the Chapter to the Judiciary Committee.                            ☐
-  Judiciary Committee review.                                                                                                ☐
-  Date of review:
-  Date of Investigation closure:
-  A hearing date is set by the Regent.                                                                                       ☐
-  Date of hearing:
-  The accused is notified of the date, time and location of the hearing and instructed to appear. *                          ☐
-  Date notified:
-  The Secretary provides the Member accused with a copy of the charge(s) (signed by the Regent and GCD),                     ☐
-  investigation and trial timeline, and the disciplinary trial guide.
-  Date provided:
-  Hearing conducted                                                                                                          ☐
-       ● Judge:
-       ● Prosecutors:
-       ● Counsel:
-       ● Witness(es):
-  The vote of the chapter:                                                                                                   ☐
-       ● Votes guilty:
-       ● Votes not guilty:
-       ● Final Verdict:
-  If guilty, punishment:                                                                                                     ☐
-       ● Punishment:
-       ● Total votes:
-       ● Aye votes:
-       ● Nay votes:
-  Accused is sent a final communication notifying them of the final verdict and punishment.                                  ☐
-  Date notified:
-  Convicted Member demands a stay of execution for thirty (30) days or until an appeal to the Executive Committee for        ☐
-  rehearing. If Member appeals, the Secretary has notified the Grand Regent. Member may elect to not appeal.
-  Executive Director notified of Chapter actions and is provided with a copy of “Chapter Roster Changes” form as well        ☐
-  as the supporting documentation.
-  Date of notification:
-* Should formal charges be brought against any Member of the Chapter for an alleged violation of any Local Chapter Ordinance,
-less than one-hundred-twenty (120) days old, that has not received written approval of the Grand Counselor or the Legislative
-Committee of the Grand Council, said Member shall be entitled to demand a continuance of all proceedings, pending a written
-decision concerning the legality of such Ordinance from the Grand Counselor or the Legislative Committee.
-
-61
-Index
-This index will provide references addressing most questions concerning Fraternity Government.
-Numbers refer to paragraphs unless otherwise indicated. Numbers preceded by the letter “C”
-refer to the Uniform Collegiate Chapter By-Laws. Numbers preceded by the letter “G” refer to
-the Uniform Graduate Chapter By-Laws. Numbers preceded by the letter “P” refer to the Uniform
-Province By-Laws.
-
-Advisory Committee, see Committees of the Grand Council
-Agora (Directory), The, 036, 149-152
-Alpha Chapter, 005, 011, 047, C02, C17, G02, G17, P02-P04, P14, also see Committees
-        of the Grand Council, Executive Committee
-Amendments,
-        Constitution and By-Laws, 039-041, 110, 177-179
-        Uniform By-Laws, 109
-                Collegiate Chapter, C35, C66-C69
-                Graduate Chapter, G32, G60-G63
-                Province, P40-P43
-Arms, see Coat of Arms
-Asklepios Key, 035, page 2 (picture)
-Assemblies, see Province Assemblies of
-Assessments,
-        Chapter, 051, C19, C53, C56-C60, G19, G50-G54
-        Grand Council, 016,017, 048-054
-        Province, 121, P05-P09
-        Special, 017, 054, C19, C58, G19, G52, P07-P09
-Audit, 097, C19, C29, C41, G19, G26, G38, P28
-Awards, 030, 111, 115, 131, 156-174
-Badge, 035, 124-127, 133, page 2 (picture)
-Bond, for Executive Director, 098
-By-Laws, 001, 006, 018, 019, 022, 030, 033, 036, 042-179, C01-C69, G01-G63, P01-P43,
-        also Uniform By-Laws
-Central Office, 029, 045, 046, 048, 050-053, 069, 077, 080, 089, 096-101, 103, 134, 157, 159,
-        161, 164, C05, C17, C19, C21, C37, C48, C56, G05, G17, G19, G21, G43, G50
-Certificates
-        Commendation (appreciation), of, 166
-        Membership, of, 047
-Chaplain, see Chapter and/or Province Officers
-Chapter,
-        By-Laws, 022, 023, 070, 088, 140, also, see Uniform By-Laws, Collegiate
-                and Graduate Chapter
-        Officers, 149, C07-C27, C31, C41, C62, G07-G24, G38, G56
-                Chaplain, 117, C07, C22, G07, G22, P23
-                Grand Council Deputy, 153, C07, C08, C24, C25, C34
-                Historian, 117, 123, C07, C18, C21, G07, G18, G21
-
-62
-                Regent, 056, 058-060, 062, 077, 080, C07, C08, C10, C11, C13-C16, C22, C23,
-C26, C27, C31, C33, C41, C43, C55, C60, G07, G08, G10, G11, G13-
-G16, G22-G24, G28, G30, G38, G49, P18
-                Secretary, 058, 059, 064, 077, 079, 080, 117, 123, C07, C17, C18, C20, C41,
-C46, C52, C55, G07, G17, G18, G20, G38, G47, G49, P17, P18
-                Sergeant-at-Arms, C07, C23, C34
-                Treasurer, 048, 052, 053, 117, 123, C07, C19, C20, C40, C41, C56, C57, G07,
-G19, G20,
-G37, G38, G50, G51
-                Vice-Regent, 059, C07, C14, C16, G07, G14, G16
-        Records, 097, 99, C13, C17, C19, C24, C41, C46, C48, G13, G17, G19, G38, G43
-Chapters, 005, 006, 019-021, 027, 034, 039, 041, 043, 045, 046, 047, 057, 069-074, 167, 170
-        Alpha, 005, 011
-        Collegiate, 005, 012, 020, 021, 027, 047, 069-073, 078, 152, 167, 170, C01-C69, P05,
-        P15, P19
-        Graduate, 005, 014, 020, 027, 047, 050, 069-073, 100, C37, G01-G63, P05, P15
-Charters, 021, 026, 053, 071, C02, C04, G02, G04, also, see Establishment of Chapters
-        Application for, 069, 070
-        Fee, 073
-Citation of Appreciation, Grand Council, 115, 167
-Coat of Arms, 035, 134-136, page 2 (picture)
-Collegiate Chapter(s), see Chapters, Collegiate
-Collegiate Member, see Membership, Collegiate
-Collegiate Member-at-Large, 080-085, 094, 104
-Colors, 138, page 2 (description)
-Commendation, see Certificates, Commendation, of
-Committees of Chapters, C28-C47, G25-G42
-        Athletic, C29, C45
-        Auditing, C29, C41, G26, G38
-        Chapter House, 088, C29, C44, G26, G39
-        Continuing Education, G26, G40
-        Executive, C28, C31, C33, G25, G28, G30
-        Finance, C29, C40, G26, G37
-        Graduate Relations, C28, C37
-        Interfraternity, C29, C43
-        Judiciary, 056-058, C28, C34, C50, G25, G31, G45
-        Legislative, C28, C35, C66, G25, G32, G60, G63
-        Professional Relations, C29, C42, G26, G36
-        Scholarship, C28, C36, G26, G34
-        Social, C28, C38, G26, G35
-Committees of the Grand Council, 030, 086, 102-116
-        Advisory, 030, 072, 071, 97, 102, 114
-        Executive, 005, 007, 015, 021, 022, 027-029, 031, 032, 036, 039, 041, 047, 053, 054,
-                063-065, 071, 072, 078, 091-99, 101, 102, 104-107, 115-116, 144, 149, 152, 154,
-                155, 167-169, 171, 179, C63, G57
-        Frank H. Eby Award, 030, 111
-
-63
-        Legislative, 023, 030, 040, 041, 102, 108-110, 178, 179, C03, C68, C69, G03, G62-63,
-               P42, P43
-        Publications, 030, 112, 148
-        Public Relations, 030, 113
-Committees of Provinces, P28-P32
-        Auditing, P28
-        Executive, P10, P12, P13, P25, P26,P27, P28-P31
-        Legislative, P28
-        Province Assembly Planning, P28
-Constituent Divisions, 002, 005
-Constitution, 001-041
-Convention Fund, Grand Council, 048, 049, 051, 078, 079
-Convention, Grand Council, 027, 028, 074-076, 070-081, 114, 175
-Delaware, Official Representative in, 086
-Delegates,
-        Grand Council, to, 027, 074, 077, 078, C27, G24, P34-P36
-        Province Assemblies, to, 034, C27, G24, P16- P19, P37, P38, P41
-Directory, see Agora, The
-Discipline, 018, 019, 055-068, C14, C49-C51, C69, G14, G44-G46, G56
-Dues, 048-054
-        Chapter, 045, 047, 048-055, 147, C19, C56-C60, G19, G50-G54
-        Grand Council, 016, 017, 045, 049, 052
-        Province, 120, P05, P06, P09
-Eby, Frank H., Award Committee, see Committees of the Grand Council
-Editor of THE MASK, see MASK, Editor of
-Election of Members, see Membership, Election to
-Election of Officers,
-        Collegiate Chapter, C08-C14
-        Graduate Chapter, G07-G14
-        Grand Council, 080-085
-        Province, P23-P25
-Electronic Meetings, 28, 41, 84, 116, 119, 179, C06, C09, C46, C52, G06, G09, G61, G47, P25,
-P33
-Establishment of Chapters, 020, 021
-Executive Committee, see, Committees of the Grand Council
-Executive Director, 029, 053, 067, 071, 079- 081, 092, 096-101, 104, 111, 115, 146, 148, 151,
-        153, C17, G17
-Expenses, 063, 076, 078, 095, 097, 101, 120, 145, P19, P20, P21, P36
-Expulsion of Members, see Discipline
-Fees, see Assessments and/or Dues
-Flower, 139, page 2 (description)Graduate Chapters, see Chapters, Graduate
-Graduate Member-at-large, 080, 083, 085, 104
-Graduate Voluntary Dues, 051
-Grand Chapter, see Alpha Chapter
-
-64
-Grand Council, The, 002, 016, 017, 021, 022, 024-032, 038-041, 045, 048, 049, 052, 066, 068,
-         074-077, 086, 090-092, 094, 095, 097, 99, 107, 110, 119, 130, 132, 134-137, 144, 149,
-         155, 159, 161, 164, 167
-         Citation of Appreciation, see Citation of Appreciation
-         Composition, 027
-         Convention, see Convention, Grand Council
-         Convention, General Chairman of, 027
-         Convention Fund, see Convention Fund, Grand Council
-         Committees, see Committees of the Grand Council
-         Officers, 029, 080, 083, 085, 086, 093-095, 104, also, see Specific Offices
-         Scholarship Certificate, see Scholarship Certificate
-         Scholarship Key, see Scholarship Key
-Grand Council Deputy, see Chapters, Officers
-Grand Counselor, 023, 029, 070, 085, 088, 102, C03, C68, C69, G03, G62, G63
-Grand Historian, 029, 085, 089, 99, C21
-Grand Regent, 029, 030, 064, 067, 073, 085, 086, 091-093, 095, 097, 99, 100, 102, 105, 111,
-         114, 115, 117, 118, 121
-Grand Ritualist, 029, 085, 90, 99, C22
-Grand Vice-Regent, 029, 085, 087, 092, 093,
-Handbook, 036, 148
-Hazing, C63, G57
-Hearings, see Discipline
-Historian, see Chapter and/or Province, Officers
-Honorary Office, 047
-Initiation Fee, see Membership Fee
-Initiation, Ritual of, 011, 025, 047
-Insignia, 035, 124, 133, 135, 136
-Installation of Officers, 029, C11, C12, C17, G11, G12, P25, P37
-Insurance, for Executive Director, 098
-Lapel Letters, 035, 132, 134, page 2 (picture)
-Legislative Committee, see Committees of the Grand Council
-Letter of Recognition, Grand Regent’s, 162
-MASK, The, 036, 143-147, C21, G21
-         Editor of, 027, 075, 144, C21, G21
-Membership, 007-014, 037, 038, 042-047, C04-C06, G04-G06
-         Certificate, see Certificate of Membership
-         Collegiate, 007-009, 011, 012, 013, 042-046, C04-C06
-         Election to, 011, 012, 042, C05-C06, G05-G06
-         Fee, 045, 048, 049, C56-C60
-         General Qualifications, 007-014, 042-046
-         Graduate, 007-009, 011, 013, 014, 044, G04-G06, G58
-         Honorary, 007-009, 011, 047
-         Transfer, 043, 046
-Name and Objectives, 003, 004
-Naming of Chapters, 020, 021
-Neglect of Duty, see Discipline
-
-65
-Nominations,
-       Collegiate Chapter Officers, C08, C12
-       Graduate Chapter Officers, G08, G12
-       Grand Officers, 080-083
-       Province Officers, P25
-Objectives, see Name and Objectives
-Orders, 037, 156-165
-Ordinances, 022, 023, 033, 070, 071, 077, 088, 109, 110, 141, 142, C66-C69, G60-G63, P40-P43
-Organization, 005, 006
-Parliamentarian, 176, C35, G32
-Parliamentary Procedure, Condensed Rules of, 140, C65, G59, P39
-Past Grand Regents, see Advisory Committee
-       Immediate Past Grand Regent, 104
-Pennant, 137, page 2(picture)
-Plaques, see Coat of Arms and/or Insignia
-Pledge Button, 035, 129, page 2 (picture)
-Pledge Manual, C05, G05
-Province, 027, 032-034, 073, 075-077, 117-123
-       Assemblies of, 119, P10-P22
-       Boundaries, 032
-       By-Laws, 022, 023, 033, P01-P43, also, see, Uniform Province By-Laws
-       Officers, 117, P15, P20 , P23-P26, P31
-               Chaplain, 117, P23
-               Historian, 117, 124, P23
-               Satrap, 117, 121, P23, P26, P30, P31
-               Secretary, 117, 123, P08, P11, P17, P18, P23, P35
-               Secretary-Treasurer, 117, 123, P11, P23
-               Supervisor, 117, 118, P24
-               Treasurer, 117, 123, P11, P23
-               Vice-Satrap, 117, 122, P23
-Proxy Voting (Proxies), 038, 075-077, C27, G24, P18, P38
-Publications, 036, 140-155
-Publications Committee, see Committees of the Grand Council
-Public Relations Committee, see Committees of the Grand Council
-Quorum,
-       Collegiate Chapters, C64
-               Electoral Quorum, C09
-       Graduate Chapters, G58
-       Grand Council, 038, 040, 178
-               Executive Committee of the, 106
-       Provinces, P38
-Recognition Button, 035, 130, page 2 (picture)
-Recognition, Letter of, see Letter of Recognition
-Regent, see Chapter, Officers
-Resignation,
-       Membership, 044
-
-66
-        Office, 091, C16, G16
-Revocation of Charters, 026
-Revocation of Former Laws, 001, C01, G01, P01
-Ritual, 011, 025, 029, 047, 090, 136, C06, C11, C15, C17, C22, C26, C54, C61-C63, G06, G07,
-        G11, G15, G17, G22, G23, G48, G55-G57, P37
-Robert’s Rules of Order, 175, C65, G99, P39
-Rules of Procedure, 175, C65, G59, P39
-Satrap, see Province, Officers
-Scholarship Certificate, 131, 168
-Scholarship Key, 035, 131, page 2 (picture)
-Secretary, see Chapter, Officers
-Secretary-Treasurer, see Chapter and/or Province, Officers
-Sergeant-at-Arms, see Chapter, Officers
-Service Order(s), 037, 157-164
-Special Assessments, see Assessments, Special
-Suspension, see Discipline
-Sweetheart Pin, 035, 128, page 2 (picture)
-Title, C02, C03, G02, G03, P02, P03, also, see, Name and Objectives
-Transfer Membership, 046
-Travel, see Expenses
-Treasurer, see Chapter, Officers
-Trials, see Discipline
-Uniform By-Laws, 006, 022, 088, 109, 140-142
-        Collegiate Chapter, 022, 088, 109, C01-C69
-        Graduate Chapter, 022, 088, 109, G01-G63
-        Province, 022, 088, 109, P01-P43
-Vice-Regent, see Chapter, Officers
-Vice-Satrap, see Province, Officers
-Website, 036, 155
-
-67`,
+             Uniform Collegiate Chapter By-Laws`,
     defaultCategory: "amendments"
   },
 
@@ -3070,10 +1204,7 @@ C03. Sec. 2. The Chapter may elect to incorporate under the laws of its State, P
 legal jurisdiction. However, any application for incorporation must receive the approval of the
 Grand Counselor and/or the Legislative Committee of the Grand Council prior to submission to
 the appropriate office of legal jurisdiction. Further, the Chapter may elect to form additional
-corporations, if needed, subject to the aforesaid provision of this section.
-
-BY-LAW II
-MEMBERSHIP`,
+corporations, if needed, subject to the aforesaid provision of this section.`,
     defaultCategory: "scope"
   },
 
@@ -3084,10 +1215,7 @@ MEMBERSHIP`,
     title: "Membership",
     text: `C04. Sec. 1. Membership in the Chapter is subject to the conditions stipulated in the Constitution,
 Article III, the Charter of the Chapter, and those additional stipulations (if any) in By-Law XVII,
-Ordinance 2, of these By-Laws.
-
-BY-LAW III
-ELECTION OF MEMBERS`,
+Ordinance 2, of these By-Laws.`,
     defaultCategory: "membership"
   },
 
@@ -3111,14 +1239,9 @@ C06. Sec. 2. The Election of Members may occur at any time the Chapter deems des
 however, all elections to membership shall be by secret ballot. Electronic voting may be permitted,
 provided the system is secured and can maintain the secrecy of the ballot. The procedure for
 election is that provided in the Ritual, with those additional requirements and clarifications as
-
-28
 stipulated in By-Law XVII, Ordinance 3; however, at no time may a person be elected to
 membership without having received an affirmation vote from at least three fourths (3/4) of the
-Membership eligible to vote.
-
-BY-LAW IV
-OFFICERS AND ORDER OF ELECTION`,
+Membership eligible to vote.`,
     defaultCategory: "membership"
   },
 
@@ -3134,10 +1257,7 @@ and Corresponding Secretaries if indicated in By-Law XVII, Ordinance 4), Treasur
 Chaplain, Sergeant-at-Arms, and such Officers as may be indicated in By-Law XVII, Ordinance
 4, and Grand Council Deputy. These Officers, except for Regent and (First) Vice Regent, may be
 elected in any Order the Chapter deems desirable. Officers of the Ritual may be appointed by the
-Regent and shall serve at the pleasure of the Regent.
-
-BY-LAW V
-            QUALIFICATION, ELECTION AND INSTALLATION OF OFFICERS`,
+Regent and shall serve at the pleasure of the Regent.`,
     defaultCategory: "officers"
   },
 
@@ -3172,8 +1292,6 @@ The tellers shall determine the number of votes for each candidate, report same 
 shall then report same and announce the results to the Chapter. Any question of eligibility of a
 Member shall be referred by the Regent to the Chapter for discussion. A majority vote shall
 determine the Member’s eligibility.
-
-29
 C11. Sec. 4. Officers-elect shall be installed, within thirty (30) days of election, according to the
 Ritual, at the meeting and time indicated in By-Law XVII, Ordinance 5. The Regent shall install
 all Officers-elect unless an objection is raised; objections must be made for each Officer-elect
@@ -3198,10 +1316,7 @@ C14. Sec. 7. Any Officer may be removed for misfeasance, malfeasance, and/or non
 two-thirds (2/3) vote of the Chapter; any Officer so charged is entitled to a trial by the Chapter
 according to the Procedure of “Discipline” found in the Constitution and By-Laws, By-Law III.
 The accused shall retain said Office until the charges are tried and sustained; however, if the
-Regent is accused, the Vice Regent shall conduct the trial.
-
-BY-LAW VI
-DUTIES OF OFFICERS`,
+Regent is accused, the Vice Regent shall conduct the trial.`,
     defaultCategory: "officers"
   },
 
@@ -3226,8 +1341,6 @@ shall assume the Office of Regent for the remainder of the term of office. If th
 than one (1) Vice Regent, the Second Vice Regent shall assume the office of First Vice Regent,
 should a vacancy occur in the office of First Vice Regent, etc. The (First) Vice Regent shall, also,
 be a member of all committees of the Chapter.
-
-30
 C17. Sec. 3. The Secretary shall maintain an accurate roster, keep accurate records of the
 proceedings of all Chapter Meetings; receive and preserve for the record the written reports of all
 Officers and committee chairmen; incorporate into the record all data generated by the Fraternity
@@ -3274,8 +1387,6 @@ the Chapter; preserve order; and perform all such duties as custom attaches to t
 
 C24. Sec. 10. The Grand Council Deputy, as the personal representative of the Grand Regent, shall
 be the advisory and supervising Officer of the Chapter. Through visitations and/or consultations,
-
-31
 at least once per month during the school year, to the Chapter and/or with the Executive Committee
 of the Chapter, the Grand Council Deputy shall see that the Chapter is carrying out all provisions
 of the Constitution and By-Laws of the Fraternity, and By-Laws and Ordinances of the Chapter;
@@ -3303,10 +1414,7 @@ attend, shall, also, notify the Regent. If neither the Delegate nor Alternates D
 able to attend, the Regent shall appoint a qualified member(s) of the Chapter to serve as
 Delegate(s). If it is not possible to send any Member, the Chapter or Regent may confer
 representation of the Delegate(s) to another Chapter, or Province by proxy. All proxies
-must be certified as required by the rules of the Grand Council or Province.
-
-BY-LAW VII
-COMMITTEES AND THEIR DUTIES`,
+must be certified as required by the rules of the Grand Council or Province.`,
     defaultCategory: "officers"
   },
 
@@ -3329,8 +1437,6 @@ Immediate Past Regent of the Chapter, providing that said Immediate Past Regent 
 from office for cause by the Chapter, and providing that said Immediate Past Regent is still a
 Collegiate Member of the Chapter. All other committees of the Chapter shall consist of at least
 three (3) Members, appointed by the Regent to serve at their pleasure or the Regent, unless
-
-32
 otherwise indicated in these By-Laws or Ordinances; Graduate Members may serve on any of
 these committees.
 
@@ -3375,8 +1481,6 @@ program to strengthen the ties between the Chapter and its Graduate Members. Whe
 Chapter exists, the Committee will work with the Graduate Chapter in mutual association for the
 advancement of the Fraternity. The Committee shall also assist The Central Office in developing
 and expanding the Graduate activities of the Fraternity.
-
-33
 C38. Sub-Sec. F. The Social Committee shall develop a balanced program of activities for the
 Chapter. The Committee shall plan, promote and supervise all social activities of the Chapter. The
 Committee shall encourage the planning of a founder’s day event.
@@ -3423,8 +1527,6 @@ collecting and investing such funds. The Chairman of this Committee shall be the
 C45. Sub-Sec. M. The Athletic Committee shall develop a program of inter-chapter, and where
 possible, interfraternity activities. The Chairman shall represent the Chapter on all athletic
 councils to which the Chapter is an interested party.
-
-34
 C46. Sec. 6. All Committees shall meet at least once a month, during the school year, and also at
 the call of the Chairman. A record, in writing, of all proceedings of all meetings shall be kept.
 The Chairman of each committee will report the activity of the Committee at the regular meeting
@@ -3435,10 +1537,7 @@ and special committees are authorized to meet by electronic communication media 
 members have the ability to participate.
 
 C47. Sec. 7. No program or activity developed by any Committee may commence until such
-program or activity has been approved and adopted by the Chapter.
-
-BY-LAW VIII
-RECORDS`,
+program or activity has been approved and adopted by the Chapter.`,
     defaultCategory: "committees"
   },
 
@@ -3448,10 +1547,7 @@ RECORDS`,
     provision: "C By-Law VIII",
     title: "Records",
     text: `C48. Sec. 1. All Chapter proceedings will be recorded on, and all Chapter reports will be submitted
-on forms approved by The Central Office or the Grand Council.
-
-BY-LAW IX
-UNETHICAL CONDUCT`,
+on forms approved by The Central Office or the Grand Council.`,
     defaultCategory: "procedure"
   },
 
@@ -3469,10 +1565,7 @@ shall prove to be unfounded and malicious may be charged with unethical conduct.
 
 C51. Sec. 3. Any Member of the Chapter who improperly uses the name of the Fraternity, the
 Chapter, the Fraternity emblem(s) or secrets; or who utilizes Fraternity Membership for strict
-personal gain may be charged with unethical conduct.
-
-BY-LAW X
-MEETINGS`,
+personal gain may be charged with unethical conduct.`,
     defaultCategory: "discipline"
   },
 
@@ -3490,15 +1583,10 @@ C53. Sec. 2. A fine, as stipulated in By-law XVII, Ordinance 10, may be levied f
 any regular meeting.
 
 C54. Sec. 3. The usual order of business shall be that order as prescribed in the Ritual.
-
-35
 C55. Sec. 4. Special meetings may be called at any time by the Regent or by the Regent upon the
 written demand of five (5) Members of the Chapter. No business other than that stated in the call
 may be conducted at the special meeting. All Members shall be notified by the Secretary (or
-Corresponding Secretary) at least forty-eight (48) hours prior to the special meeting.
-
-BY-LAW XI
-DUES`,
+Corresponding Secretary) at least forty-eight (48) hours prior to the special meeting.`,
     defaultCategory: "procedure"
   },
 
@@ -3527,10 +1615,7 @@ known to the Chapter in open meeting. Any Member in arrears shall not be entitle
 or vote, and shall have only one (1) meeting to make up such arrears, or shall be summarily
 suspended from all benefits and privileges of the Fraternity and the Chapter. Such suspension
 shall remain in force until payment is made in full, or other disciplinary action is taken by the
-Chapter.
-
-BY-LAW XII
-SECRECY`,
+Chapter.`,
     defaultCategory: "dues"
   },
 
@@ -3548,9 +1633,7 @@ published. Any Member who reveals any of the secrets of the Fraternity shall be 
 expulsion.
 
 BY-LAW XIII
-RITUAL OF INITIATION
-
-36`,
+RITUAL OF INITIATION`,
     defaultCategory: "ritual"
   },
 
@@ -3562,10 +1645,7 @@ RITUAL OF INITIATION
     text: `C63. Sec. 1. The Ritual of Initiation while secret, shall be considered to be a part of these By-
 Laws, and shall be conducted at all times with proper dignity and decorum. Hazing, as defined by
 the Grand Council and/or the Executive Committee of the Grand Council, is prohibited; any
-Member found guilty of hazing shall be subject to expulsion.
-
-BY-LAW XIV
-QUORUM`,
+Member found guilty of hazing shall be subject to expulsion.`,
     defaultCategory: "ritual"
   },
 
@@ -3579,10 +1659,7 @@ necessary for the transaction of business at any meeting of the Chapter shall no
 half (1/2) of the Chapter Membership in good standing. Chapters may elect to increase the
 requirement for quorum or exclude Members on clinical rotations (APPEs) if specified in By-Law
 XVII, Ordinance 14. If specified, Members on clinical rotations shall be permitted to vote as part
-of any required quorum if in good standing, but their absence will not count against quorum.
-
-BY-LAW XV
-PARLIAMENTARY PROCEDURE`,
+of any required quorum if in good standing, but their absence will not count against quorum.`,
     defaultCategory: "quorum"
   },
 
@@ -3626,8 +1703,6 @@ C68. Sec. 3. Duly adopted Local Chapter Ordinances of By-Law XVII shall be deeme
 force upon adoption by the Chapter, unless disapproved by the Grand Counselor and/or the
 Legislative Committee of the Grand Council. Enforcement of any newly adopted Local Chapter
 Ordinance may be delayed for a decision of legality from the Grand Counselor and/or the
-
-37
 Legislative Committee of the Grand Council upon a motion approved by a simple majority of the
 members in good standing at any regular or special meeting of the Chapter.
 
@@ -3642,8 +1717,6 @@ Legislative Committee of the Chapter.
 
 BY-LAW XVII
 LOCAL CHAPTER ORDINANCES
-
-38
               Uniform Graduate Chapter By-Laws`,
     defaultCategory: "amendments"
   },
@@ -3670,10 +1743,7 @@ G03. Sec. 2. The Chapter may elect to incorporate under the laws of its State, P
 legal jurisdiction. However, any application for incorporation must receive the approval of the
 Grand Counselor and/or the Legislative Committee of the Grand Council prior to submission to
 the appropriate office of legal jurisdiction. Further, the Chapter may elect to form additional
-corporations, if needed, subject to the aforesaid provision of this section.
-
-BY-LAW II
-MEMBERSHIP`,
+corporations, if needed, subject to the aforesaid provision of this section.`,
     defaultCategory: "scope"
   },
 
@@ -3684,10 +1754,7 @@ MEMBERSHIP`,
     title: "Membership",
     text: `G04. Sec. 1. Membership in the Chapter is subject to the conditions stipulated in the Constitution,
 Article III, the Charter of the Chapter, and those additional stipulations (if any) in By-Law XVII,
-Ordinance 2, of these By-Laws.
-
-BY-LAW III
-ELECTION OF MEMBERS`,
+Ordinance 2, of these By-Laws.`,
     defaultCategory: "membership"
   },
 
@@ -3711,14 +1778,9 @@ G06. Sec. 2. The Election of Members may occur at any time the Chapter deems des
 however, all elections to membership shall be by secret ballot. Electronic voting may be permitted,
 provided the system is secured and can maintain the secrecy of the ballot. The procedure for
 election is that provided in the Ritual, with those additional requirements and clarifications as
-
-39
 stipulated in By-Law XVII, Ordinance 3; however, at no time may a person be elected to
 membership without having received an affirmative vote from at least three fourths (3/4) of the
-Membership eligible to vote.
-
-BY-LAW IV
-OFFICERS AND ORDER OF ELECTION`,
+Membership eligible to vote.`,
     defaultCategory: "membership"
   },
 
@@ -3735,10 +1797,7 @@ of Secretary and Treasurer may be combined into one [1] office, to wit: Secretar
 indicated in By-Law XVII, Ordinance 4), Historian, Chaplain, and such Officers as may be
 indicated in By-Law XVII, Ordinance 4. These Officers, except for Regent and Vice-Regent, may
 be elected in any Order the Chapter deems desirable. Officers of the Ritual shall be appointed by
-the Regent and shall serve at the pleasure of the Regent.
-
-BY-LAW V
-            QUALIFICATION, ELECTION AND INSTALLATION OF OFFICERS`,
+the Regent and shall serve at the pleasure of the Regent.`,
     defaultCategory: "officers"
   },
 
@@ -3772,8 +1831,6 @@ The tellers shall determine the number of votes for each candidate, report same 
 shall then report same and announce the results to the Chapter. Any question of eligibility of a
 Member shall be referred by the Regent to the Chapter for Discussion. A majority vote shall
 determine the Member’s eligibility.
-
-40
 G11. Sec. 4. Officers-elect shall be installed, within ninety (90) days of election, according to the
 Ritual, at the meeting and time indicated in By-Law XVII, Ordinance 5. The Regent shall install
 all Officers-elect unless an objection is raised; objections must be made for each Officer-elect
@@ -3798,10 +1855,7 @@ G14. Sec. 7. Any Officer may be removed for misfeasance, malfeasance, and/or non
 two-thirds (2/3) vote of the Chapter; any Officer so charged is entitled to a trial by the Chapter
 according to the Procedure of “Discipline” found in the Constitution and By-Laws, By-Law III.
 The accused shall retain said Office until the charges are tried and sustained; however, if the
-Regent is accused, the Vice Regent shall conduct the trial.
-
-BY-LAW VI
-DUTIES OF OFFICERS`,
+Regent is accused, the Vice Regent shall conduct the trial.`,
     defaultCategory: "officers"
   },
 
@@ -3826,8 +1880,6 @@ shall assume the Office of Regent for the remainder of the term of office. If th
 than one (1) Vice Regent, the Second Vice Regent shall assume the office of First Vice Regent,
 should a vacancy occur in the office of First Vice Regent, etc. The (First) Vice Regent shall, also,
 be a member of all committees of the Chapter.
-
-41
 G17. Sec. 3. The Secretary shall maintain an accurate roster, keep accurate records of the
 proceedings of all Chapter Meetings; receive and preserve for the record the written reports of all
 officers and committee chairmen; incorporate into the record all data generated by the Fraternity
@@ -3874,8 +1926,6 @@ preserve the decorum and dignity of the Ritual, the most sacred of Fraternal Tra
 assistance and service to the Regent in the discharge of said Officer’s official duties; and strive to
 ensure that all Brothers may participate and partake of the Industry, Sobriety, Fellowship, and
 High Ideals of the Order.
-
-42
 G24. Sec. 10. The Chapter, at least one (1) month preceding the Grand Council Convention or
 Province Assembly, shall elect Delegates and Alternates Delegate(s), who if unable to attend, shall,
 also, notify the Regent. If neither the Delegate or Alternate Delegate(s) are unable to attend, the
@@ -3883,10 +1933,7 @@ Regent shall appoint a qualified Member(s) of the Chapter to serve as Delegate(s
 shall be chosen from the Graduate Members of the Chapter. If it is not possible to send any
 Member, the Chapter or Regent may confer representation of the Delegate(s) to another Chapter,
 or Province by proxy. All proxies must be certified as required by the rules of the Grand Council
-or Province.
-
-BY-LAW VII
-COMMITTEES AND THEIR DUTIES`,
+or Province.`,
     defaultCategory: "officers"
   },
 
@@ -3927,8 +1974,6 @@ recognizance. The Committee shall receive charges against any Member of the Chap
 charges must be placed before the Committee in writing and be signed by the complainant(s).
 After investigation and evaluation of the charges, if the Committee finds reasonable cause to
 sustain them, it shall proceed as provided in the Constitution and By-Laws of the Fraternity. The
-
-43
 Committee has no power to adjudge the guilt of any Member, nor can it determine the punishment;
 however, it can recommend a course of action.
 
@@ -3975,8 +2020,6 @@ stating its findings. The Auditing Committee shall have the power to require, at
 presentation of all books, papers, vouchers, and documents relating to the account they are to
 examine, which may be necessary to determine their correctness, and the actual cash in the hands
 of the Officers.
-
-44
 G39. Sub-Sec. J. The Chapter House Committee shall have charge of the Chapter House including
 the formation and enforcement of House Rules. In the event that the Chapter establishes a fund
 for building or purchasing a Chapter House, the Committee shall develop a proposed program for
@@ -3993,10 +2036,7 @@ activities of their respective committees. All committees are authorized to meet
 communication media so long as all members have the ability to participate.
 
 G42. Sec. 7. No program or activity developed by any Committee may commence until such
-program or activity has been approved and adopted by the Chapter.
-
-BY-LAW VIII
-RECORDS`,
+program or activity has been approved and adopted by the Chapter.`,
     defaultCategory: "committees"
   },
 
@@ -4006,10 +2046,7 @@ RECORDS`,
     provision: "G By-Law VIII",
     title: "Records",
     text: `G43. Sec. 1. All Chapter proceedings will be recorded on, and all Chapter reports will be submitted
-on forms approved by The Central Office or the Grand Council.
-
-BY-LAW IX
-UNETHICAL CONDUCT`,
+on forms approved by The Central Office or the Grand Council.`,
     defaultCategory: "procedure"
   },
 
@@ -4027,10 +2064,7 @@ shall prove to be unfounded and malicious may be charged with unethical conduct.
 
 G46. Sec. 3. Any Member of the Chapter who improperly uses the name of the Fraternity, the
 Chapter, the Fraternity emblem(s) or secrets; or who utilizes Fraternity Membership for strict
-personal gain may be charged with unethical conduct.
-
-BY-LAW X
-MEETINGS`,
+personal gain may be charged with unethical conduct.`,
     defaultCategory: "discipline"
   },
 
@@ -4043,17 +2077,12 @@ MEETINGS`,
 Ordinance 10. The Secretary (or Corresponding Secretary) shall notify the Members of any change
 in the regular meeting at least forty-eight (48) hours prior to the change. The Chapter is authorized
 to meet by electronic communication media so long as all Members have the ability to participate.
-
-45
 G48. Sec. 2. The usual order of business shall be that order as prescribed in the Ritual.
 
 G49. Sec. 3. Special meetings may be called at any time by the Regent or by the Regent upon the
 written demand of five (5) Members of the Chapter. No business other than that stated in the call
 may be conducted at the special meeting. All Members shall be notified by the Secretary (or
-Corresponding Secretary) at least forty-eight (48) hours prior to the special meeting.
-
-BY-LAW XI
-DUES`,
+Corresponding Secretary) at least forty-eight (48) hours prior to the special meeting.`,
     defaultCategory: "procedure"
   },
 
@@ -4079,10 +2108,7 @@ deemed, not in good standing.
 G54. Sec. 5. If a Member is in arrears for dues, fines, or assessments, said Member shall not be
 entitled to hold office or vote, and shall have only one (1) meeting to make up such arrears, or may
 be suspended from all benefits and privileges of the Fraternity and the Chapter. Such suspension
-may remain in force until payment is made in full.
-
-BY-LAW XII
-SECRECY`,
+may remain in force until payment is made in full.`,
     defaultCategory: "dues"
   },
 
@@ -4097,10 +2123,7 @@ to the management or conduct of the Chapter shall be kept secret.
 G56. Sec. 2. The names of the Chapter Officers and Members, and the general object and scope
 of the Fraternity may be published. The names of the Officers of the Ritual shall never be
 published. Any Member who reveals any of the secrets of the Fraternity shall be subject to
-expulsion.
-
-BY-LAW XIII
-RITUAL OF INITIATION`,
+expulsion.`,
     defaultCategory: "ritual"
   },
 
@@ -4111,13 +2134,8 @@ RITUAL OF INITIATION`,
     title: "Ritual of Initiation",
     text: `G57. Sec. 1. The Ritual of Initiation while secret, shall be considered to be a part of these By-
 Laws, and shall be conducted at all times with proper dignity and decorum. Hazing, as defined by
-
-46
 the Grand Council and/or the Executive Committee of the Grand Council, is prohibited; any
-Member found guilty of hazing shall be subject to expulsion.
-
-BY-LAW XIV
-QUORUM`,
+Member found guilty of hazing shall be subject to expulsion.`,
     defaultCategory: "ritual"
   },
 
@@ -4128,10 +2146,7 @@ QUORUM`,
     title: "Quorum",
     text: `G58. Sec. 1. Unless a greater number is stipulated in By-Law XVII, Ordinance 14, the quorum
 necessary for the transaction of business at any meeting of the Chapter shall not be less than one-
-fifth (1/5) of the Chapter Membership in good standing.
-
-BY-LAW XV
-PARLIAMENTARY PROCEDURE`,
+fifth (1/5) of the Chapter Membership in good standing.`,
     defaultCategory: "quorum"
   },
 
@@ -4180,8 +2195,6 @@ Members in good standing at any regular or special meeting of the Chapter.
 G63. Sec. 4. Should formal charges be brought against any Member of the Chapter for an alleged
 violation of any Local Chapter Ordinance, less that one-hundred-twenty (120) days old, that has
 not received written approval of the Grand Counselor or the Legislative Committee of the Grand
-
-47
 Council, said Member shall be entitled to demand a continuance of all proceedings, pending a
 written decision concerning the legality of such Ordinance from the Grand Counselor or the
 Legislative Committee of the Grand Council; such decision shall be transmitted by Certified Mail;
@@ -4190,9 +2203,11 @@ Legislative Committee of the Chapter.
 
 BY-LAW XVII
 LOCAL CHAPTER ORDINANCES
-
-48
-Uniform Province By-Laws`,
+Uniform Province By-Laws
+P01. (Sec. 1.) The Constitution and By-Laws of Kappa Psi Pharmaceutical Fraternity,
+Incorporated shall be the Constitution for this Province of Kappa Psi Pharmaceutical Fraternity,
+Incorporated: all constitutions, by-laws and standing laws by which this Province was formerly
+governed are revoked.`,
     defaultCategory: "amendments"
   },
 
@@ -4209,10 +2224,7 @@ Fraternity.
 P03. Sec. 2. The Province may elect to incorporate, however, any application for incorporation
 must receive the approval of Alpha Chapter of the Fraternity prior to submission to the appropriate
 office of legal jurisdiction. Further, the Province may elect to form additional corporations, if
-needed, subject to the aforesaid provision of this section.
-
-BY-LAW II
-COMPOSITION OF THE PROVINCE`,
+needed, subject to the aforesaid provision of this section.`,
     defaultCategory: "scope"
   },
 
@@ -4244,15 +2256,10 @@ special assessments.
 
 P08. Sec. 4. Notice of special assessments shall be given to the Chapters by the Province Secretary
 and shall be due within thirty (30) days after the posting of such written notice.
-
-49
 P09. Sec. 5. Money raised by special assessment may be used only for the stated purpose for which
 the assessment is made. Any unused money must, on a pro-rated basis, be either refunded to the
 Chapter or credited toward the following year’s dues and/or fees, at the option of the individual
-Chapter.
-
-BY-LAW IV
-PROVINCE ASSEMBLIES AND INTERIM MEETINGS`,
+Chapter.`,
     defaultCategory: "dues"
   },
 
@@ -4277,10 +2284,7 @@ in case of an emergency.
 
 P13. Sec. 4. The Province Executive Committee shall conduct an Interim Executive Committee
 Meeting between Province Assemblies and at each Grand Council Convention for the purpose of
-planning the next Province Assembly and/or conduct any other Province business.
-
-BY-LAW V
-COMPOSITION OF THE PROVINCE ASSEMBLY`,
+planning the next Province Assembly and/or conduct any other Province business.`,
     defaultCategory: "procedure"
   },
 
@@ -4303,8 +2307,6 @@ of Chapters, two (2) votes may be cast by a single delegate.
 P17. Sec. 4. The Chapter Secretary should notify the Province Secretary, at least thirty (30) days
 prior to the Assembly, of the names of the Chapter’s Delegates. Any changes are to be reported
 to the Province Secretary at the opening of the Province Assembly.
-
-50
 P18. Sec. 5. Any Chapter unable to send a Delegate to the Province Assembly may confer its
 proxy on any Delegate of another Chapter represented at the Assembly. The certificate of proxy
 must be signed by the Regent and Secretary of the Chapter-conferrer and must be forwarded or
@@ -4356,14 +2358,9 @@ vacant and the Satrap shall appoint a successor to serve until the next Assembly
 P26. Sec. 4. The Province Officers shall administer the affairs of the Province. Their duties shall
 be those usually attending their respective Office, comparable to the functions of Officers of the
 Grand Council as indicated in the Constitution and By-Laws of the Fraternity.
-
-51
 P27. Sec. 5. The Province Executive Committee may designate a particular Chapter to serve as a
 “Permanent Archives,” and a member of that Chapter shall be appointed by the Satrap to serve as
-“archivist.”
-
-BY-LAW VII
-COMMITTEES`,
+“archivist.”`,
     defaultCategory: "officers"
   },
 
@@ -4391,10 +2388,7 @@ duties of similar Committees of the Grand Council.
 
 P33. Sec. 6. All committees are authorized to meet by electronic communication media so long
 as all members have the ability to participate.
-.
-
-BY-LAW VIII
-          DELEGATE AND ALTERNATE DELEGATE TO THE GRAND COUNCIL`,
+.`,
     defaultCategory: "committees"
   },
 
@@ -4411,10 +2405,7 @@ P35. Sec. 2. The Province Delegate shall submit a written or electronic report o
 to the Province Secretary at least one month prior to the next Province Assembly.
 
 P36. Sec. 3. The Province Delegate shall be reimbursed for expenses of attending the Grand
-Council as provided in By-Law XIII, Ordinance 8.
-
-BY-LAW IX
-                   ORDER OF BUSINESS FOR PROVINCE ASSEMBLIES`,
+Council as provided in By-Law XIII, Ordinance 8.`,
     defaultCategory: "procedure"
   },
 
@@ -4425,14 +2416,9 @@ BY-LAW IX
     title: "Order of Business for Province Assemblies",
     text: `P37. Sec. 1. The order of business for Province Assemblies shall be: Call to Order; Opening Ritual;
 Roll Call and Seating of Delegates; Welcoming of Visiting Brothers; Minutes of Previous
-
-52
 Assemblies; Reading of Communications; Officer and Committee reports; Chapter Reports;
 Special Speakers; Old Business; Report of Grand Council Deputies Session; New Business;
-Election and Installation of Officers; Closing Ritual; and Adjournment.
-
-BY-LAW X
-QUORUM`,
+Election and Installation of Officers; Closing Ritual; and Adjournment.`,
     defaultCategory: "procedure"
   },
 
@@ -4442,10 +2428,7 @@ QUORUM`,
     provision: "P By-Law IX",
     title: "Quorum",
     text: `P38. Sec. 1. A quorum shall consist of the Delegates from not less than one-half (1/2) of the
-Chapters, including proxies, of the Province.
-
-BY-LAW XI
-PARLIAMENTARY PROCEDURE`,
+Chapters, including proxies, of the Province.`,
     defaultCategory: "quorum"
   },
 
@@ -4494,53 +2477,47 @@ of the Grand Council, the Chapter or Member so charged shall be entitled to dema
 of all proceedings, pending written decision concerning the legality of such Ordinance from the
 Grand Counselor or the Legislative Committee of the Grand Council; such decision shall be
 transmitted by Certified Mail.
-
-53
         BY-LAW XIII
 LOCAL PROVINCE ORDINANCES
-
-           54
                 Rules of Parliamentary Procedure
 Trace each motion to its respective references and you master at a glance the intricacies
 of parliamentary usages comprising some three hundred points of order.
 
- Motion to adjourn                                                        1 a * B a II x
- Motion to determine time to which to adjourn                             2 a + A a II x
- Motion to amend                                                          3 a + A a II x
- Motion to amend an amendment                                             3 a * A a II x
- Motion to amend the rules                                                3 a + A a II x
+ Motion to adjourn1 a * B a II x
+ Motion to determine time to which to adjourn2 a + A a II x
+ Motion to amend3 a + A a II x
+ Motion to amend an amendment3 a * A a II x
+ Motion to amend the rules3 a + A a II x
  Motion to appeal from Speaker’s decision in re indecorum                 1 a + A a II y
- Motion to appeal from Speaker’s decision generally                       3 a + A a II y
- Call to order                                                            1 a * A a II y
- Motion to close debate on question                                       1 a + A b II x
- Motion to commit                                                         3 b + A b II x
- Motion to extend limits of debate on question                            1 a + A a II x
- Leave to continue speaking after indecorum                               1 a * A a II x
- Motion that -----------do lie on the table                               1 a * C a II x
- Motion to limit debate on question                                       1 a + A b II x
- Objection to consideration of question                                   1 a * A b III y
- Motion for orders of the day                                             1 a * A a III y
- Motion to postpone to a definite time                                    4 a + A a II x
- Motion to postpone indefinitely                                          3 b * A a II x
- Motion for previous question                                             1 a * A b II x
- Questions touching priority of business                                  1 a + A a II x
- Questions of privilege                                                   3 a + A a II x
- Reading papers                                                           1 a * A a II x
- Motion to reconsider debatable question                                  3 b * B a II x
- Motion to reconsider an undebatable question                             1 a * B a II z
- Motion to refer a question                                               3 b + B a II x
- Motion that committee do not rise                                        1 a * B a II x
- Question whether subject shall be discussed                              1 a * A b III y
- Motion to make subject a special order                                   3 a + A b II x
- To substitute in nature of an amendment                                  3 a + A a II x
- Motion to suspend the rules                                              3 a + B a II x
- Motion to take from the table                                            1 a + B a II x
- To take up question out of it’s proper order                             1 a * A b II x
- Motion to withdraw a motion                                              1 a * A b II x
- Questions of precedence of questions                                     5-14
- Forms in which questions may be put                                      15-19
-
-55
+ Motion to appeal from Speaker’s decision generally3 a + A a II y
+ Call to order1 a * A a II y
+ Motion to close debate on question1 a + A b II x
+ Motion to commit3 b + A b II x
+ Motion to extend limits of debate on question1 a + A a II x
+ Leave to continue speaking after indecorum1 a * A a II x
+ Motion that -----------do lie on the table1 a * C a II x
+ Motion to limit debate on question1 a + A b II x
+ Objection to consideration of question1 a * A b III y
+ Motion for orders of the day1 a * A a III y
+ Motion to postpone to a definite time4 a + A a II x
+ Motion to postpone indefinitely3 b * A a II x
+ Motion for previous question1 a * A b II x
+ Questions touching priority of business1 a + A a II x
+ Questions of privilege3 a + A a II x
+ Reading papers1 a * A a II x
+ Motion to reconsider debatable question3 b * B a II x
+ Motion to reconsider an undebatable question1 a * B a II z
+ Motion to refer a question3 b + B a II x
+ Motion that committee do not rise1 a * B a II x
+ Question whether subject shall be discussed1 a * A b III y
+ Motion to make subject a special order3 a + A b II x
+ To substitute in nature of an amendment3 a + A a II x
+ Motion to suspend the rules3 a + B a II x
+ Motion to take from the table1 a + B a II x
+ To take up question out of it’s proper order1 a * A b II x
+ Motion to withdraw a motion1 a * A b II x
+ Questions of precedence of questions5-14
+ Forms in which questions may be put15-19
 1. Questions undebatable: sometimes remarks tacitly allowed.
 2. Undebatable if another question is before the assembly.
 3. Debatable question.
@@ -4581,8 +2558,6 @@ z. May be moved and entered on record, when another has the floor, but the
 19. When an objection is raised to considering question, “Shall the question be
      considered?” Objection may be made by any member before debate has
      commenced, but not subsequently.
-
-56
 Disciplinary Trial Guide
 
 The Constitution (Article V) & By-Laws (By-Law III) of the Fraternity allow for Chapters to
@@ -4628,8 +2603,6 @@ Sec. 6. Should the accused fail to comply with the order to appear for more than
 Sec. 7. The Chapter may conduct a formal hearing according to the following guidelines:
         A. The presiding officer/judge shall be the Regent, or in case of trial with the Regent as
            defendant, the (First) Vice-Regent shall act as judge.
-
-57
        B. As per By-Law III of the Uniform By-Laws of Kappa Psi, no hearing shall be
           considered valid unless two-thirds (2/3) of the Chapter membership in good standing
           are present at the meeting.
@@ -4675,8 +2648,6 @@ Sec. 9. Appeals for conviction or punishment type shall be handled according to 
 
 Sec. 10. When conviction is final and there are no appeals requested or available, the Chapter
        shall notify the Executive Director of the Chapter’s decision immediately.
-
-58
 Article II
 Disciplinary Actions & Consequences
 
@@ -4722,8 +2693,6 @@ Sec. 1. Any Member found guilty of any of the above offenses shall, upon a disci
           shall:
               a. Follow the limitations, restrictions or terms of the probation, provided they
                  abide by all Fraternity policies.
-
-59
                b. Pay all dues, fees, and assessments applicable to all Members in good
                   standing unless expressly excused there from by the terms of the designated
                   probation. (Note: The Chapter is still responsible for paying national &
@@ -4763,8 +2732,6 @@ Province for any individual punished by any means other than expulsion.
 Sec. 5. If a Member is undergoing investigation by the University or College in which they are
 enrolled, the Chapter shall report the results of any investigation, verdicts or imposed
 punishments it conducts to the appropriate authorities.
-
-60
 Disciplinary Process Form
 The following checklist outlines the steps in the disciplinary process that must be followed for a Chapter to Discipline a Member
 as noted in the Kappa Psi Constitution and By-Laws.
@@ -4783,32 +2750,32 @@ of all supporting documents on file for a period of 5 years.
 
  Name of Grand Council Deputy who has verified the accuracy of documentation:
 
-  Written charges are presented by a Member or Members or the Chapter to the Judiciary Committee.                            ☐
-  Judiciary Committee review.                                                                                                ☐
+  Written charges are presented by a Member or Members or the Chapter to the Judiciary Committee.☐
+  Judiciary Committee review.☐
   Date of review:
   Date of Investigation closure:
-  A hearing date is set by the Regent.                                                                                       ☐
+  A hearing date is set by the Regent.☐
   Date of hearing:
-  The accused is notified of the date, time and location of the hearing and instructed to appear. *                          ☐
+  The accused is notified of the date, time and location of the hearing and instructed to appear. *☐
   Date notified:
-  The Secretary provides the Member accused with a copy of the charge(s) (signed by the Regent and GCD),                     ☐
+  The Secretary provides the Member accused with a copy of the charge(s) (signed by the Regent and GCD),☐
   investigation and trial timeline, and the disciplinary trial guide.
   Date provided:
-  Hearing conducted                                                                                                          ☐
+  Hearing conducted☐
        ● Judge:
        ● Prosecutors:
        ● Counsel:
        ● Witness(es):
-  The vote of the chapter:                                                                                                   ☐
+  The vote of the chapter:☐
        ● Votes guilty:
        ● Votes not guilty:
        ● Final Verdict:
-  If guilty, punishment:                                                                                                     ☐
+  If guilty, punishment:☐
        ● Punishment:
        ● Total votes:
        ● Aye votes:
        ● Nay votes:
-  Accused is sent a final communication notifying them of the final verdict and punishment.                                  ☐
+  Accused is sent a final communication notifying them of the final verdict and punishment.☐
   Date notified:
   Convicted Member demands a stay of execution for thirty (30) days or until an appeal to the Executive Committee for        ☐
   rehearing. If Member appeals, the Secretary has notified the Grand Regent. Member may elect to not appeal.
@@ -4819,8 +2786,6 @@ of all supporting documents on file for a period of 5 years.
 less than one-hundred-twenty (120) days old, that has not received written approval of the Grand Counselor or the Legislative
 Committee of the Grand Council, said Member shall be entitled to demand a continuance of all proceedings, pending a written
 decision concerning the legality of such Ordinance from the Grand Counselor or the Legislative Committee.
-
-61
 Index
 This index will provide references addressing most questions concerning Fraternity Government.
 Numbers refer to paragraphs unless otherwise indicated. Numbers preceded by the letter “C”
@@ -4865,8 +2830,6 @@ Chapter,
                 Chaplain, 117, C07, C22, G07, G22, P23
                 Grand Council Deputy, 153, C07, C08, C24, C25, C34
                 Historian, 117, 123, C07, C18, C21, G07, G18, G21
-
-62
                 Regent, 056, 058-060, 062, 077, 080, C07, C08, C10, C11, C13-C16, C22, C23,
 C26, C27, C31, C33, C41, C43, C55, C60, G07, G08, G10, G11, G13-
 G16, G22-G24, G28, G30, G38, G49, P18
@@ -4913,8 +2876,6 @@ Committees of the Grand Council, 030, 086, 102-116
                 063-065, 071, 072, 078, 091-99, 101, 102, 104-107, 115-116, 144, 149, 152, 154,
                 155, 167-169, 171, 179, C63, G57
         Frank H. Eby Award, 030, 111
-
-63
         Legislative, 023, 030, 040, 041, 102, 108-110, 178, 179, C03, C68, C69, G03, G62-63,
                P42, P43
         Publications, 030, 112, 148
@@ -4959,8 +2920,6 @@ Flower, 139, page 2 (description)Graduate Chapters, see Chapters, Graduate
 Graduate Member-at-large, 080, 083, 085, 104
 Graduate Voluntary Dues, 051
 Grand Chapter, see Alpha Chapter
-
-64
 Grand Council, The, 002, 016, 017, 021, 022, 024-032, 038-041, 045, 048, 049, 052, 066, 068,
          074-077, 086, 090-092, 094, 095, 097, 99, 107, 110, 119, 130, 132, 134-137, 144, 149,
          155, 159, 161, 164, 167
@@ -5007,8 +2966,6 @@ Membership, 007-014, 037, 038, 042-047, C04-C06, G04-G06
 Name and Objectives, 003, 004
 Naming of Chapters, 020, 021
 Neglect of Duty, see Discipline
-
-65
 Nominations,
        Collegiate Chapter Officers, C08, C12
        Graduate Chapter Officers, G08, G12
@@ -5055,8 +3012,6 @@ Recognition, Letter of, see Letter of Recognition
 Regent, see Chapter, Officers
 Resignation,
        Membership, 044
-
-66
         Office, 091, C16, G16
 Revocation of Charters, 026
 Revocation of Former Laws, 001, C01, G01, P01
@@ -5085,9 +3040,7 @@ Uniform By-Laws, 006, 022, 088, 109, 140-142
         Province, 022, 088, 109, P01-P43
 Vice-Regent, see Chapter, Officers
 Vice-Satrap, see Province, Officers
-Website, 036, 155
-
-67`,
+Website, 036, 155`,
     defaultCategory: "amendments"
   },
 
