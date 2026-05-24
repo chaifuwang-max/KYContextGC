@@ -1,363 +1,223 @@
-// src/App.jsx - COMPLETE VERSION WITH ALL 76 VERIFIED SECTIONS
-// All section text extracted directly from Constitution PDF 2024 (zero errors verified)
-// Verification: All sections spot-checked against source document - ALL PASSED ✓
+// src/App.jsx
+// ✓ Imports ALL_SECTIONS from ./ALL_SECTIONS.js (must be in same src/ folder)
+// ✓ No other external dependencies beyond React and Supabase
+// ✓ To update section text: edit ALL_SECTIONS.js only — do not touch this file
 
 import { useState, useEffect, useRef } from 'react';
 import { createClient } from '@supabase/supabase-js';
+import ALL_SECTIONS from './ALL_SECTIONS.js';
 
-// Initialize Supabase
 const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
 const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
 const supabase = createClient(supabaseUrl, supabaseAnonKey);
 
-// ============================================================================
-// ALL_SECTIONS ARRAY - 76 SECTIONS WITH EXACT VERBATIM TEXT FROM PDF
-// ============================================================================
-// To view the complete array, see: ALL_SECTIONS_ARRAY_EXACT_TEXT.js
-// This file contains the array declaration. For brevity in this file,
-// we'll import it or include key sections inline.
-//
-// Key verification performed:
-// ✓ §001: Preamble language matches source exactly
-// ✓ §044: Resignation prohibition matches source exactly  
-// ✓ §007: Membership eligibility matches source exactly
-// ✓ §042: Election by secret ballot matches source exactly
-// ✓ C64: Collegiate quorum matches source exactly
-// ✓ G58: Graduate quorum matches source exactly
-// ✓ P38: Province parliamentary procedure matches source exactly
-// ✓ All 76 sections extracted and verified - ZERO ERRORS
-// ============================================================================
+const CATEGORIES = [
+  'membership','dues','discipline','elections','quorum','amendments',
+  'scope','procedure','insignia','officers','committees','province',
+  'ritual','hazing','finance'
+];
+const SEVERITIES = ['HARD_REJECT','HIGH','MEDIUM','INFO'];
 
-import { ALL_SECTIONS } from './CONSTITUTION.js';
+export default function App() {
+  const [selectedId, setSelectedId]         = useState(ALL_SECTIONS[0].id);
+  const [annotations, setAnnotations]       = useState([]);
+  const [userSessions, setUserSessions]     = useState([]);
+  const [sessionId]                         = useState(() => `s-${Math.random().toString(36).slice(2,9)}`);
+  const [username]                          = useState(() => `User ${Math.random().toString(36).slice(2,7).toUpperCase()}`);
 
-// Categories for annotation
-const CATEGORIES = ["membership","dues","discipline","elections","quorum","amendments","scope","procedure","insignia","officers","committees","province","ritual","hazing","finance"];
-const SEVERITIES = ["HARD_REJECT","HIGH","MEDIUM","INFO"];
+  const [formText,     setFormText]         = useState('');
+  const [formCategory, setFormCategory]     = useState('');
+  const [formSeverity, setFormSeverity]     = useState('MEDIUM');
+  const [formFlags,    setFormFlags]        = useState('');
+  const [formSource,   setFormSource]       = useState('');
 
-function App() {
-  const [selectedId, setSelectedId] = useState(ALL_SECTIONS[0].id);
-  const [annotations, setAnnotations] = useState([]);
-  const [userSessions, setUserSessions] = useState([]);
-  const [sessionId] = useState(`session-${Math.random().toString(36).substr(2,9)}`);
-  const [username, setUsername] = useState(`User ${Math.random().toString(36).substr(2,5).toUpperCase()}`);
-  
-  // Form state
-  const [formText, setFormText] = useState('');
-  const [formCategory, setFormCategory] = useState('');
-  const [formSeverity, setFormSeverity] = useState('MEDIUM');
-  const [formFlags, setFormFlags] = useState('');
-  const [formSource, setFormSource] = useState('');
-  
-  // Modal state
-  const [showExportModal, setShowExportModal] = useState(false);
-  const [exportLoading, setExportLoading] = useState(false);
-  const [exportError, setExportError] = useState('');
-  const [estimatedTokens, setEstimatedTokens] = useState(0);
-  
-  // UI state
-  const [searchQuery, setSearchQuery] = useState('');
-  const [filterComplete, setFilterComplete] = useState(false);
-  const [expandedGroups, setExpandedGroups] = useState(Object.fromEntries([...new Set(ALL_SECTIONS.map(s => s.group))].map(g => [g, true])));
-  const [saving, setSaving] = useState(false);
-  const [syncStatus, setSyncStatus] = useState('synced');
-  const autoSaveTimer = useRef(null);
+  const [showExport,   setShowExport]       = useState(false);
+  const [exportBusy,   setExportBusy]       = useState(false);
+  const [exportError,  setExportError]      = useState('');
+  const [tokenEst,     setTokenEst]         = useState(0);
 
-  // Initialize Supabase subscriptions
+  const [search,       setSearch]           = useState('');
+  const [onlyDone,     setOnlyDone]         = useState(false);
+  const [openGroups,   setOpenGroups]       = useState(
+    () => Object.fromEntries([...new Set(ALL_SECTIONS.map(s => s.group))].map(g => [g, true]))
+  );
+  const [saving,       setSaving]           = useState(false);
+  const debounce = useRef(null);
+
+  // ── Supabase real-time ─────────────────────────────────────────────────────
   useEffect(() => {
     loadAnnotations();
-    updateUserSession();
-    
-    // Real-time subscription to annotations
-    const annotationChannel = supabase
-      .channel('annotations')
-      .on('postgres_changes', { event: '*', schema: 'public', table: 'annotations' }, (payload) => {
-        loadAnnotations();
-      })
+    upsertSession();
+
+    const aCh = supabase.channel('annotations')
+      .on('postgres_changes', { event: '*', schema: 'public', table: 'annotations' }, loadAnnotations)
       .subscribe();
-
-    // Real-time subscription to user sessions
-    const sessionChannel = supabase
-      .channel('user_sessions')
-      .on('postgres_changes', { event: '*', schema: 'public', table: 'user_sessions' }, (payload) => {
-        loadSessions();
-      })
+    const sCh = supabase.channel('user_sessions')
+      .on('postgres_changes', { event: '*', schema: 'public', table: 'user_sessions' }, loadSessions)
       .subscribe();
+    const tick = setInterval(upsertSession, 10000);
 
-    // Keep user session alive
-    const sessionInterval = setInterval(updateUserSession, 10000);
-
-    return () => {
-      annotationChannel.unsubscribe();
-      sessionChannel.unsubscribe();
-      clearInterval(sessionInterval);
-      if (autoSaveTimer.current) clearTimeout(autoSaveTimer.current);
-    };
+    return () => { aCh.unsubscribe(); sCh.unsubscribe(); clearInterval(tick); };
   }, []);
 
-  // Auto-save form changes
-  useEffect(() => {
-    if (autoSaveTimer.current) clearTimeout(autoSaveTimer.current);
-    setSyncStatus('unsaved');
-    
-    autoSaveTimer.current = setTimeout(() => {
-      if (formText.trim()) {
-        setSyncStatus('saving');
-        setSyncStatus('synced');
-      }
-    }, 2000);
-
-    return () => clearTimeout(autoSaveTimer.current);
-  }, [formText, formCategory, formSeverity, formFlags, formSource]);
+  useEffect(() => { upsertSession(); }, [selectedId]);
 
   async function loadAnnotations() {
-    const { data, error } = await supabase.from('annotations').select('*');
-    if (error) {
-      console.error('Error loading annotations:', error);
-      return;
-    }
-    setAnnotations(data || []);
+    const { data } = await supabase.from('annotations').select('*');
+    setAnnotations(data ?? []);
   }
-
   async function loadSessions() {
-    const { data, error } = await supabase.from('user_sessions').select('*').gt('last_active', new Date(Date.now() - 60000).toISOString());
-    if (error) return;
-    setUserSessions(data || []);
+    const since = new Date(Date.now() - 60000).toISOString();
+    const { data } = await supabase.from('user_sessions').select('*').gt('last_active', since);
+    setUserSessions(data ?? []);
   }
-
-  async function updateUserSession() {
+  async function upsertSession() {
     await supabase.from('user_sessions').upsert(
-      {
-        id: sessionId,
-        current_section: selectedId,
-        username: username,
-        last_active: new Date().toISOString()
-      },
+      { id: sessionId, current_section: selectedId, username, last_active: new Date().toISOString() },
       { onConflict: 'id' }
     );
     loadSessions();
   }
 
-  async function addAnnotation() {
+  // ── CRUD ───────────────────────────────────────────────────────────────────
+  async function saveAnnotation() {
     if (!formText.trim()) return;
-    
-    const section = ALL_SECTIONS.find(s => s.id === selectedId);
+    const sec = ALL_SECTIONS.find(s => s.id === selectedId);
     setSaving(true);
-    
-    const { error } = await supabase.from('annotations').insert([
-      {
-        section_id: selectedId,
-        provision: section.provision,
-        category: formCategory || section.defaultCategory,
-        severity: formSeverity,
-        guidance: formText,
-        flags: formFlags,
-        source: formSource,
-        user_session_id: sessionId
-      }
-    ]);
-
-    if (error) {
-      console.error('Error saving:', error);
-      alert('Failed to save annotation');
-    } else {
-      setFormText('');
-      setFormCategory('');
-      setFormSeverity('MEDIUM');
-      setFormFlags('');
-      setFormSource('');
-      loadAnnotations();
-    }
+    const { error } = await supabase.from('annotations').insert([{
+      section_id:      selectedId,
+      provision:       sec.provision,
+      category:        formCategory || sec.defaultCategory,
+      severity:        formSeverity,
+      guidance:        formText,
+      flags:           formFlags,
+      source:          formSource,
+      user_session_id: sessionId,
+    }]);
+    if (error) { alert('Save failed — check Supabase connection.'); }
+    else { setFormText(''); setFormCategory(''); setFormSeverity('MEDIUM'); setFormFlags(''); setFormSource(''); loadAnnotations(); }
     setSaving(false);
   }
-
   async function deleteAnnotation(id) {
     if (!confirm('Delete this annotation?')) return;
     await supabase.from('annotations').delete().eq('id', id);
     loadAnnotations();
   }
 
-  async function manualSave() {
-    setSaving(true);
-    setTimeout(() => setSaving(false), 500);
-  }
-
-  // Export functionality
-  function prepareForExport() {
-    const stats = annotations.reduce((acc, a) => {
-      acc[a.section_id] = (acc[a.section_id] || 0) + 1;
-      return acc;
-    }, {});
-    
-    const complete = ALL_SECTIONS.length === Object.keys(stats).length;
-    
-    if (!complete) {
-      alert(`Only ${Object.keys(stats).length} of ${ALL_SECTIONS.length} sections are annotated. Export requires 100% completion.`);
+  // ── Export ─────────────────────────────────────────────────────────────────
+  function openExportModal() {
+    const annotated = new Set(annotations.map(a => a.section_id)).size;
+    if (annotated < ALL_SECTIONS.length) {
+      alert(`${annotated} / ${ALL_SECTIONS.length} sections annotated.\nAll sections must be annotated before export.`);
       return;
     }
-
-    let charCount = 0;
-    annotations.forEach(a => {
-      charCount += (a.provision?.length || 0) + (a.guidance?.length || 0) + (a.flags?.length || 0) * 2;
-    });
-    const estimate = Math.ceil(charCount / 4) + 500;
-    setEstimatedTokens(estimate);
-    setShowExportModal(true);
-  }
-
-  async function confirmExport() {
-    setExportLoading(true);
+    const chars = annotations.reduce((n,a) => n + (a.provision?.length??0) + (a.guidance?.length??0) + (a.flags?.length??0)*2, 0);
+    setTokenEst(Math.ceil(chars / 4) + 500);
     setExportError('');
-
+    setShowExport(true);
+  }
+  async function runExport() {
+    setExportBusy(true);
+    setExportError('');
     try {
-      const response = await fetch('/.netlify/functions/generate-schema', {
+      const res = await fetch('/.netlify/functions/generate-schema', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          annotations: annotations.map(a => ({
-            provision: a.provision,
-            category: a.category,
-            severity: a.severity,
-            guidance: a.guidance,
-            flags: a.flags ? a.flags.split(',').map(f => f.trim()) : [],
-            source: a.source
-          }))
-        })
+        body: JSON.stringify({ annotations: annotations.map(a => ({
+          provision: a.provision, category: a.category, severity: a.severity,
+          guidance: a.guidance, flags: a.flags ? a.flags.split(',').map(f=>f.trim()) : [], source: a.source
+        }))}),
       });
-
-      if (!response.ok) {
-        const error = await response.json();
-        throw new Error(error.error || 'Export failed');
-      }
-
-      const { schema, tokenUsage } = await response.json();
-
+      if (!res.ok) throw new Error((await res.json()).error ?? 'Export failed');
+      const { schema, tokenUsage } = await res.json();
       const blob = new Blob([JSON.stringify(schema, null, 2)], { type: 'application/json' });
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      a.href = url;
-      a.download = 'kappa-psi-context-rules.json';
-      a.click();
+      const url  = URL.createObjectURL(blob);
+      const a    = document.createElement('a');
+      a.href = url; a.download = 'kappa-psi-context-rules.json'; a.click();
       URL.revokeObjectURL(url);
-
-      setShowExportModal(false);
-      alert(`Export successful! Used ${tokenUsage.totalTokens} tokens.`);
-    } catch (err) {
-      setExportError(err.message);
-    }
-
-    setExportLoading(false);
+      setShowExport(false);
+      alert(`Export complete — ${tokenUsage.totalTokens} tokens used.`);
+    } catch (e) { setExportError(e.message); }
+    setExportBusy(false);
   }
 
-  // Computed values
-  const selectedSection = ALL_SECTIONS.find(s => s.id === selectedId) || ALL_SECTIONS[0];
-  const sectionAnnotations = annotations.filter(a => a.section_id === selectedId);
-  const totalAnnotations = annotations.length;
-  const sectionsWithAnnotations = [...new Set(annotations.map(a => a.section_id))].length;
-  const progressPercent = Math.round((sectionsWithAnnotations / ALL_SECTIONS.length) * 100);
-  
-  const groups = [...new Set(ALL_SECTIONS.map(s => s.group))];
-  const filteredSections = ALL_SECTIONS.filter(s => {
-    if (filterComplete) {
-      const has = annotations.some(a => a.section_id === s.id);
-      if (!has) return false;
-    }
-    if (searchQuery) {
-      const q = searchQuery.toLowerCase();
-      return s.title.toLowerCase().includes(q) || s.provision.toLowerCase().includes(q) || s.defaultCategory.includes(q);
+  // ── Derived state ──────────────────────────────────────────────────────────
+  const sel          = ALL_SECTIONS.find(s => s.id === selectedId) ?? ALL_SECTIONS[0];
+  const secAnn       = annotations.filter(a => a.section_id === selectedId);
+  const annotatedCnt = new Set(annotations.map(a => a.section_id)).size;
+  const progress     = Math.round((annotatedCnt / ALL_SECTIONS.length) * 100);
+  const groups       = [...new Set(ALL_SECTIONS.map(s => s.group))];
+  const visible      = ALL_SECTIONS.filter(s => {
+    if (onlyDone && !annotations.some(a => a.section_id === s.id)) return false;
+    if (search) {
+      const q = search.toLowerCase();
+      return s.title.toLowerCase().includes(q) || s.provision.toLowerCase().includes(q) || s.group.toLowerCase().includes(q);
     }
     return true;
   });
+  const visIdx       = visible.findIndex(s => s.id === selectedId);
+  const others       = userSessions.filter(u => u.id !== sessionId && u.current_section === selectedId);
 
-  const currentFilteredIndex = filteredSections.findIndex(s => s.id === selectedId);
-  const otherEditors = userSessions.filter(u => u.id !== sessionId && u.current_section === selectedId);
+  // ── Severity colours ───────────────────────────────────────────────────────
+  const sevStyle = {
+    HARD_REJECT: { bg:'#fee2e2', color:'#991b1b' },
+    HIGH:        { bg:'#fef3c7', color:'#78350f' },
+    MEDIUM:      { bg:'#e0f2fe', color:'#0c4a6e' },
+    INFO:        { bg:'#f0fdf4', color:'#166534' },
+  };
 
   return (
-    <div className="container">
-      {/* Sidebar */}
-      <div className="sidebar">
-        <div style={{ padding: '12px', borderBottom: '0.5px solid #d5d5d0' }}>
+    <div style={{ display:'flex', height:'100vh', overflow:'hidden', fontFamily:'-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif', fontSize:'14px', background:'#f9f9f7', color:'#1a1a1a' }}>
+
+      {/* ── SIDEBAR ─────────────────────────────────────────────────────────── */}
+      <div style={{ width:280, borderRight:'0.5px solid #d5d5d0', overflowY:'auto', background:'#fafaf9', flexShrink:0 }}>
+
+        {/* Search + filter */}
+        <div style={{ padding:'12px', borderBottom:'0.5px solid #d5d5d0' }}>
           <input
-            type="text"
-            placeholder="Search sections..."
-            value={searchQuery}
-            onChange={e => setSearchQuery(e.target.value)}
-            style={{ width: '100%', marginBottom: '8px' }}
+            value={search} onChange={e=>setSearch(e.target.value)}
+            placeholder="Search sections…"
+            style={{ width:'100%', padding:'7px 9px', border:'0.5px solid #d5d5d0', borderRadius:6, fontSize:12, marginBottom:8, boxSizing:'border-box' }}
           />
-          <label style={{ display: 'flex', alignItems: 'center', gap: '6px', fontSize: '12px', cursor: 'pointer' }}>
-            <input type="checkbox" checked={filterComplete} onChange={e => setFilterComplete(e.target.checked)} />
+          <label style={{ display:'flex', alignItems:'center', gap:6, fontSize:12, cursor:'pointer', userSelect:'none' }}>
+            <input type="checkbox" checked={onlyDone} onChange={e=>setOnlyDone(e.target.checked)} />
             Show only annotated
           </label>
-          <div style={{ fontSize: '11px', color: '#666', marginTop: '6px' }}>
-            {filteredSections.length} / {ALL_SECTIONS.length} sections
-          </div>
+          <div style={{ fontSize:11, color:'#999', marginTop:6 }}>{visible.length} / {ALL_SECTIONS.length} sections</div>
         </div>
 
+        {/* Group rows */}
         {groups.map(g => {
-          const gSections = filteredSections.filter(s => s.group === g);
-          if (!gSections.length) return null;
-          
-          const gAnnotations = gSections.reduce((n, s) => n + annotations.filter(a => a.section_id === s.id).length, 0);
-          const isOpen = expandedGroups[g] !== false;
-
+          const gRows = visible.filter(s => s.group === g);
+          if (!gRows.length) return null;
+          const gCount = gRows.reduce((n,s) => n + annotations.filter(a=>a.section_id===s.id).length, 0);
+          const open   = openGroups[g] !== false;
           return (
             <div key={g}>
-              <button 
-                className="group-hdr"
-                onClick={() => setExpandedGroups(prev => ({ ...prev, [g]: !isOpen }))}
-                style={{
-                  width: '100%',
-                  textAlign: 'left',
-                  padding: '7px 10px',
-                  background: 'transparent',
-                  border: 'none',
-                  borderBottom: '0.5px solid #d5d5d0',
-                  cursor: 'pointer',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'space-between',
-                  fontSize: '10px',
-                  fontWeight: 500,
-                  color: '#666',
-                  textTransform: 'uppercase',
-                  letterSpacing: '.06em'
-                }}
+              <button
+                onClick={() => setOpenGroups(p => ({ ...p, [g]: !open }))}
+                style={{ width:'100%', textAlign:'left', padding:'7px 10px', background:'transparent', border:'none', borderBottom:'0.5px solid #d5d5d0', cursor:'pointer', display:'flex', justifyContent:'space-between', alignItems:'center', fontSize:10, fontWeight:600, color:'#666', textTransform:'uppercase', letterSpacing:'.07em' }}
               >
                 <span>{g}</span>
-                <span style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
-                  {gAnnotations > 0 && <span style={{ fontSize: '10px', background: '#22c55e', color: 'white', padding: '1px 6px', borderRadius: '10px', fontWeight: 500 }}>{gAnnotations}</span>}
-                  <span style={{ fontSize: '11px' }}>{isOpen ? '▼' : '▶'}</span>
+                <span style={{ display:'flex', alignItems:'center', gap:4 }}>
+                  {gCount > 0 && <span style={{ fontSize:10, background:'#22c55e', color:'#fff', padding:'1px 6px', borderRadius:10, fontWeight:600 }}>{gCount}</span>}
+                  <span style={{ fontSize:10 }}>{open ? '▼' : '▶'}</span>
                 </span>
               </button>
-
-              {isOpen && gSections.map(s => {
-                const cnt = annotations.filter(a => a.section_id === s.id).length;
-                const isActive = s.id === selectedId;
-
+              {open && gRows.map(s => {
+                const cnt    = annotations.filter(a=>a.section_id===s.id).length;
+                const active = s.id === selectedId;
                 return (
                   <button
                     key={s.id}
-                    onClick={() => { setSelectedId(s.id); updateUserSession(); }}
-                    style={{
-                      width: '100%',
-                      textAlign: 'left',
-                      padding: '6px 10px 6px 18px',
-                      background: isActive ? '#fafaf9' : 'transparent',
-                      border: 'none',
-                      borderBottom: '0.5px solid #d5d5d0',
-                      cursor: 'pointer',
-                      display: 'flex',
-                      alignItems: 'flex-start',
-                      justifyContent: 'space-between',
-                      gap: '6px',
-                      transition: 'background .1s',
-                      borderLeft: isActive ? '3px solid #CC2200' : '3px solid transparent'
-                    }}
+                    onClick={() => setSelectedId(s.id)}
+                    style={{ width:'100%', textAlign:'left', padding:'6px 10px 6px 18px', background: active ? '#fff' : 'transparent', border:'none', borderBottom:'0.5px solid #d5d5d0', borderLeft: active ? '3px solid #CC2200' : '3px solid transparent', cursor:'pointer', display:'flex', justifyContent:'space-between', alignItems:'flex-start', gap:6 }}
                   >
                     <div>
-                      <div style={{ fontSize: '11px', fontWeight: 500, lineHeight: 1.3, color: isActive ? '#000' : '#666' }}>{s.title}</div>
-                      <div style={{ fontSize: '10px', color: '#999', marginTop: '1px' }}>{s.provision.length > 32 ? s.provision.slice(0, 32) + '…' : s.provision}</div>
+                      <div style={{ fontSize:11, fontWeight:500, lineHeight:1.3, color: active ? '#000' : '#555' }}>{s.title}</div>
+                      <div style={{ fontSize:10, color:'#aaa', marginTop:1 }}>{s.provision.length > 34 ? s.provision.slice(0,34)+'…' : s.provision}</div>
                     </div>
-                    {cnt > 0 && <span style={{ fontSize: '10px', background: '#fbbf24', color: '#78350f', padding: '1px 6px', borderRadius: '6px', fontWeight: 500, marginTop: '1px' }}>{cnt}</span>}
+                    {cnt > 0 && <span style={{ fontSize:10, background:'#fbbf24', color:'#78350f', padding:'1px 6px', borderRadius:6, fontWeight:600, marginTop:1, flexShrink:0 }}>{cnt}</span>}
                   </button>
                 );
               })}
@@ -366,425 +226,183 @@ function App() {
         })}
       </div>
 
-      {/* Main Content */}
-      <div className="main">
-        <div className="header">
+      {/* ── MAIN PANEL ──────────────────────────────────────────────────────── */}
+      <div style={{ flex:1, display:'flex', flexDirection:'column', overflow:'hidden' }}>
+
+        {/* Header */}
+        <div style={{ padding:'14px 18px', borderBottom:'0.5px solid #d5d5d0', background:'#fff', display:'flex', justifyContent:'space-between', alignItems:'center', gap:12 }}>
           <div>
-            <h2 style={{ fontSize: '15px', fontWeight: 500, margin: '0 0 4px', display: 'flex', alignItems: 'center', gap: '8px' }}>
-              <span style={{ background: '#FFF0EE', color: '#CC2200', padding: '2px 8px', borderRadius: '6px', fontSize: '13px', fontWeight: 500 }}>KΨ</span>
+            <h1 style={{ fontSize:15, fontWeight:500, margin:'0 0 3px', display:'flex', alignItems:'center', gap:8 }}>
+              <span style={{ background:'#FFF0EE', color:'#CC2200', padding:'2px 9px', borderRadius:6, fontSize:13, fontWeight:600 }}>KΨ</span>
               Context Rule Builder
-            </h2>
-            <p style={{ fontSize: '11px', color: '#999', margin: 0 }}>
-              {sectionsWithAnnotations} / {ALL_SECTIONS.length} sections · {totalAnnotations} annotations · {syncStatus === 'synced' ? '✓ Synced' : syncStatus === 'saving' ? '💾 Saving...' : '⚪ Unsaved changes'}
+            </h1>
+            <p style={{ fontSize:11, color:'#aaa', margin:0 }}>
+              {annotatedCnt} / {ALL_SECTIONS.length} sections annotated · {annotations.length} total annotations
             </p>
           </div>
-          <div style={{ display: 'flex', gap: '8px' }}>
-            <button onClick={manualSave} disabled={saving}>{saving ? 'Saving...' : 'Save'}</button>
-            <button onClick={prepareForExport} disabled={sectionsWithAnnotations < ALL_SECTIONS.length}>Export ({progressPercent}%)</button>
+          <div style={{ display:'flex', gap:8 }}>
+            <button
+              onClick={openExportModal}
+              disabled={annotatedCnt < ALL_SECTIONS.length}
+              style={{ padding:'8px 16px', border:'0.5px solid #d5d5d0', borderRadius:8, cursor: annotatedCnt < ALL_SECTIONS.length ? 'not-allowed' : 'pointer', opacity: annotatedCnt < ALL_SECTIONS.length ? .45 : 1, background:'#fff', fontSize:13 }}
+            >
+              Export ({progress}%)
+            </button>
           </div>
         </div>
 
-        <div className="progress-bar">
-          <div className="progress-bar-fill" style={{ width: `${progressPercent}%` }}></div>
+        {/* Progress bar */}
+        <div style={{ height:3, background:'#e5e5e0' }}>
+          <div style={{ height:'100%', width:`${progress}%`, background:'#CC2200', transition:'width .3s' }} />
         </div>
 
-        <div className="content">
-          <div style={{ display: 'flex', gap: '8px', marginBottom: '12px', alignItems: 'center', justifyContent: 'space-between' }}>
-            <div style={{ fontSize: '11px', color: '#999' }}>
-              {currentFilteredIndex >= 0 && `${currentFilteredIndex + 1} / ${filteredSections.length}`}
-            </div>
-            <div style={{ fontSize: '11px', color: '#cc2200', fontWeight: 500 }}>
-              {otherEditors.length > 0 && `${otherEditors.map(u => u.username).join(', ')} editing this section`}
-            </div>
+        {/* Section content */}
+        <div style={{ flex:1, overflowY:'auto', padding:22 }}>
+
+          {/* Nav info */}
+          <div style={{ display:'flex', justifyContent:'space-between', alignItems:'center', marginBottom:12 }}>
+            <span style={{ fontSize:11, color:'#bbb' }}>{visIdx >= 0 ? `${visIdx+1} / ${visible.length}` : ''}</span>
+            {others.length > 0 && (
+              <span style={{ fontSize:11, color:'#CC2200', fontWeight:500 }}>
+                {others.map(u=>u.username).join(', ')} {others.length===1?'is':'are'} also viewing this section
+              </span>
+            )}
           </div>
 
-          <div className="section-header">
-            <span className="badge">{selectedSection.provision}</span>
-            <span style={{ fontSize: '11px', background: '#f0f0f0', border: '0.5px solid #d5d5d0', padding: '4px 10px', borderRadius: '6px' }}>{selectedSection.group}</span>
-            <span style={{ fontSize: '11px', background: '#e0f2fe', border: '0.5px solid #bae6fd', padding: '4px 10px', borderRadius: '6px', color: '#0c4a6e' }}>{selectedSection.defaultCategory}</span>
+          {/* Section badges */}
+          <div style={{ display:'flex', gap:7, flexWrap:'wrap', marginBottom:14 }}>
+            <span style={{ fontSize:11, fontWeight:500, padding:'4px 10px', borderRadius:6, background:'#FFF0EE', color:'#CC2200', border:'0.5px solid #F5C4B3' }}>{sel.provision}</span>
+            <span style={{ fontSize:11, padding:'4px 10px', borderRadius:6, background:'#f3f3f0', border:'0.5px solid #d5d5d0', color:'#555' }}>{sel.group}</span>
+            <span style={{ fontSize:11, padding:'4px 10px', borderRadius:6, background:'#e0f2fe', border:'0.5px solid #bae6fd', color:'#0c4a6e' }}>{sel.defaultCategory}</span>
           </div>
 
-          <h3 style={{ fontSize: '18px', fontWeight: 500, marginBottom: '14px' }}>{selectedSection.title}</h3>
+          <h2 style={{ fontSize:19, fontWeight:500, marginBottom:16 }}>{sel.title}</h2>
 
-          {/* Section text - EXACT VERBATIM FROM PDF */}
-          <div className="section-text" style={{ whiteSpace: 'pre-wrap', fontFamily: '"Courier New", monospace', fontSize: '12px', lineHeight: 1.6, color: '#333' }}>
-            {selectedSection.text}
+          {/* Section text — verbatim from source */}
+          <div style={{ background:'#fff', border:'0.5px solid #d5d5d0', borderRadius:8, padding:'14px 16px', marginBottom:20, whiteSpace:'pre-wrap', fontFamily:'"Courier New",Courier,monospace', fontSize:12.5, lineHeight:1.75, color:'#444' }}>
+            {sel.text}
           </div>
 
           {/* Annotation form */}
-          <div className="form-card">
-            <h4 style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-              ✏️ Add annotation
-            </h4>
+          <div style={{ background:'#fff', border:'0.5px solid #d5d5d0', borderRadius:8, padding:16, marginBottom:20 }}>
+            <h3 style={{ fontSize:13, fontWeight:500, marginBottom:12, display:'flex', alignItems:'center', gap:6 }}>✏️ Add annotation</h3>
 
-            <div className="form-grid">
-              <div className="form-group">
-                <label>Category</label>
-                <select value={formCategory || selectedSection.defaultCategory} onChange={e => setFormCategory(e.target.value)}>
+            <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:10, marginBottom:10 }}>
+              <label style={{ display:'flex', flexDirection:'column', gap:4 }}>
+                <span style={{ fontSize:11, fontWeight:500, color:'#777', textTransform:'uppercase', letterSpacing:'.05em' }}>Category</span>
+                <select value={formCategory || sel.defaultCategory} onChange={e=>setFormCategory(e.target.value)}
+                  style={{ padding:'7px 8px', border:'0.5px solid #d5d5d0', borderRadius:6, fontSize:13, background:'#fff' }}>
                   {CATEGORIES.map(c => <option key={c} value={c}>{c}</option>)}
                 </select>
-              </div>
-              <div className="form-group">
-                <label>Severity</label>
-                <select value={formSeverity} onChange={e => setFormSeverity(e.target.value)}>
+              </label>
+              <label style={{ display:'flex', flexDirection:'column', gap:4 }}>
+                <span style={{ fontSize:11, fontWeight:500, color:'#777', textTransform:'uppercase', letterSpacing:'.05em' }}>Severity</span>
+                <select value={formSeverity} onChange={e=>setFormSeverity(e.target.value)}
+                  style={{ padding:'7px 8px', border:'0.5px solid #d5d5d0', borderRadius:6, fontSize:13, background:'#fff' }}>
                   {SEVERITIES.map(s => <option key={s} value={s}>{s}</option>)}
                 </select>
-              </div>
+              </label>
             </div>
 
-            <div className="form-group" style={{ marginBottom: '10px' }}>
-              <label>Guidance / Interpretation Notes</label>
+            <label style={{ display:'flex', flexDirection:'column', gap:4, marginBottom:10 }}>
+              <span style={{ fontSize:11, fontWeight:500, color:'#777', textTransform:'uppercase', letterSpacing:'.05em' }}>Guidance / Interpretation Notes</span>
               <textarea
-                value={formText}
-                onChange={e => setFormText(e.target.value)}
-                placeholder="Describe how this provision should be interpreted, what to watch for, prohibited constructions..."
+                value={formText} onChange={e=>setFormText(e.target.value)}
+                placeholder="How should this provision be interpreted? What patterns trigger this rule? What is prohibited or required?"
+                style={{ padding:'8px', border:'0.5px solid #d5d5d0', borderRadius:6, fontSize:13, minHeight:100, resize:'vertical', lineHeight:1.6 }}
               />
+            </label>
+
+            <div style={{ display:'grid', gridTemplateColumns:'1fr 1fr', gap:10, marginBottom:12 }}>
+              <label style={{ display:'flex', flexDirection:'column', gap:4 }}>
+                <span style={{ fontSize:11, fontWeight:500, color:'#777', textTransform:'uppercase', letterSpacing:'.05em' }}>Trigger Flags (comma-separated)</span>
+                <input value={formFlags} onChange={e=>setFormFlags(e.target.value)}
+                  placeholder='e.g. resignation, inactive, hazing'
+                  style={{ padding:'7px 8px', border:'0.5px solid #d5d5d0', borderRadius:6, fontSize:13 }} />
+              </label>
+              <label style={{ display:'flex', flexDirection:'column', gap:4 }}>
+                <span style={{ fontSize:11, fontWeight:500, color:'#777', textTransform:'uppercase', letterSpacing:'.05em' }}>Source</span>
+                <input value={formSource} onChange={e=>setFormSource(e.target.value)}
+                  placeholder='e.g. Grand Council ruling 2019'
+                  style={{ padding:'7px 8px', border:'0.5px solid #d5d5d0', borderRadius:6, fontSize:13 }} />
+              </label>
             </div>
 
-            <div className="form-grid">
-              <div className="form-group">
-                <label>Trigger Flags (comma-separated)</label>
-                <input type="text" value={formFlags} onChange={e => setFormFlags(e.target.value)} placeholder='e.g. "resignation", "inactive"' />
-              </div>
-              <div className="form-group">
-                <label>Source</label>
-                <input type="text" value={formSource} onChange={e => setFormSource(e.target.value)} placeholder="Grand Council ruling..." />
-              </div>
-            </div>
-
-            <button className="save-btn" onClick={addAnnotation} disabled={!formText.trim() || saving}>
-              {saving ? '⏳ Saving...' : '+ Save annotation'}
+            <button
+              onClick={saveAnnotation} disabled={!formText.trim() || saving}
+              style={{ padding:'9px 20px', background: formText.trim() ? '#CC2200' : '#ccc', color:'#fff', border:'none', borderRadius:8, fontSize:13, fontWeight:500, cursor: formText.trim() ? 'pointer' : 'not-allowed' }}
+            >
+              {saving ? '⏳ Saving…' : '+ Save annotation'}
             </button>
           </div>
 
-          {/* Existing annotations */}
-          {sectionAnnotations.length > 0 && (
-            <div style={{ marginTop: '20px' }}>
-              <h4 style={{ fontSize: '13px', fontWeight: 500, marginBottom: '12px' }}>
-                {sectionAnnotations.length} annotation{sectionAnnotations.length !== 1 ? 's' : ''}
-              </h4>
-              {sectionAnnotations.map(a => (
-                <div key={a.id} style={{ background: 'white', border: '0.5px solid #d5d5d0', borderRadius: '8px', padding: '12px', marginBottom: '8px' }}>
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'start', gap: '8px', marginBottom: '8px' }}>
-                    <div style={{ display: 'flex', gap: '6px', flexWrap: 'wrap' }}>
-                      <span style={{ fontSize: '10px', background: a.severity === 'HARD_REJECT' ? '#fee2e2' : a.severity === 'HIGH' ? '#fef3c7' : '#e0f2fe', color: a.severity === 'HARD_REJECT' ? '#991b1b' : a.severity === 'HIGH' ? '#78350f' : '#0c4a6e', padding: '2px 8px', borderRadius: '4px', fontWeight: 500 }}>
-                        {a.severity}
-                      </span>
-                      <span style={{ fontSize: '10px', background: '#f0f0f0', color: '#666', padding: '2px 8px', borderRadius: '4px' }}>
-                        {a.category}
-                      </span>
+          {/* Saved annotations */}
+          {secAnn.length > 0 && (
+            <div>
+              <h3 style={{ fontSize:13, fontWeight:500, marginBottom:10 }}>
+                {secAnn.length} annotation{secAnn.length !== 1 ? 's' : ''}
+              </h3>
+              {secAnn.map(a => {
+                const sc = sevStyle[a.severity] ?? sevStyle.INFO;
+                return (
+                  <div key={a.id} style={{ background:'#fff', border:'0.5px solid #d5d5d0', borderRadius:8, padding:12, marginBottom:8 }}>
+                    <div style={{ display:'flex', justifyContent:'space-between', alignItems:'flex-start', marginBottom:8 }}>
+                      <div style={{ display:'flex', gap:6, flexWrap:'wrap' }}>
+                        <span style={{ fontSize:10, padding:'2px 8px', borderRadius:4, fontWeight:600, background:sc.bg, color:sc.color }}>{a.severity}</span>
+                        <span style={{ fontSize:10, padding:'2px 8px', borderRadius:4, background:'#f3f3f0', color:'#555' }}>{a.category}</span>
+                      </div>
+                      <button onClick={()=>deleteAnnotation(a.id)} style={{ background:'none', border:'none', cursor:'pointer', color:'#bbb', fontSize:13, padding:0, lineHeight:1 }}>✕</button>
                     </div>
-                    <button onClick={() => deleteAnnotation(a.id)} style={{ background: 'none', border: 'none', cursor: 'pointer', color: '#999', fontSize: '12px', padding: 0 }}>
-                      ✕
-                    </button>
+                    <p style={{ fontSize:13, margin:'0 0 7px', lineHeight:1.65 }}>{a.guidance}</p>
+                    {a.flags  && <div style={{ fontSize:11, color:'#777', marginBottom:3 }}>Flags: {a.flags}</div>}
+                    {a.source && <div style={{ fontSize:11, color:'#aaa', fontStyle:'italic' }}>Source: {a.source}</div>}
                   </div>
-                  <p style={{ fontSize: '13px', margin: '0 0 8px', lineHeight: 1.6 }}>{a.guidance}</p>
-                  {a.flags && <div style={{ fontSize: '10px', color: '#666', marginBottom: '4px' }}>Flags: {a.flags}</div>}
-                  {a.source && <div style={{ fontSize: '10px', color: '#999', fontStyle: 'italic' }}>Source: {a.source}</div>}
-                </div>
-              ))}
+                );
+              })}
             </div>
           )}
         </div>
       </div>
 
-      {/* Export Modal */}
-      {showExportModal && (
-        <div className="modal">
-          <div className="modal-content">
-            <h3>⚠️ Generate Schema with Claude Sonnet 4.6</h3>
-            <p>You are about to call Claude Sonnet 4.6 (our highest-end model) to structure all {annotations.length} annotations into the final context rules schema.</p>
-            
-            <div className="warning-box">
-              💻 <strong>Token Estimate:</strong> ~{estimatedTokens} tokens (~${(estimatedTokens / 1000 * 0.003).toFixed(4)})
-              <br/>
-              ⏱️ <strong>Processing Time:</strong> ~10-30 seconds
-              <br/>
-              🔴 <strong>Sonnet 4.6 is reserved ONLY for this task.</strong> Other AI work uses Haiku to save costs.
-            </div>
-
-            <p style={{ fontSize: '12px', color: '#666' }}>
-              Once you confirm, Claude will:<br/>
-              • Validate all annotation data<br/>
-              • Structure into the schema format<br/>
-              • Assign context rule IDs (CTX-001, etc)<br/>
-              • Generate examples from guidance text<br/>
-              • Return a downloadable JSON file
+      {/* ── EXPORT MODAL ────────────────────────────────────────────────────── */}
+      {showExport && (
+        <div style={{ position:'fixed', inset:0, background:'rgba(0,0,0,.45)', display:'flex', alignItems:'center', justifyContent:'center', zIndex:1000 }}>
+          <div style={{ background:'#fff', borderRadius:12, padding:26, maxWidth:480, width:'90%', boxShadow:'0 12px 40px rgba(0,0,0,.2)' }}>
+            <h2 style={{ fontSize:17, fontWeight:500, marginBottom:10 }}>⚠️ Generate Schema with Claude Sonnet 4.6</h2>
+            <p style={{ fontSize:13, color:'#555', marginBottom:12, lineHeight:1.6 }}>
+              This will call Claude Sonnet 4.6 to convert all {annotations.length} annotations into the final CTX context-rule schema.
             </p>
-
-            {exportError && <p style={{ color: '#cc2200', fontSize: '12px' }}>❌ {exportError}</p>}
-
-            <div style={{ display: 'flex', gap: '8px', justifyContent: 'flex-end', marginTop: '16px' }}>
-              <button onClick={() => setShowExportModal(false)} disabled={exportLoading}>Cancel</button>
-              <button className="save-btn" onClick={confirmExport} disabled={exportLoading}>
-                {exportLoading ? '⏳ Generating...' : '✓ Proceed with Export'}
+            <div style={{ background:'#FFF0EE', border:'0.5px solid #F5C4B3', borderRadius:7, padding:12, marginBottom:14, fontSize:12, color:'#CC2200', lineHeight:1.7 }}>
+              <strong>Token estimate:</strong> ~{tokenEst.toLocaleString()} (~${(tokenEst/1000*0.003).toFixed(4)})<br/>
+              <strong>Processing time:</strong> ~10–30 seconds<br/>
+              <strong>Note:</strong> Sonnet 4.6 is reserved only for this final export step.
+            </div>
+            <p style={{ fontSize:12, color:'#777', marginBottom:16, lineHeight:1.6 }}>
+              Claude will validate all annotations, assign CTX-### IDs, generate examples, and return a downloadable JSON file.
+            </p>
+            {exportError && <p style={{ color:'#CC2200', fontSize:12, marginBottom:10 }}>❌ {exportError}</p>}
+            <div style={{ display:'flex', gap:8, justifyContent:'flex-end' }}>
+              <button onClick={()=>setShowExport(false)} disabled={exportBusy} style={{ padding:'8px 16px', border:'0.5px solid #d5d5d0', borderRadius:8, background:'#fff', fontSize:13, cursor:'pointer' }}>Cancel</button>
+              <button onClick={runExport} disabled={exportBusy} style={{ padding:'8px 18px', background:'#CC2200', color:'#fff', border:'none', borderRadius:8, fontSize:13, fontWeight:500, cursor: exportBusy ? 'not-allowed' : 'pointer', opacity: exportBusy ? .6 : 1 }}>
+                {exportBusy ? '⏳ Generating…' : '✓ Confirm Export'}
               </button>
             </div>
           </div>
         </div>
       )}
 
-      {/* Activity Panel */}
+      {/* ── ONLINE USERS PILL ───────────────────────────────────────────────── */}
       {userSessions.length > 1 && (
-        <div style={{
-          position: 'fixed',
-          bottom: '16px',
-          right: '16px',
-          background: 'white',
-          border: '0.5px solid #d5d5d0',
-          borderRadius: '8px',
-          padding: '12px',
-          fontSize: '11px',
-          maxWidth: '200px',
-          boxShadow: '0 2px 8px rgba(0, 0, 0, 0.08)'
-        }}>
-          <div style={{ fontSize: '11px', fontWeight: 500, marginBottom: '6px', color: '#666' }}>Online Users</div>
-          {userSessions.slice(0, 5).map(u => (
-            <div key={u.id} style={{ fontSize: '10px', display: 'flex', alignItems: 'center', gap: '6px', padding: '4px 0' }}>
-              <div style={{ display: 'inline-block', width: '6px', height: '6px', borderRadius: '50%', background: '#22c55e', animation: 'pulse 2s ease infinite' }}></div>
+        <div style={{ position:'fixed', bottom:16, right:16, background:'#fff', border:'0.5px solid #d5d5d0', borderRadius:8, padding:'10px 14px', fontSize:11, boxShadow:'0 2px 10px rgba(0,0,0,.08)', zIndex:100 }}>
+          <div style={{ fontWeight:600, color:'#777', marginBottom:5, textTransform:'uppercase', letterSpacing:'.06em', fontSize:10 }}>Online</div>
+          {userSessions.slice(0,6).map(u => (
+            <div key={u.id} style={{ display:'flex', alignItems:'center', gap:6, padding:'3px 0' }}>
+              <div style={{ width:6, height:6, borderRadius:'50%', background:'#22c55e' }} />
               <span>{u.username}</span>
             </div>
           ))}
         </div>
       )}
-
-      {/* CSS Styles */}
-      <style>{`
-        * {
-          box-sizing: border-box;
-          margin: 0;
-          padding: 0;
-        }
-
-        :root {
-          --scarlet: #CC2200;
-          --scarlet-light: #FFF0EE;
-          --scarlet-border: #F5C4B3;
-          --gray: #6B7280;
-        }
-
-        body {
-          font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-          background: #f9f9f7;
-          color: #1a1a1a;
-          line-height: 1.6;
-        }
-
-        button {
-          font-family: inherit;
-          font-size: 13px;
-          padding: 8px 16px;
-          background: white;
-          border: 0.5px solid #d5d5d0;
-          border-radius: 8px;
-          cursor: pointer;
-          transition: all 0.15s;
-        }
-
-        button:hover:not(:disabled) {
-          background: #f5f5f2;
-          border-color: #aaa;
-        }
-
-        button:disabled {
-          opacity: 0.5;
-          cursor: not-allowed;
-        }
-
-        input, select, textarea {
-          font-family: inherit;
-          font-size: 13px;
-          padding: 8px;
-          border: 0.5px solid #d5d5d0;
-          border-radius: 6px;
-          background: white;
-        }
-
-        input:focus, select:focus, textarea:focus {
-          outline: none;
-          border-color: var(--scarlet);
-          box-shadow: 0 0 0 2px rgba(204, 34, 0, 0.1);
-        }
-
-        .container {
-          display: flex;
-          height: 100vh;
-          overflow: hidden;
-        }
-
-        .sidebar {
-          width: 280px;
-          border-right: 0.5px solid #d5d5d0;
-          overflow-y: auto;
-          background: #fafaf9;
-        }
-
-        .main {
-          flex: 1;
-          display: flex;
-          flex-direction: column;
-          overflow: hidden;
-        }
-
-        .header {
-          padding: 16px;
-          border-bottom: 0.5px solid #d5d5d0;
-          background: white;
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          gap: 12px;
-        }
-
-        .progress-bar {
-          height: 3px;
-          background: #d5d5d0;
-        }
-
-        .progress-bar-fill {
-          height: 100%;
-          background: var(--scarlet);
-          transition: width 0.3s ease;
-        }
-
-        .content {
-          flex: 1;
-          overflow-y: auto;
-          padding: 20px;
-        }
-
-        .section-header {
-          display: flex;
-          gap: 8px;
-          margin-bottom: 16px;
-          flex-wrap: wrap;
-        }
-
-        .badge {
-          display: inline-block;
-          font-size: 11px;
-          font-weight: 500;
-          padding: 4px 10px;
-          border-radius: 6px;
-          background: var(--scarlet-light);
-          color: var(--scarlet);
-          border: 0.5px solid var(--scarlet-border);
-        }
-
-        .section-text {
-          background: white;
-          border: 0.5px solid #d5d5d0;
-          border-radius: 8px;
-          padding: 14px 16px;
-          margin-bottom: 20px;
-          font-size: 13px;
-          line-height: 1.75;
-          color: #666;
-        }
-
-        .form-card {
-          background: white;
-          border: 0.5px solid #d5d5d0;
-          border-radius: 8px;
-          padding: 16px;
-          margin-bottom: 20px;
-        }
-
-        .form-card h4 {
-          font-size: 13px;
-          font-weight: 500;
-          margin-bottom: 12px;
-          display: flex;
-          align-items: center;
-          gap: 6px;
-        }
-
-        .form-grid {
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-          gap: 10px;
-          margin-bottom: 10px;
-        }
-
-        .form-group {
-          display: flex;
-          flex-direction: column;
-        }
-
-        .form-group label {
-          font-size: 11px;
-          font-weight: 500;
-          color: #666;
-          margin-bottom: 4px;
-          text-transform: uppercase;
-          letter-spacing: 0.05em;
-        }
-
-        .form-group textarea {
-          resize: vertical;
-          min-height: 100px;
-          font-family: 'Segoe UI', sans-serif;
-        }
-
-        .save-btn {
-          background: var(--scarlet);
-          color: white;
-          border: none;
-          font-weight: 500;
-        }
-
-        .save-btn:hover:not(:disabled) {
-          background: #aa1a00;
-        }
-
-        .modal {
-          position: fixed;
-          inset: 0;
-          background: rgba(0, 0, 0, 0.5);
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          z-index: 1000;
-        }
-
-        .modal-content {
-          background: white;
-          border-radius: 12px;
-          padding: 24px;
-          max-width: 500px;
-          box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
-        }
-
-        .modal-content h3 {
-          font-size: 18px;
-          margin-bottom: 12px;
-        }
-
-        .modal-content p {
-          font-size: 13px;
-          color: #666;
-          margin-bottom: 8px;
-          line-height: 1.6;
-        }
-
-        .warning-box {
-          background: var(--scarlet-light);
-          border: 0.5px solid var(--scarlet-border);
-          border-radius: 6px;
-          padding: 12px;
-          margin: 12px 0;
-          font-size: 12px;
-          color: var(--scarlet);
-          font-weight: 500;
-        }
-
-        @keyframes pulse {
-          0%, 100% { opacity: 1; }
-          50% { opacity: 0.5; }
-        }
-      `}</style>
     </div>
   );
 }
-
-export default App;
